@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block custom_css%}
+  <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/floating-labels.css">
+{% endblock%}
+
+{% block content %}
+
+  <div class="container rounded col-lg-4 col-md-6 col-xm-8 col-sm-8">
+    <form class="" method="post">
+      {% csrf_token %}
+        <div class="text-center">
+          <img class="m-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+          <h1 class="h3 mb-3 font-weight-bold">Connexion</h1>
+        </div>
+        <div class="form-label-group">
+          <input class="form-control mb-3" type="text" name="username" placeholder="Username ou Email" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+          <label for="id_username">Username ou Email</label>
+        </div>
+        <div class="form-label-group">
+          <input class="form-control" type="password" name="password" placeholder="Mot de passe" autocomplete="current-password" required="" id="id_password">
+          <label for="id_password">Mot de passe</label>
+        </div>
+      <div class="text-center">
+        <input class=" m-3 btn btn-primary" type="submit" value="Connexion"><br>
+        <a href="{% url 'dashboard' %}">Retour à l'accueil</a>
+        <p>Pas encore de compte? <a href="{% url 'register' %}">Inscrivez-vous ici</a></p>
+        <p class="mt-5 mb-3 text-muted">© CAAURI Consulting</p>
+      </div>
+    </form>
+  </div>
+  {% endblock %}

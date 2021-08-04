@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3 card text-center">
+    <div class="card-header ">
+      Rechecher un véhicule
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Des véhicules pour tous les gouts</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Launch modal</button>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+</div>
+  {% for v in vehicules %}
+  <div class="card mt-3 mr-2" style="width: 17rem;">
+      <h4 class="card-title active text-center"> {{ v.vehicule }}</h4>
+      <img class="card-img-top" src="{{v.vehicule.image.url}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">{{v.subdesc}}.</p>
+        <p class="text-center">
+          <a href="#" class="btn btn-primary"> Plus de détails </a>
+        </p>
+      </div>
+  </div>
+  {% endfor %}
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script_block %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+{% endblock%}

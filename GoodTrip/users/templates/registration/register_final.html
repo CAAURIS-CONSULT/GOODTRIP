@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block custom_css%}
+<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/floating-labels.css">
+{% endblock%}
+
+{% block content %}
+  <div class="container col-lg-4 col-md-6 col-xm-8 col-sm-8">
+    <form class="form-signin" method="post">
+      {% csrf_token %}
+        <div class="text-center">
+          <img class="m-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+          <h1 class="h3 mb-3 font-weight-bold">Inscription</h1>
+        </div>
+        {% for input in form %}
+        <div class="form-label-group">
+            {{ input }}
+            <label for={{input.id_for_label}}> {{input.label}}</label>
+        </div>
+        {% endfor%}
+        <div class="text-center">
+            <input class=" m-3 btn btn-primary" type="submit" value="Créér mon compte"><br>
+            <a href="{% url 'dashboard' %}">Retour à l'accueil</a>
+            <p>Déjà un compte? <a href="{% url 'login' %}">Connectez-vous</a></p>
+            <p class="mt-5 mb-3 text-muted">© CAAURI Consulting</p>
+        </div>
+    </form>
+  </div>
+{% endblock content %}

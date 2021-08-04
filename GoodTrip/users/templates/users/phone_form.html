@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%block content %}
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="phone"> Numero de téléphone </label>
+        <input type="text" id=phone class="form-control">
+        <input  type="submit" class=" text-center m-3 btn btn-primary">
+    </form>
+</div>
+{% endblock %}

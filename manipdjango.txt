@@ -1,0 +1,5 @@
+Pour connecter django à Mysql Database
+1- Instller mysqlclient: 'pip install mysqlclient'
+2- Creer une base de données : CREATE DATABASE 'nomBaseDonnee'
+3- Changer les paramètres de Django dans settings.py afin d'utiliser la base de données mysql
+4- Faire les migrations
