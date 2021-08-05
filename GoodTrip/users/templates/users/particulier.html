@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+        <div class="form-group mb-3">
+            <div class="form-control m-3">
+                <label for="last_name"> Nom </label>
+                <input type="text" name="last_name" id="last_name">
+            </div>
+            <div class="form-control m-3">
+                <label for="first_name"> Prénoms </label>
+                <input type="text" name="first_name" id="first_name">
+            </div>
+            <div class="form-control m-3">
+                <label for="last_name">Tél </label>
+                <input type="text" name="phoneNumber" id="phoneNumber">
+            </div>
+        </div>
+        <button class="btn btn-primary"> Confirmer </button>
+    </form>    
+    </div>
+{% endblock %}

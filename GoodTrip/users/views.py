@@ -3,9 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegistrationForm
 from django.contrib import messages
+from users.models import Particulier, CodeInstance
+
 import requests
 import random
 import json
+
 
 # Create your views here.
 
@@ -59,19 +62,37 @@ def register(request):
             return redirect('dashboard')
     return render(request, 'registration/register_final.html', {'form':form})
 
-def confirmPhoneNumber(request):
-#    return render(request,'phone_verification.html',{'reponse':response})
+def registerParticulier(request):
     if request.method=='POST':
-        Code = random.randrange(100000,999999)
+        last_name       = request.POST.get('last_name')
+        first_name      = request.POST.get('first_name')
+        phone_number    = request.POST.get('phoneNumber')
+        user = Particulier()
+        user.last_name  = last_name
+        user.first_name = first_name
+        user.phoneNumber= phone_number
+        user.isVerified = False
+        user.save()
+
+    else:
+        return render(request, 'users/particulier.html', { 'form': ''} )
+
+
+def confirmPhoneNumber(request):
+    if request.method=='POST':
+        Code = str(random.randrange(100000,999999))
         if request.POST.get('phoneNumber'):
-            #url = 'https://api.letexto.com/v1/dev/campaigns'
             Message = f'Votre code de vérification est:\n{Code}'
             phoneNumber = request.POST['phoneNumber']
-            response = sendMessage(Message,phoneNumber)
-            return render(request, 'users/verification_form.html', {'reponse':response.text})
+            #response = sendMessage(Message,phoneNumber
+            print(Code)
+            return render(request, 'users/verification_form.html', {'reponse':'response.text'})
         elif request.POST.get('receivedCode'):
             receivedCode = request.POST['receivedCode']
-            if str(Code) == str(receivedCode):
+            print(type(Code))
+            print(Code)
+            print(type(receivedCode))
+            if Code==receivedCode:
                 return render(request, 'users/ok.html')
             else:
                 #errorMessage = messages

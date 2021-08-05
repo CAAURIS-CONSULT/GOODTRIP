@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from users.models import Particulier
 
 class UserPhoneRegister():
     phone_number = forms.CharField(max_length = 15)
@@ -34,3 +35,9 @@ class UserRegistrationForm(UserCreationForm):
                 'class':'form-control mb-3'
             })
         }
+
+# class ParticulierUserRegistrationForm(UserCreationForm):
+#     class Meta:
+#         model          = Particulier
+#         fields         = ['last_name', 'first_name', 'phone_number']
+#         widgets        = {}
