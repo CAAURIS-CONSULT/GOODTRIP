@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <span class="alert alert-primary"> 
+            Hello, {{ user.username|default:'Guest' }}!
+            {% if user.is_authenticated %}
+                <p><a href={% url 'logout' %} class="link active"> Déconnexion </a></p>
+            {% else %}
+                <p><a href={% url 'login' %} class="link active"> Connexion </a></p>
+            {% endif %}
+        </span> 
+    </div>
+</div>
+{% endblock %}
