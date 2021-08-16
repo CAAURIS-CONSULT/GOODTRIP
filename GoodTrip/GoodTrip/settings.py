@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'users',
     'commande',
+    'location',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,6 +77,10 @@ WSGI_APPLICATION = 'GoodTrip.wsgi.application'
 
 
 # Database
+#Config pour BASE DE DONNÉES sqlite3
+
+# configure database mysql for django
+
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
@@ -86,6 +91,18 @@ DATABASES = {
     }
 }
 
+
+# Config for mysql DATABASES
+# DATABASES = {
+#     'default':{
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME':'goodtrip',
+#         'HOST':'/opt/lampp/var/mysql/mysql.sock',
+#         'PORT':'3306',
+#         'USER':'root',
+#         'PASSWORD':""
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

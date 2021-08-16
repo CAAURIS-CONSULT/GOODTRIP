@@ -1,0 +1,471 @@
+ <!-- {% debutblock content %} -->
+      <div class="container mt-5 mb-md-4 py-5">
+        <div class="row py-md-1">
+          <!-- Filers sidebar (Offcanvas on mobile)-->
+          <div class="col-lg-3 pe-xl-4">
+            <div class="offcanvas offcanvas-start offcanvas-collapse bg-dark" id="filters-sidebar">
+              <div class="offcanvas-header bg-transparent d-flex d-lg-none align-items-center">
+                <h2 class="h5 text-light mb-0">filtres</h2>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas"></button>
+              </div>
+              <div class="offcanvas-body py-lg-4">
+                <div class="pb-3 mb-4 border-bottom border-light">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h3 class="h6 text-light mb-0">Selection</h3>
+                    <button class="btn btn-link btn-light fw-normal fs-sm p-0" type="button">Annuler ma sélection</button>
+                  </div>
+                </div>
+                <div class="pb-4 mb-2">
+                  <h3 class="h6 text-light">Catégorie</h3>
+                  <div class="overflow-auto" data-simplebar data-simplebar-auto-hide="false" data-simplebar-inverse style="height: 11rem;">
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="sedan" checked>
+                      <label class="form-check-label fs-sm" for="sedan">Sedan</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="suv" checked>
+                      <label class="form-check-label fs-sm" for="suv">SUV</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="wagon">
+                      <label class="form-check-label fs-sm" for="wagon">Wagon</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="crossover" checked>
+                      <label class="form-check-label fs-sm" for="crossover">Crossover</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="coupe">
+                      <label class="form-check-label fs-sm" for="coupe">Coupe</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="pickup">
+                      <label class="form-check-label fs-sm" for="pickup">Pickup</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="sport">
+                      <label class="form-check-label fs-sm" for="sport">Sport Coupe</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="compact">
+                      <label class="form-check-label fs-sm" for="compact">Compact</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="convertible">
+                      <label class="form-check-label fs-sm" for="convertible">Convertible</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="mpv">
+                      <label class="form-check-label fs-sm" for="mpv">Family MPV</label>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="pb-4 mb-2">
+                  <h3 class="h6 text-light">Marque &amp; Modèle</h3>
+                  <select class="form-select form-select-light mb-2">
+                    <option value="" disabled selected>Selectionnez la marque</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Toyota">Toyota</option>
+                  </select>
+                  <select class="form-select form-select-light mb-1">
+                    <option value="" disabled selected>Selectionnez le Modèle</option>
+                    <option value="Altima">Altima</option>
+                    <option value="Juke">Juke</option>
+                    <option value="Leaf">Leaf</option>
+                    <option value="Maxima">Maxima</option>
+                    <option value="Micra">Micra</option>
+                    <option value="Murano">Murano</option>
+                    <option value="Note">Note</option>
+                    <option value="Pathfinder">Pathfinder</option>
+                    <option value="Patrol">Patrol</option>
+                  </select>
+                </div>
+                <div class="pb-4 mb-1">
+                    <h3 class="h6 text-light">Type de boîte</h3>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="auto">
+                      <label class="form-check-label fs-sm" for="auto">Automatique</label>
+                    </div>
+                    <div class="form-check form-check-light">
+                      <input class="form-check-input" type="checkbox" id="manual">
+                      <label class="form-check-label fs-sm" for="manual">Manuelle</label>
+                    </div>
+                  </div>
+                <button type="button" class="btn btn-primary col-12">Chercher</button>
+              </div>
+            </div>
+          </div>
+          <!-- Catalog grid view-->
+          <div class="col-lg-9">
+            <!-- Breadcrumb-->
+            <nav class="mb-3 pt-md-2 pt-lg-4" aria-label="Breadcrumb">
+              <ol class="breadcrumb breadcrumb-light">
+                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Location de Véhicules</li>
+              </ol>
+            </nav>
+            <!-- Page title-->
+            <div class="d-flex align-items-center justify-content-between pb-4 mb-2">
+              <h1 class="text-light me-3 mb-0">Location de Véhicules</h1>
+              <div class="text-light"><i class="fi-car fs-lg me-2"></i><span class="align-middle">249 offres</span></div>
+            </div>
+            <!-- Sorting + View-->
+            <div class="d-sm-flex align-items-center justify-content-between pb-4 mb-2">
+              <div class="d-flex align-items-center me-sm-4">
+                <label class="fs-sm text-light me-2 pe-1 text-nowrap" for="sorting1"><i class="fi-arrows-sort mt-n1 me-2"></i>Trier par:</label>
+                <select class="form-select form-select-light form-select-sm me-sm-4" id="sorting1">
+                  <option>Le plus récent</option>
+                  <option>Populaire</option>
+                  <option>Prix</option>
+                </select>
+                <!-- <div class="d-none d-md-block border-end border-light" style="height: 1.25rem;"></div>
+                <div class="d-none d-sm-block fw-bold text-light opacity-70 text-nowrap ps-md-4"><i class="fi-switch-horizontal me-2"></i><span class="align-middle">Comparer (0)</span></div> -->
+              </div>
+              <div class="d-none d-sm-flex"><a class="nav-link nav-link-light px-2" href="Location-vehicule-par-liste.html" data-bs-toggle="tooltip" title="vue par liste"><i class="fi-list"></i></a><a class="nav-link nav-link-light px-2 active" href="Location-vehicule-par-grille.html" data-bs-toggle="tooltip" title="vue par grille"><i class="fi-grid"></i></a></div>
+            </div>
+            <div class="row">
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/01.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/01.jpg' %}" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare1">
+                        <label class="form-check-label fs-sm" for="compare1">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">Ford Truck Lifted</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">278 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Diesel</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/02.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/02.jpg' %}" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare2">
+                        <label class="form-check-label fs-sm" for="compare2">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">Mercedes Benz C300 Sport</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">35 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Automatique</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">hybride</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/03.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/03.jpg' %}" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare3">
+                        <label class="form-check-label fs-sm" for="compare3">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">Mazda MX-5 Miata Convertible</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">18 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Essence</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/04.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/04.jpg' %}" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare4">
+                        <label class="form-check-label fs-sm" for="compare4">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">Nissan 370Z Nismo</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">16 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Automatique</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Essence</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/05.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/05.jpg' %}" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare5">
+                        <label class="form-check-label fs-sm" for="compare5">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">BMW 640 XI Gran Turismo</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">10 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Automatique</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Essence</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/06.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/06.jpg' %}" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare6">
+                        <label class="form-check-label fs-sm" for="compare6">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">Toyota GT86</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">46 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Essence</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/07.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/07.jpg' %}" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare7">
+                        <label class="form-check-label fs-sm" for="compare7">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">Volkswagen GTI S</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">25 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Automatique</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">hybride</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="col-sm-6 mb-4">
+                <div class="card card-light card-hover h-100">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-location-vehicule.html"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En Location</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/08.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/08.jpg" alt="Image"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between pb-1"><span class="fs-sm text-light me-3"></span>
+                      <!-- <div class="form-check form-check-light">
+                        <input class="form-check-input" type="checkbox" id="compare8">
+                        <label class="form-check-label fs-sm" for="compare8">Compare</label>
+                      </div> -->
+                    </div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-location-vehicule.html">Ford Explorer XLT</a></h3>
+                    <div class="text-primary fw-bold mb-1">100 000 Franc CFA / Jour</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  </div>
+                  <div class="card-footer border-0 pt-0">
+                    <div class="border-top border-light pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">34 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Diesel</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Sorting + Pagination-->
+            <div class="d-flex align-items-center justify-content-between py-2">
+              <div class="d-flex align-items-center me-sm-4">
+                <label class="fs-sm text-light me-2 pe-1 text-nowrap" for="sorting2"><i class="fi-arrows-sort mt-n1 me-2"></i>Trier par:</label>
+                <select class="form-select form-select-light form-select-sm me-2 me-sm-4" id="sorting2">
+                  <option>Le plus récent</option>
+                  <option>Populaire</option>
+                  <option>Prix</option>
+                </select>
+                <!-- <div class="d-none d-md-block border-end border-light" style="height: 1.25rem;"></div>
+                <div class="d-none d-md-block fw-bold text-light opacity-70 text-nowrap ps-md-4"><i class="fi-switch-horizontal me-2"></i><span class="align-middle">Compare (0)</span></div> -->
+              </div>
+              <nav aria-label="Pagination">
+                <ul class="pagination pagination-light mb-0">
+                  <li class="page-item d-sm-none text-nowrap"><span class="page-link page-link-static">1 / 5</span></li>
+                  <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">1<span class="visually-hidden">(current)</span></span></li>
+                  <li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item d-none d-sm-block">...</li>
+                  <li class="page-item d-none d-sm-block"><a class="page-link" href="#">8</a></li>
+                  <li class="page-item"><a class="page-link" href="#" aria-label="Next"><i class="fi-chevron-right"></i></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- {% enddebutblock content %} -->

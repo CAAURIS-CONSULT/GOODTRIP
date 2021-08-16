@@ -1,19 +1,14 @@
 
-function getModels(maque){
+function getModels(marque){
     $.ajax({
-        url:'marque',
+        url:"{% url 'marque' %}",
         type:'POST',
         datatype: 'json',
         data:{
-            ''
+            'marque':marque,
         },
         success: function(response){
-            if (JSON.parse(response).status) {
-                connected = false;
-                newData = null;
-            }else{
-                newData = JSON.parse(response);
-            }
+            alert('ok')
         },
     });
 }
