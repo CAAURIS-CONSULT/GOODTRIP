@@ -1,19 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from .forms import UserRegistrationForm
 from django.contrib.auth.models import User
-from django.contrib import messages
 from users.models import Particulier, CodeInstance
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import HttpResponse
-from django.http import *
 from django.views.generic import TemplateView
 from django.conf import settings
 
 
-import pyotp
 import requests
 import random
 import json
@@ -197,56 +191,6 @@ def verification_code(username,code):
     #sendMessage(msg,username.split('_')[1])
     print(msg)
     return user
-# Vue permettant de vérifier le code envoyé
-def verify_number(request, username=''):
-    #template_name = 'users/verification_form.html'
-    template_name = 'users/validation.html'
-    if request.POST.get('code'):
-        code = request.POST.get('code')
-        username = request.POST.get('username')
-        main = CodeInstance.objects.filter(associatedUser = username)
-        instanceOfCode = main[len(main)-1]
-        if instanceOfCode is not None:
-            if isCodeValid(instanceOfCode):
-                user = User.objects.filter(username=username)[0]
-                default_password= User.objects.make_random_password()
-                if str(instanceOfCode.Code) == str(code):
-                    instanceOfCode.already_used = True
-                    instanceOfCode.save()
-                    user.set_password(default_password)
-                    user.isVerified = True
-                    user.save()
-                    user = authenticate(username=username, password=default_password)
-                    login(request,user)
-                    msg = f'Compte vérifié.\nNom d\'utilisateur: {username}\nMot de passe: {default_password}\nVous pourrez les changer votre mot de passe plus tard'
-                    #sendMessage(msg,username.split('_')[1])
-                    print(msg)
-                    succcess_msg = 'Numéro de téléphone vérifié avec succès'
-                    return render(request, 'users/dashboard.html' , {'success':succcess_msg})
-                else:
-                    error = 'Code erroné'
-                    context = {
-                        'error': error, 
-                        'username':username,
-                        'generateNewCodeIsPossible':True,
-                    }        
-                    return render(request, template_name, context) 
-            else:
-                error = 'Ce code a expiré'
-                context = {
-                    'error':error,
-                    'username':username,
-                    'generateNewCodeIsPossible':True,
-                }
-                return render(request, template_name, context)
-
-        else:
-            error = 'Votre numéro n\'est pas encore enregistré\nInscrivez-vous'
-            return render(request, 'users/dashboard.html', {'error':error, 'anchor':'signup-modal'})
-    if username == '':
-        return render(request, template_name , {'forverif':True})  #""" A FAIRE POUR LA VERIFICATION """
-    return render(request, template_name , {'username':username})
-
 
 def registerParticulier(request):
     # Si l'utilisateur nous envoie des données
@@ -297,38 +241,6 @@ def registerParticulier(request):
     else:
         return render(request,template_name)
 
-
-# def confirmPhoneNumber(request, default_password, default_username):
-#     if request.method=='POST':
-#         Code = str(random.randrange(100000,999999))
-#         if request.POST.get('phoneNumber'):
-#             Message = f'Votre code de vérification est:\n{Code}'
-#             phoneNumber = request.POST['phoneNumber']
-#             newCodeInstance = CodeInstance()
-#             newCodeInstance.Code=Code
-#             newCodeInstance.associatedPhone = phoneNumber
-#             try:
-#                 newCodeInstance.save()
-#                 print(Code)
-#             except:
-#                 print('Une erreur s\' est produite')
-#             #response = sendMessage(Message,phoneNumber
-#             #print(Code)
-#             return render(request, 'users/verification_form.html', {'reponse':'response.text'})
-#         elif request.POST.get('receivedCode'):
-#             receivedCode = request.POST['receivedCode']
-#             print(type(Code))
-#             print(Code)
-#             print(type(receivedCode))
-#             if Code==receivedCode:
-#                 return render(request, 'users/ok.html')
-#             else:
-#                 #errorMessage = messages
-#                 return render(request,'users/phone_form.html', {'code':receivedCode})
-#     else:
-#         return render(request,'users/phone_form.html')
-
-# Fonction de verification de bon formatage de numéro de téléphone
 def verifyNumber(phone_number):
     for car in phone_number:
         if car not in '0123456789':
