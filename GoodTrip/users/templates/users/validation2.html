@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+        <!-- Page content-->
+        {% block content %}
+        <div class="row">
+          <!-- Content-->
+          <center>
+          <div class="container col-lg-4 col-md-4 col-sm-6 col-xs-8 mt-5">
+            <h1 class="h2 text-light">Validation de code</h1>
+            <form method="POST" action="{% url 'verify_number' %}" class="needs-validation pb-4" novalidate>
+              {% csrf_token %}
+              
+              <!-- Hover effect on default card -->
+              <div class="card card-hover">
+                <div class="card-header">
+                  <h2 class="card-title"> {{ motif }} </h2>
+                </div>
+                <div class="card-body">
+                    {% if motif == 'Réinitialisation' %}
+                  <h5 class="card-title">Renseignez votre numéro de téléphone </h5>
+                    {% endif %}
+
+                  {% if error %}
+                    <div class="message alert alert-danger"> {{ error }} </div>
+                  {% endif %}
+
+                  {% if motif == 'Réinitialisation' %}
+                    <div class="mb-4">
+                      <input class="form-control form-control-dark" name="username" type="text" id="username" placeholder="Numéro de Téléphone" maxlength="10" required>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary">Recevoir le code</button>
+                  {% else %}
+                    <div class="mb-4">
+                      <input class="form-control form-control-dark" name="username" type="text" id="username" placeholder="Numéro de Téléphone" value="{{username}}" hidden required>
+                    </div>
+                    <div class="mb-4 ">
+                      <input class="form-control form-control-dark" name="code" type="text" id="code" placeholder="Entrer le code reçu par sms" required>
+                  </div>
+                  <button type="submit" class="btn btn-sm btn-success"> Valider </button>
+                  {% endif %}
+
+                  {% if errcode == 'impToGenCode' %}
+                  <button type="button" d class="btn disabled m-2 btn-primary">
+                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Patienter...
+                  </button>
+                  <h3 id="count" class="text-danger">  </h3>
+                {% elif errcode == 'expired' %}
+                    <button type="button" class="btn m-2 btn-info"> Renvoyer un code </button>
+                {% endif %}
+                </div>
+              </div>
+              </form>
+          </div>
+        </center>
+        </div>
+      </div>
+      {% endblock %}

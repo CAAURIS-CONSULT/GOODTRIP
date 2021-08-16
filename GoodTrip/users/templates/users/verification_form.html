@@ -2,11 +2,15 @@
 
 {% block content %}
 <div class="container">
-    <form method="POST">
+    <form action="{% url 'verify_number' %}" method="POST">
         {% csrf_token %}
         <label for="phoneNumber"> Code recu</label>
-        <input type="number" id=receivedCode name="receivedCode" class="form-control">
+        <input name="username" type="text" hidden value="{{username}}">
+        <input type="number" maxlength="6" id="code" name="code" class="form-control">
         <input value="Valider mon numéro" type="submit" class=" text-center m-3 btn btn-primary">
+        {% if generateNewCodeIsPossible %}
+            <button class="btn btn-info"> Generer un nouveau code </button>
+        {% endif %}
     </form>
 </div>
 {% endblock %}

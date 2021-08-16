@@ -5,17 +5,24 @@
         <form method="POST">
             {% csrf_token %}
         <div class="form-group mb-3">
+            {% if error %}
+                {% for err in error %}
+                <div class=" text-center mt-5">
+                    <span class="alert alert-danger"> {{err}} </span>
+                </div>
+                {% endfor %}
+            {% endif%}
             <div class="form-control m-3">
                 <label for="last_name"> Nom </label>
-                <input type="text" name="last_name" id="last_name">
+                <input required type="text" name="last_name" id="last_name">
             </div>
             <div class="form-control m-3">
                 <label for="first_name"> Prénoms </label>
-                <input type="text" name="first_name" id="first_name">
+                <input required type="text" name="first_name" id="first_name">
             </div>
             <div class="form-control m-3">
                 <label for="last_name">Tél </label>
-                <input type="text" name="phoneNumber" id="phoneNumber">
+                <input required type="text" name="phoneNumber" pattern="^0[1,5,7][0-9]{8}$" id="phoneNumber">
             </div>
         </div>
         <button class="btn btn-primary"> Confirmer </button>
