@@ -33,7 +33,7 @@
                         <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button"
                             data-bs-toggle="dropdown"><i class="fi-grid me-2"></i><span
                                 class="dropdown-toggle-label">Catégorie</span></button>
-                        <input type="hidden" name="model">
+                        <input type="hidden" id="category" name="category">
                         <ul class="dropdown-menu dropdown-menu-dark">
 {% for cat in category %}   <li>
                                 <a class="dropdown-item" href="#">
@@ -48,11 +48,11 @@
                     <div class="dropdown border-end-sm border-light" data-bs-toggle="select">
                         <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button"
                             data-bs-toggle="dropdown"><i class="fi-car fs-lg me-2"></i><span
-                                class="dropdown-toggle-label">Marque</span></button>
-                        <input type="hidden" name="type">
+                               class="dropdown-toggle-label">Marque</span></button>
+                        <input type="hidden" id="marque" name="marque">
                         <ul class="dropdown-menu dropdown-menu-dark">
 {% for marq in marques %}   <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item marque" marque="{{marq.nom_marque}}" href="#">
                                     <span class="dropdown-item-label">{{marq.nom_marque}}</span>
                                 </a>
                             </li>
@@ -65,19 +65,18 @@
                         <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button"
                             data-bs-toggle="dropdown"><i class="fi-filter-alt-horizontal me-2"></i><span
                                 class="dropdown-toggle-label">Modèle</span></button>
-                        <input type="hidden" name="location">
-                        <ul class="dropdown-menu dropdown-menu-dark">
-{% for mod in modeles %}   <li>
+                        <input type="hidden" id="modele" name="modele">
+                        <ul id='listmodels' class="dropdown-menu dropdown-menu-dark">
+                            <li>
                                 <a class="dropdown-item" href="#">
-                                    <span class="dropdown-item-label">{{mod.nom_modele}}</span>
+                                    <span class="dropdown-item-label">Value 1</span>
                                 </a>
                             </li>
-{% endfor %}
                         </ul>
-                    </div>
                 </div>
-                <hr class="hr-light d-lg-none my-2">
-                <div class="col-lg-2">
+            </div>
+            <hr class="hr-light d-lg-none my-2">
+            <div class="col-lg-2">
                     <button class="btn btn-primary w-100" type="submit">Chercher</button>
                 </div>
             </div>
