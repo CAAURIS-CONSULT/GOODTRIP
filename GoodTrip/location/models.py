@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Category(models.Model):
     nom_category        = models.CharField(max_length=100)
     def __str__(self):
@@ -24,10 +23,14 @@ class Vehicule(models.Model):
     is_auto             =models.BooleanField(default=False)
     estAVendre          =models.BooleanField(default=False)
     estALouer           =models.BooleanField(default=False)
-    image               =models.ImageField(null=True)
     per_day_price       =models.DecimalField(max_digits=10,decimal_places=2)
     description         =models.TextField(null=True)
     kilometrage         =models.PositiveSmallIntegerField(default=15000)
 
     def __str__(self):
         return str(self.marque)+" "+str(self.modele)
+class Image(models.Model):
+    associatedVehicule = models.ForeignKey(Vehicule,on_delete=models.CASCADE)
+    image = models.ImageField(default=False)
+    def __str__(self):
+        return self.associatedVehicule 
