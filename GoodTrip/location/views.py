@@ -14,30 +14,40 @@ def accueil(request):
         'category':listCategory,
     }
     return render(request,template_name, context)
-
+def 
 def ajaxView(request):
     marque = request.GET.get('marque')
     idMarque = Marque.objects.filter(nom_marque=marque)[0].id
     listModel = [Modele.objects.filter(marque=idMarque)[i].nom_modele for i in range(len(Modele.objects.filter(marque=idMarque)))]    
     return JsonResponse({'models':listModel})
 
-def rechercheVoiture(request):
+def rechercheVoiture(request): 
         if request.method  == 'GET':
             modele = request.GET.get('modeles')
             marque = request.GET.get('marque')
             category = request.GET.get('category')
-            marqueId = Marque.objects.filter(nom_marque = marque)
-            modeleId = Modele.objects.filter(nom_modele = modele)
-            categoryId = Category.objects.filter(nom_category = category)
+            params = Q()
+            if Marque.objects.filter(nom_marque = marque):
+                marqueId = Marque.objects.filter(nom_marque = marque)[0].id
+                params.add(Q(marque=marqueId),Q.AND)
 
-            params = Q(category=categoryId)
-            params.add(Q(marque=marqueId),Q.AND)
-            params.add(Q(modele=modeleId),Q.AND)
+            if Modele.objects.filter(nom_modele = modele):
+                modeleId = Modele.objects.filter(nom_modele = modele)[0].id
+                params.add(Q(modele=modeleId),Q.AND)
 
+            if Category.objects.filter(nom_category = category):
+                categoryId = Category.objects.filter(nom_category = category)[0].id
+                params.add(Q(category=categoryId),Q.AND)
+
+            print(params)
             resultat = Vehicule.objects.filter(params)
             context = {
-                'resultat':resultat,
+                'vehicules':resultat,
             }
-            return render(request, 'achat-vehicule-grille.html', context)
+            print('result', resultat)
+            return render(request, 'location/achat-vehicule-grille.html', context)
         else:
             return redirect('acc_location')
+def details(request, id):
+    print(id)
+    return HttpResponse('bien')
