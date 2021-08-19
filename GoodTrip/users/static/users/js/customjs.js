@@ -46,11 +46,11 @@ function getModelsById(id){
         success:function(response){
             data.models = JSON.parse(response).models;
             var html='';
-            // data.models.forEach(element => {
-            //     html += '<li><a class="dropdown-item" href="#"><span class="dropdown-item-label">'+element+'</span></a></li>'
-            // });
-            // $('#listmodels').html(html);
-            // reload_js('/static/users/js/theme.min.js');
+            data.models.forEach(element => {
+                html += '<option value="'+ element +'">'+element+'</option>';
+            });
+            $('#listmodels').html(html);
+            reload_js('/static/users/js/theme.min.js');
         },
         error:function(){
                 alert('nononn');

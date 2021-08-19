@@ -22,9 +22,9 @@ def ajaxForMarques(request):
         idMarque = Marque.objects.filter(nom_marque=marque)[0].id
         listModel = [Modele.objects.filter(marque=idMarque)[i].nom_modele for i in range(len(Modele.objects.filter(marque=idMarque)))]
     if request.GET.get('id'):
-        idMarque = id
+        idMarque = request.GET.get('id')
         print(idMarque)
-        listModel = Modele.objects.filter(marque = idMarque)
+        listModel = [Modele.objects.filter(marque=idMarque)[i].nom_modele for i in range(len(Modele.objects.filter(marque=idMarque)))]
         print(listModel)
     return JsonResponse({'models':listModel})
 
@@ -70,16 +70,18 @@ def rechercheVoiture(request):
 def detailsVehicule(request, id):
 
     template_name = 'location/details_vehicule.html'
+    
     vehicule = Vehicule.objects.filter(id=id)[0]
+    images = Image.objects.filter(associatedVehicule = id)
+    vehicule.listAssImages = images
+
     latelyAdd = list(Vehicule.objects.all())[0:-10]
     for v in latelyAdd:
         assImg = Image.objects.filter(associatedVehicule=v.id)
         v.listAssImages = assImg
     
-    images = Image.objects.filter(associatedVehicule = id)
     context = {
         'vehicule':vehicule,
-        'images':images,
         'lastVehicule':latelyAdd
     }
     return render(request, template_name, context)

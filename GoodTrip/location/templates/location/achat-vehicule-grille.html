@@ -101,38 +101,14 @@
                 <div class="pb-4 mb-2">
                   <h3 class="h6 text-light">Marque &amp; Modèle</h3>
                   <select id="marque" onchange="getModelsById(this.value)" class="form-select form-select-light mb-2">
-                    <option value="" disabled selected>Aucune</option>
+                    <option value="" selected>Aucune</option>
                     {% for marque in marques %}
                       <option value="{{marque.id}}">{{marque.nom_marque}}</option>
                     {% endfor %}
                   </select>
-                  <select class="form-select form-select-light mb-1">
-                    <option value="" disabled selected>N'importe quel modèle</option>
-                    <option value="Altima">Altima</option>
-                    <option value="Juke">Juke</option>
-                    <option value="Leaf">Leaf</option>
-                    <option value="Maxima">Maxima</option>
-                    <option value="Micra">Micra</option>
-                    <option value="Murano">Murano</option>
-                    <option value="Note">Note</option>
-                    <option value="Pathfinder">Pathfinder</option>
-                    <option value="Patrol">Patrol</option>
+                  <select id="listmodels" class="form-select form-select-light mb-1">
+                    <option value="" selected>N'importe quel modèle</option>
                   </select>
-                </div>
-                <div class="pb-4 mb-2">
-                  <h3 class="h6 text-light">Transmission</h3>
-                  <div class="form-check form-check-light">
-                    <input class="form-check-input" type="checkbox" id="awd">
-                    <label class="form-check-label fs-sm" for="awd">AWD/4WD</label>
-                  </div>
-                  <div class="form-check form-check-light">
-                    <input class="form-check-input" type="checkbox" id="front-wheel">
-                    <label class="form-check-label fs-sm" for="front-wheel">Traction avant</label>
-                  </div>
-                  <div class="form-check form-check-light">
-                    <input class="form-check-input" type="checkbox" id="rear-wheel">
-                    <label class="form-check-label fs-sm" for="rear-wheel">À traction arrière</label>
-                  </div>
                 </div>
                 <div class="pb-4 mb-2">
                   <h3 class="h6 text-light">Type de carburant</h3>

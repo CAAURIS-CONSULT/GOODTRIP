@@ -41,14 +41,14 @@
         </div>
         <div class="tns-carousel-inner"
           data-carousel-options="{&quot;navAsThumbnails&quot;: true, &quot;navContainer&quot;: &quot;#thumbnails&quot;, &quot;gutter&quot;: 12, &quot;responsive&quot;: {&quot;0&quot;:{&quot;controls&quot;: false},&quot;500&quot;:{&quot;controls&quot;: true}}}">
-            {% for img in images %}
+            {% for img in vehicule.listAssImages %}
           <div><img class="rounded-3" src="{{img.image.url }}" alt="Image"></div>
             {% endfor %}
         </div>
       </div>
       <ul class="tns-thumbnails" id="thumbnails">
-        {% for img in images %}
-        <li class="tns-thumbnail"><img src="{% static 'users/img/car-finder/single/gallery/th01.jpg' %}"
+        {% for img in vehicule.listAssImages %}
+        <li class="tns-thumbnail"><img src="{{ img.image.url }}"
           alt="Thumbnail"></li>
         {% endfor %}
       </ul>
