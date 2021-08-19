@@ -1,0 +1,165 @@
+      <!-- {% debutblock content %} -->
+      <div class="container pt-5 pb-lg-4 mt-5 mb-sm-2">
+        <!-- Breadcrumb-->
+        <nav class="mb-4 pt-md-3" aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark">
+            <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+            <li class="breadcrumb-item"><a href="profile.html">Mon compte</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Historique</li>
+          </ol>
+        </nav>
+        <!-- Page content-->
+        <div class="row">
+          <!-- Sidebar-->
+          <aside class="col-lg-4 col-md-5 pe-xl-4 mb-5">
+            <!-- Account nav-->
+            <div class="card card-body card-dark border-0 shadow-sm pb-1 me-lg-1">
+              <div class="d-flex d-md-block d-lg-flex align-items-start pt-lg-2 mb-4"><img class="rounded-circle" src="{% static 'users/img/avatars/01.jpg' %}" width="48" alt="Robert Fox">
+                <div class="pt-md-2 pt-lg-0 ps-3 ps-md-0 ps-lg-3">
+                  <h2 class="fs-lg text-dark mb-0">Robert Fox</h2>
+                  <ul class="list-unstyled fs-sm mt-3 mb-0">
+                    <li><a class="nav-link-dark fw-normal" href="tel:3025550107"><i class="fi-phone opacity-60 me-2"></i>(+225) 00-00-00-00-00</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-outline-dark d-block d-md-none w-100 mb-3" href="#account-nav" data-bs-toggle="collapse">
+                <i class="fi-align-justify me-2"></i>Menu</a>
+              <div class="collapse d-md-block mt-3" id="account-nav">
+                <div class="card-nav"><a class="card-nav-link" href="profile.html"><i class="fi-user me-2"></i>Informations personnelles</a>
+                  <a class="card-nav-link" href="settings.html"><i class="fi-lock me-2"></i>Mot de passe &amp; Sécurité</a>
+                  <a class="card-nav-link" href="historique-vehicule.html"><i class="fi-car me-2"></i>Historique-véhicule</a>
+                  <a class="card-nav-link active" href="Historique-livraison.html"><i class="fi-car me-2"></i>Historique-livraison</a>
+                  <a class="card-nav-link" href="#"><i class="fi-logout me-2"></i>Déconnexion</a></div>
+              </div>
+            </div>
+          </aside>
+          <!-- Content-->
+          <div class="col-lg-8 col-md-7 mb-5">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h1 class="h2 text-dark mb-0">Mes colis</h1>
+            </div>
+            <p class="text-dark pt-1 mb-4">Ici, vous pouvez voir l'historique de vos livraisons</p>
+           
+            <!-- Item-->
+            <div class="card card-dark card-hover card-horizontal mb-4">
+              <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
+                
+                <div class="tns-carousel-inner position-absolute top-0 h-100">
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis1.jpg' %});"></div>
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis2.jpg' %});"></div>
+                </div>
+              </div>
+              <div class="card-body position-relative">
+                <div class="fs-sm text-dark pb-1">Livrée le : 12/05/2017</div>
+                <div class="text-primary fw-bold mb-1">20 000 Franc CFA</div>
+                <div class="fs-sm text-dark opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                <div class="border-top border-dark mt-3 pt-3">
+                  <div class="row g-2">
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-car d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu d'expedition: Yopougon</span></div>
+                    </div>
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-file d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu de livraison: Adjamé</span></div>
+                    </div>
+                    <div class="col">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-clock d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Heure de livraison: 14h05</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item-->
+             <!-- Item-->
+             <div class="card card-dark card-hover card-horizontal mb-4">
+              <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
+                
+                <div class="tns-carousel-inner position-absolute top-0 h-100">
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis2.jpg' %});"></div>
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis3.png' %});"></div>
+                </div>
+              </div>
+              <div class="card-body position-relative">
+                <div class="fs-sm text-dark pb-1">Livrée le : 12/05/2017</div>
+                <div class="text-primary fw-bold mb-1">20 000 Franc CFA</div>
+                <div class="fs-sm text-dark opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                <div class="border-top border-dark mt-3 pt-3">
+                  <div class="row g-2">
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-car d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu d'expedition: Yopougon</span></div>
+                    </div>
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-file d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu de livraison: Adjamé</span></div>
+                    </div>
+                    <div class="col">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-clock d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Heure de livraison: 14h05</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <!-- Item-->
+              <div class="card card-dark card-hover card-horizontal mb-4">
+                <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                  <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
+                  
+                  <div class="tns-carousel-inner position-absolute top-0 h-100">
+                    <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis3.png' %});"></div>
+                    <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis4.jpg' %});"></div>
+                  </div>
+                </div>
+                <div class="card-body position-relative">
+                  <div class="fs-sm text-dark pb-1">Livrée le : 12/05/2017</div>
+                  <div class="text-primary fw-bold mb-1">20 000 Franc CFA</div>
+                  <div class="fs-sm text-dark opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  <div class="border-top border-dark mt-3 pt-3">
+                    <div class="row g-2">
+                      <div class="col me-sm-1">
+                        <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-car d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu d'expedition: Yopougon</span></div>
+                      </div>
+                      <div class="col me-sm-1">
+                        <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-file d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu de livraison: Adjamé</span></div>
+                      </div>
+                      <div class="col">
+                        <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-clock d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Heure de livraison: 14h05</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- Item-->
+            <div class="card card-dark card-hover card-horizontal mb-4">
+              <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
+                
+                <div class="tns-carousel-inner position-absolute top-0 h-100">
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis4.jpg' %});"></div>
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/real-estate/catalog/colis1.jpg' %});"></div>
+                </div>
+              </div>
+              <div class="card-body position-relative">
+                <div class="fs-sm text-dark pb-1">Livrée le : 12/05/2017</div>
+                <div class="text-primary fw-bold mb-1">20 000 Franc CFA</div>
+                <div class="fs-sm text-dark opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                <div class="border-top border-dark mt-3 pt-3">
+                  <div class="row g-2">
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-car d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu d'expedition: Yopougon</span></div>
+                    </div>
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-file d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu de livraison: Adjamé</span></div>
+                    </div>
+                    <div class="col">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-clock d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Heure de livraison: 14h05</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- {% endblock content %} -->
