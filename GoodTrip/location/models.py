@@ -33,4 +33,4 @@ class Image(models.Model):
     associatedVehicule = models.ForeignKey(Vehicule,on_delete=models.CASCADE)
     image = models.ImageField(default=False)
     def __str__(self):
-        return self.associatedVehicule 
+        return str(self.associatedVehicule) 

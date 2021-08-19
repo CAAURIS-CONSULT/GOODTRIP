@@ -100,23 +100,14 @@
                 </div>
                 <div class="pb-4 mb-2">
                   <h3 class="h6 text-light">Marque &amp; Modèle</h3>
-                  <select class="form-select form-select-light mb-2">
-                    <option value="" disabled selected>N'importe quelle marque</option>
-                    <option value="Audi">Audi</option>
-                    <option value="Infiniti">Infiniti</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Hyundai">Hyundai</option>
-                    <option value="Lexus">Lexus</option>
-                    <option value="Mazda">Mazda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
-                    <option value="Mercedes-Benz">Mercedes-Benz</option>
-                    <option value="Nissan">Nissan</option>
-                    <option value="Opel">Opel</option>
-                    <option value="Renault">Renault</option>
-                    <option value="Toyota">Toyota</option>
+                  <select id="marque" onchange="getModelsById(this.value)" class="form-select form-select-light mb-2">
+                    <option value="" disabled selected>Aucune</option>
+                    {% for marque in marques %}
+                      <option value="{{marque.id}}">{{marque.nom_marque}}</option>
+                    {% endfor %}
                   </select>
                   <select class="form-select form-select-light mb-1">
-                    <option value="" disabled selected>N'importe quel modèke</option>
+                    <option value="" disabled selected>N'importe quel modèle</option>
                     <option value="Altima">Altima</option>
                     <option value="Juke">Juke</option>
                     <option value="Leaf">Leaf</option>
@@ -304,10 +295,13 @@
                       <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
                     </div>
                     <div class="tns-carousel-inner">
-                      <img src="{% static 'users/img/car-finder/catalog/01.jpg' %}" alt="Image">
-                      <img src="{% static 'users/img/car-finder/catalog/02.jpg' %}" alt="Image">
-                      <img src="{% static 'users/img/car-finder/catalog/03.jpg' %}" alt="Image">
-                      <img src="{% static 'users/img/car-finder/catalog/04.jpg' %}" alt="Image">
+                      {% if vehicule.listAssImages %}
+                      {% for img in vehicule.listAssImages %}
+                      <img src="{{img.image.url }}" alt="Image">
+                      {% endfor %}
+                      {% else %}
+                      <img src="{% static 'users/img/car-finder/catalog/08.jpg' %}" alt="Image">
+                      {% endif%}
                     </div>
                   </div>
                   <div class="card-body">
@@ -338,38 +332,7 @@
                 </div>
               </div>
 {% endfor %}
-              <!-- Item-->
-              <div class="col-sm-6 mb-4">
-                <div class="card card-light card-hover h-100">
-                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="detail-achat-vehicule.html"></a>
-                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #fd5631" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en vente.&lt;/div&gt;&lt;/div&gt;">En Vente</span></div>
-                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter à mes favoris"><i class="fi-heart"></i></button>
-                    </div>
-                    <div class="tns-carousel-inner"><img src="{% static 'users/img/car-finder/catalog/02.jpg' %}" alt="Image"><img src="{% static 'users/img/car-finder/catalog/02.jpg' %}" alt="Image"></div>
-                  </div>
-                  <div class="card-body">
-                    <h3 class="h6 mb-1"><a class="nav-link-light" href="detail-achat-vehicule.html">Mercedes Benz C300 Sport</a></h3>
-                    <div class="text-primary fw-bold mb-1">43 383 786 Franc CFA</div>
-                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
-                  </div>
-                  <div class="card-footer border-0 pt-0">
-                    <div class="border-top border-light pt-3">
-                      <div class="row g-2">
-                        <div class="col me-sm-1">
-                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">35 Km</span></div>
-                        </div>
-                        <div class="col me-sm-1">
-                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Automatique</span></div>
-                        </div>
-                        <div class="col">
-                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Hybrid</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </div>
             <!-- Sorting + Pagination-->
             <div class="d-flex align-items-center justify-content-between py-2">
