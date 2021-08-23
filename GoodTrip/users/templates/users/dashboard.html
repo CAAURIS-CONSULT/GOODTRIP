@@ -1,3 +1,23 @@
+<style>
+  img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translatey(0); }
+    100% { transform: translatey(-10px); }
+}
+@keyframes mover {
+    0% { transform: translatey(0); }
+    100% { transform: translatey(-10px); }
+}
+</style>
+
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -18,14 +38,14 @@
               <div class="d-block hover-img-scale position-relative zindex-5 mt-md-5 mx-auto me-md-n5 mb-4 mb-md-0" style="max-width: 633px;">
                 <div class="pt-md-5 mt-4 me-md-n5">
                   <h2 class="h4 mb-2 pb-1 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="real-estate-home.html"><i class="fi-truck text-primary me-2 pe-1"></i><span>Livraison de colis</span></a></h2>
-                  <div class="position-relative zindex-0"><img class="position-relative zindex-5" src="{% static 'users/img/intro/demos/Capture2.png' %}" alt="Real Estate Demo">
+                  <div class="position-relative zindex-0"><img class="position-relative zindex-5 vert-move" src="{% static 'users/img/intro/demos/capture2.png' %}" style="border-radius: 5px;" alt="Goodtrip">
                     <div class="d-none d-md-block position-absolute zindex-1" style="top: 15px; left: 20px; width: calc(100% - 40px); height: calc(100% - 50px); box-shadow: 33px 26px 85px rgba(0, 0, 0, .14);"></div>
                   </div>
                 </div>
               </div>
               <!-- Job Board-->
               <div class="d-block hover-img-scale position-relative mt-md-n5 mx-auto me-md-n3" style="max-width: 550px;">
-                <h2 class="h4 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="{% url 'acc_location'%}"><i class="fi-car text-primary me-2 pe-1"></i><span>Location et Achat</span></a></h2><img src="{% static 'users/img/intro/demos/Capture.png' %}" alt="Car Finder Demo">
+                <h2 class="h4 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="{% url 'acc_location'%}"><i class="fi-car text-primary me-2 pe-1"></i><span>Location et Achat</span></a></h2><img class="vert-move" src="{% static 'users/img/intro/demos/capture.png' %}" style="border-radius: 5px;" alt="Goodtrip">
               </div>
             </div>
             
@@ -41,49 +61,49 @@
           <div class="col-lg-9">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gy-1 gy-md-3 gx-3 gx-md-4">
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100" alt="location de véhicule particulier">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="location de véhicule particulier">
                   <h3 class="h6">Location de véhicule pour particulier</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
               </div>
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/entreprise.jpg' %}" width="100" alt="location de véhicule pour entreprise">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="location de véhicule pour entreprise">
                   <h3 class="h6">Location de véhicule pour entreprise</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
               </div>
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/vente.jpg' %}" width="100" alt="vente de véhicule">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="vente de véhicule">
                   <h3 class="h6">Vente de véhicule</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
               </div>
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/livraison.jpg' %}" width="100" alt="Livraison de colis">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="Livraison de colis">
                   <h3 class="h6">Livraison de colis</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
               </div>
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/formation.jpg' %}" width="100" alt="Formation">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="Formation">
                   <h3 class="h6">Formation</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
               </div>
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/etude.svg' %}" width="100" alt="Etude">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="Etude">
                   <h3 class="h6">Etude</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
               </div>
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/recrutement.jpg' %}" width="100" alt="Recrutement">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="Recrutement">
                   <h3 class="h6">Recrutement</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
               </div>
               <div class="col">
-                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/placement.jpeg' %}" width="100" alt="Placement">
+                <div class="card card-body card-hover h-100 border-0"><img class="d-block mb-3" src="{% static 'users/img/intro/features/location.jpg' %}" width="100%" alt="Placement">
                   <h3 class="h6">Placement</h3>
                   <p class="fs-sm mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                 </div>
@@ -96,24 +116,30 @@
       <section class="container mb-5">
           <h1 class="h5 fw-normal text-center" style="font-weight: 700px; text-transform: uppercase; font-size: 42px; line-height: 38px; color: #033f58">Nos valeurs</h1>
           <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4 mt-4">
-            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+            <div data-aos="zoom-in" data-aos-duration="2000">
+            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" >
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-check-circle"></i></div>
-                <h3 class="icon-box-title fs-base mb-0">Fiabilité</h3></a></div>
-            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
+                <h3 class="icon-box-title fs-base mb-0">Fiabilité</h3></a></div></div>
+                <div data-aos="zoom-in" data-aos-duration="2000">
+            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-lock"></i></div>
-                <h3 class="icon-box-title fs-base mb-0">Sécurité</h3></a></div>
-            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+                <h3 class="icon-box-title fs-base mb-0">Sécurité</h3></a></div></div>
+                <div data-aos="zoom-in" data-aos-duration="2000">
+            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-zoom-in"></i></div>
-                <h3 class="icon-box-title fs-base mb-0">Transparence</h3></a></div>
-            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
+                <h3 class="icon-box-title fs-base mb-0">Transparence</h3></a></div></div>
+                <div data-aos="zoom-in" data-aos-duration="2000">
+            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-globe"></i></div>
-                <h3 class="icon-box-title fs-base mb-0">Flexibilité</h3></a></div>
-            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+                <h3 class="icon-box-title fs-base mb-0">Flexibilité</h3></a></div></div>
+                <div data-aos="zoom-in" data-aos-duration="2000">
+            <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-plant"></i></div>
-                <h3 class="icon-box-title fs-base mb-0">Durabilité</h3></a></div>
-                <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+                <h3 class="icon-box-title fs-base mb-0">Durabilité</h3></a></div></div>
+                <div data-aos="zoom-in" data-aos-duration="2000">
+                <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
                   <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-truck"></i></div>
-                  <h3 class="icon-box-title fs-base mb-0">Livraison en 24h</h3></a></div>
+                  <h3 class="icon-box-title fs-base mb-0">Livraison en 24h</h3></a></div></div>
           </div>
         </section>
       <!-- Footer-->
