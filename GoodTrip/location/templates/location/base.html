@@ -221,7 +221,7 @@
                       </label>
                     </div>
                   </div>
-                  <button class="btn btn-primary btn-lg w-100" type="submit">S'identifier</button>
+                  <button class="btn btn-primary btn-lg w-100" type="submit">Se connecter</button>
                 </form>
               </div>
             </div>
@@ -232,9 +232,16 @@
     {% endif %}
       <!-- Navbar-->
       <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" data-scroll-header>
-          <div class="container"><a class="navbar-brand me-3 me-xl-4" href="index.html"><img class="d-block" src="{% static 'users/img/logo/logo-light.svg' %}" width="116" alt="Finder"></a>
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-link btn-light btn-sm d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Se connecter</a>
-            <div class="collapse navbar-collapse order-md-2" id="navbarNav">
+          <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard'%}"><img class="d-block" src="{% static 'users/img/logo/logo-light.svg' %}" width="116" alt="Finder"></a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            {% if not user.is_authenticated %}
+            <a class="btn btn-link btn-light btn-sm d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal">
+              <i class="fi-user me-2"></i>Se connecter</a>
+            {% endif %}
+
+              <div class="collapse navbar-collapse order-md-2" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
                   <ul class="dropdown-menu">
@@ -246,23 +253,26 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="real-estate-home.html">Livraison de colis</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% static 'users/docs/dev-setup.' %}">Nos services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Nos services</a></li>
               </ul>
             </div>
           </div>
+          {% if user.is_authenticated %}
           <ul class="navbar-nav" style="margin-right: 20px">
           <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #fd5631; color: #fff;"> <i class="fi-user me-2"></i>Mon compte</a>
-              <div class="dropdown-menu my-1" >
+              <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #fd5631; color: #fff;">
+                <i class="fi-user me-2"></i>Mon compte</a>
+              <div class="dropdown-menu" >
                 <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
                
                 <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
                 
                 <hr style="height: 2px;"></hr>
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="#" style="text-decoration: none"> Deconnexion</a></span>
+                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="{% url 'logout' %}" style="text-decoration: none"> Deconnexion</a></span>
               </div>
             </li>
           </ul>
+          {% endif %}
         </header>
 {% block content %}
 
@@ -311,10 +321,10 @@
               </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 mb-2 mb-sm-4">
-              <h3 class="fs-base text-light">Profil</h3>
+              <h3 class="fs-base text-light">Mon compte</h3>
               <ul class="list-unstyled fs-sm">
-                <li><a class="nav-link-light" href="#">Mon compte</a></li>
-                <li><a class="nav-link-light" href="#">liste de mes favoris</a></li>
+                <li><a class="nav-link-light" href="#">Profil</a></li>
+                <li><a class="nav-link-light" href="#">Historique</a></li>
               </ul>
             </div>
             <div class="col-xl-2 col-lg-3 col-sm-6 col-md-3 mb-2 mb-sm-4"><a class="d-flex align-items-center text-decoration-none mb-2" href="tel:4065550120"><i class="fi-device-mobile me-2"></i><span class="text-light">(+225) xx-xx-xx-xx-xx</span></a><a class="d-flex align-items-center text-decoration-none mb-2" href="mailto:example@email.com"><i class="fi-mail me-2"></i><span class="text-light">example@email.com</span></a>
@@ -340,3 +350,4 @@
   <script src="{% static 'users/vendor/jarallax/dist/jarallax-element.min.js' %}"></script>
   <!-- Main theme script-->
   <script src="{% static 'users/js/theme.min.js' %}"></script>
+  <script src="{% static 'users/js/customjs.js' %}"></script>

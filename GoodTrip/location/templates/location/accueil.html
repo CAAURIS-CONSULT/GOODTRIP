@@ -25,7 +25,7 @@
                         class="fi-apartment"></i> Entreprise</a></li>
         </ul>
         <!-- Form group-->
-        <form class="form-group form-group-light d-block">
+        <form method="GET" action="{% url 'rechercheVoiture' %}" class="form-group form-group-light d-block">
             <div class="row g-0 ms-lg-n2">
                 <hr class="hr-light d-sm-none my-2">
                 <div class="col-lg-4 col-md-3 col-sm-6">
@@ -33,7 +33,7 @@
                         <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button"
                             data-bs-toggle="dropdown"><i class="fi-grid me-2"></i><span
                                 class="dropdown-toggle-label">Catégorie</span></button>
-                        <input type="hidden" name="model">
+                        <input type="hidden" id="category" name="category">
                         <ul class="dropdown-menu dropdown-menu-dark">
 {% for cat in category %}   <li>
                                 <a class="dropdown-item" href="#">
@@ -48,11 +48,11 @@
                     <div class="dropdown border-end-sm border-light" data-bs-toggle="select">
                         <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button"
                             data-bs-toggle="dropdown"><i class="fi-car fs-lg me-2"></i><span
-                                class="dropdown-toggle-label">Marque</span></button>
-                        <input type="hidden" name="type">
+                               class="dropdown-toggle-label">Marque</span></button>
+                        <input type="hidden" id="marque" name="marque">
                         <ul class="dropdown-menu dropdown-menu-dark">
 {% for marq in marques %}   <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item marque" marque="{{marq.nom_marque}}" href="#">
                                     <span class="dropdown-item-label">{{marq.nom_marque}}</span>
                                 </a>
                             </li>
@@ -65,19 +65,18 @@
                         <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button"
                             data-bs-toggle="dropdown"><i class="fi-filter-alt-horizontal me-2"></i><span
                                 class="dropdown-toggle-label">Modèle</span></button>
-                        <input type="hidden" name="location">
-                        <ul class="dropdown-menu dropdown-menu-dark">
-{% for mod in modeles %}   <li>
+                        <input type="hidden" id="modele" name="modele">
+                        <ul id='listmodels' class="dropdown-menu dropdown-menu-dark">
+                            <li>
                                 <a class="dropdown-item" href="#">
-                                    <span class="dropdown-item-label">{{mod.nom_modele}}</span>
+                                    <span class="dropdown-item-label">Value 1</span>
                                 </a>
                             </li>
-{% endfor %}
                         </ul>
-                    </div>
                 </div>
-                <hr class="hr-light d-lg-none my-2">
-                <div class="col-lg-2">
+            </div>
+            <hr class="hr-light d-lg-none my-2">
+            <div class="col-lg-2">
                     <button class="btn btn-primary w-100" type="submit">Chercher</button>
                 </div>
             </div>
@@ -95,14 +94,14 @@
         <!-- Item-->
         <div class="col">
             <div class="card card-body card-light card-hover bg-transparent border-0 px-0 pt-0 text-center"><img
-                    class="d-block mx-auto mb-3" src="{% static 'users/img/car-finder/icons/sedan.svg' %}" width="160"
+                    class="d-block mx-auto mb-3" src="{% static 'users/img/car-finder/icons/bmw-logo.svg' %}" width="160"
                     alt="Sedan"><a class="nav-link-light stretched-link fw-bold"
                     href="car-finder-catalog-list.html">Sedan</a></div>
         </div>
         <!-- Item-->
         <div class="col">
             <div class="card card-body card-light card-hover bg-transparent border-0 px-0 pt-0 text-center"><img
-                    class="d-block mx-auto mb-3" src="{% static 'users/img/car-finder/icons/suv.svg' %}" width="160"
+                    class="d-block mx-auto mb-3" src="{% static 'users/img/car-finder/icons/tesla-motors-1.svg' %}" width="160"
                     alt="SUV"><a class="nav-link-light stretched-link fw-bold"
                     href="car-finder-catalog-grid.html">SUV</a></div>
         </div>
