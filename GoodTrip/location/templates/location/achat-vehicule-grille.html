@@ -157,71 +157,6 @@
                   </div>
                 </div>
                 <div class="pb-4 mb-2">
-                  <h3 class="h6 text-light">Couleur</h3>
-                  <div class="overflow-auto" data-simplebar data-simplebar-auto-hide="false" data-simplebar-inverse style="height: 11rem;">
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="amber">
-                      <label class="form-check-label fs-sm" for="amber">Ambre</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="azure">
-                      <label class="form-check-label fs-sm" for="azure">Bleu Azure</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="beige">
-                      <label class="form-check-label fs-sm" for="beige">Beige</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="black">
-                      <label class="form-check-label fs-sm" for="black">Noir</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="blue">
-                      <label class="form-check-label fs-sm" for="blue">Blue</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="brown">
-                      <label class="form-check-label fs-sm" for="brown">Brun</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="camouflage">
-                      <label class="form-check-label fs-sm" for="camouflage">Vert camouflage</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="charcoal">
-                      <label class="form-check-label fs-sm" for="charcoal">charbon</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="gray">
-                      <label class="form-check-label fs-sm" for="gray">gris</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="green">
-                      <label class="form-check-label fs-sm" for="green">Vert</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="gold">
-                      <label class="form-check-label fs-sm" for="gold">Or</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="purple">
-                      <label class="form-check-label fs-sm" for="purple">Mauve</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="red">
-                      <label class="form-check-label fs-sm" for="red">Rouge</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="white">
-                      <label class="form-check-label fs-sm" for="white">Blanc</label>
-                    </div>
-                    <div class="form-check form-check-light">
-                      <input class="form-check-input" type="checkbox" id="yellow">
-                      <label class="form-check-label fs-sm" for="yellow">Jaune</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="pb-4 mb-2">
                     <h3 class="h6 text-light">Estimation du Prix</h3>
                     <input class="form-control" id="readonly-input" type="text" placeholder="Prix d'achat du véhicule" readonly>
                   </div>
@@ -308,7 +243,6 @@
                 </div>
               </div>
 {% endfor %}
-
             </div>
             <!-- Sorting + Pagination-->
             <div class="d-flex align-items-center justify-content-between py-2">
@@ -323,12 +257,17 @@
               <nav aria-label="Pagination">
                 <ul class="pagination pagination-light mb-0">
                   <li class="page-item d-sm-none text-nowrap"><span class="page-link page-link-static">1 / 5</span></li>
-                  <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">1<span class="visually-hidden">(current)</span></span></li>
-                  <li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item d-none d-sm-block">...</li>
-                  <li class="page-item d-none d-sm-block"><a class="page-link" href="#">8</a></li>
-                  <li class="page-item"><a class="page-link" href="#" aria-label="Next"><i class="fi-chevron-right"></i></a></li>
+                  {% if vehicules.has_previous %}
+                  <li class="page-item"><a class="page-link" href="{{ link }}&page=1" aria-label="first"><i class="fi-chevrons-left"></i></a></li>
+                  <li class="page-item"><a class="page-link" href="{{ link }}{{vehicules.previous_page_number}}" aria-label="Previous"><i class="fi-chevron-left"></i></a></li>
+                  {% endif %}
+                  <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">{{ vehicules.number }}<span class="visually-hidden">(current)</span></span></li>
+                  <li class="page-item d-none d-sm-block">/</li>
+                  <li class="page-item d-none d-sm-block"> <a class="page-link">{{ vehicules.paginator.num_pages }}</a></li>
+                  {% if vehicules.has_next %}
+                  <li class="page-item"><a class="page-link" href="{{ link }}{{vehicules.next_page_number}}" aria-label="Next"><i class="fi-chevron-right"></i></a></li>
+                  <li class="page-item"><a class="page-link" href="{{ link }}{{vehicules.paginator.num_pages}}" aria-label="last"><i class="fi-chevrons-right"></i></a></li>
+                  {% endif %}
                 </ul>
               </nav>
             </div>

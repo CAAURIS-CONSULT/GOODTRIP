@@ -3,6 +3,7 @@ from location.models import Marque, Modele, Vehicule, Category, Image
 from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 # Create your views here.
 def accueil(request):
     template_name = 'location/accueil.html'
@@ -55,13 +56,18 @@ def rechercheVoiture(request):
         page  = request.GET.get('page')
         try:
             listvehicule = paginator.page(page)
+            listvehicule.page=page
         except PageNotAnInteger:
             listvehicule = paginator.page(1)
         except EmptyPage:
             listvehicule = paginator.page(paginator.num_pages)
+            listvehicule.page=paginator.num_pages
+        link = request.get_full_path().split('&page')[0]+'&page='
+        print(link)
         context = {
             'vehicules':listvehicule,
-            'marques':marques
+            'marques':marques,
+            'link':link,
         }
         return render(request, 'location/achat-vehicule-grille.html', context)
     else:
@@ -75,7 +81,7 @@ def detailsVehicule(request, id):
     images = Image.objects.filter(associatedVehicule = id)
     vehicule.listAssImages = images
 
-    latelyAdd = list(Vehicule.objects.all())[0:-10]
+    latelyAdd = list(Vehicule.objects.all())[0:-10] #Recupération des 9 derniers véhicules ajoutés
     for v in latelyAdd:
         assImg = Image.objects.filter(associatedVehicule=v.id)
         v.listAssImages = assImg

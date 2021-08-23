@@ -5,8 +5,8 @@
   <!-- Breadcrumb-->
   <nav class="mb-3 pt-md-3" aria-label="Breadcrumb">
     <ol class="breadcrumb breadcrumb-light">
-      <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-      <li class="breadcrumb-item"><a href="location-vehicule-par-liste.html">Véhicules</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'acc_location' %}">Accueil</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'rechercheVoiture'%}">Véhicules</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{vehicule}}</li>
     </ol>
   </nav>
