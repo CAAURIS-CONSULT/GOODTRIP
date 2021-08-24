@@ -1,4 +1,5 @@
-/GoodTrip/test.txt
-/manipdjango.txt
-/visitedWebSites.txt
+GoodTrip/test.txt
+GoodTrip/virtualenv
+manipdjango.txt
+visitedWebSites.txt
 virtualenv/
