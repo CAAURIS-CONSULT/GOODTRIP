@@ -3,7 +3,7 @@ from location.models import Marque, Modele, Vehicule, Category, Image
 from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def accueil(request):
     template_name = 'location/accueil.html'
@@ -92,6 +92,16 @@ def detailsVehicule(request, id):
     }
     return render(request, template_name, context)
 
-def checkout(request, id):
-    template_name = 'location/panier.html'
-    return render(request, template_name)
+#@login_required
+def commander(request):
+    template_name = 'location/historique.html'
+    if request.method != 'POST':
+        return HttpResponse('Method not allowed')
+    else:
+        data = request.POST
+        print(data)
+    message = 'commande bien effectuée'
+    context = {
+        'message':message
+    }
+    return render(request, template_name, context)

@@ -37,12 +37,12 @@ class Image(models.Model):
     def __str__(self):
         return str(self.associatedVehicule)
         
-class Location(models.Model):    
+class Commande(models.Model):    
     user                =models.OneToOneField(User, on_delete=models.CASCADE)
-    hasBeenProcessed    =models.BooleanField(default=False)
     status              =models.CharField(default='En cours', max_length=100)
-
-class VoitureLocation(models.Model):
-    location            =models.ForeignKey(Location,on_delete=models.CASCADE)
-    voiture             =models.ForeignKey(Vehicule,on_delete=models.CASCADE)
+    delivered_at        =models.DateField(auto_now_add=True)
+    created_at          =models.DateField(auto_now_add=True)
+class ProduitCommande(models.Model):
+    associatedCommande  =models.ForeignKey(Commande,on_delete=models.CASCADE)
+    vehicule            =models.ForeignKey(Vehicule,on_delete=models.CASCADE)
     quantity            =models.IntegerField()
