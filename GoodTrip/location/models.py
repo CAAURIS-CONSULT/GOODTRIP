@@ -1,4 +1,6 @@
 from django.db import models
+from users.models import Particulier
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):
@@ -33,4 +35,14 @@ class Image(models.Model):
     associatedVehicule = models.ForeignKey(Vehicule,on_delete=models.CASCADE)
     image = models.ImageField(default=False)
     def __str__(self):
-        return str(self.associatedVehicule) 
+        return str(self.associatedVehicule)
+        
+class Location(models.Model):    
+    user                =models.OneToOneField(User, on_delete=models.CASCADE)
+    hasBeenProcessed    =models.BooleanField(default=False)
+    status              =models.CharField(default='En cours', max_length=100)
+
+class VoitureLocation(models.Model):
+    location            =models.ForeignKey(Location,on_delete=models.CASCADE)
+    voiture             =models.ForeignKey(Vehicule,on_delete=models.CASCADE)
+    quantity            =models.IntegerField()

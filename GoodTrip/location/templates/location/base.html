@@ -221,6 +221,7 @@
                       </label>
                     </div>
                   </div>
+                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
                   <button class="btn btn-primary btn-lg w-100" type="submit">Se connecter</button>
                 </form>
               </div>
@@ -268,7 +269,7 @@
                 <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
                 
                 <hr style="height: 2px;"></hr>
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="{% url 'logout' %}" style="text-decoration: none"> Deconnexion</a></span>
+                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="{% url 'logout' %}?next={{request.get_full_path }}" style="text-decoration: none"> Deconnexion</a></span>
               </div>
             </li>
           </ul>

@@ -91,3 +91,7 @@ def detailsVehicule(request, id):
         'lastVehicule':latelyAdd
     }
     return render(request, template_name, context)
+
+def checkout(request, id):
+    template_name = 'location/panier.html'
+    return render(request, template_name)
