@@ -20,6 +20,11 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Page loading styles-->
+
+     <!-- Template CSS -->
+     <link rel="stylesheet" href="{% static 'users/sweet/css2/style.css' %}">
+     <link rel="stylesheet" href="{% static 'users/sweet/css2/components.css' %}">
+ <!-- Custom style CSS -->
     <style>
       .page-loading {
         position: fixed;
@@ -258,21 +263,9 @@
             </div>
           </div>
           {% if user.is_authenticated %}
-          <ul class="navbar-nav" style="margin-right: 20px">
-          <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #fd5631; color: #fff;">
-                <i class="fi-user me-2"></i>Mon compte</a>
-              <div class="dropdown-menu" >
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
-               
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
-                
-                <hr style="height: 2px;"></hr>
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
-              </div>
-            </li>
-          </ul>
+          
           {% endif %}
+          <a href="cart-vehicule.html" style="margin-right: 20px; margin-left: 20px;"><i class="fi-cart me-2 rounded-circle" style="font-size: 40px;" alt="pannier";></i></a>
         </header>
 {% block content %}
 
@@ -351,3 +344,9 @@
   <!-- Main theme script-->
   <script src="{% static 'users/js/theme.min.js' %}"></script>
   <script src="{% static 'users/js/customjs.js' %}"></script>
+     <!-- General JS Scripts -->
+     <script src="{% static 'users/sweet/js/app.min.js' %}"></script>
+     <!-- JS Libraies -->
+     <script src="{% static 'users/sweet/bundles2/sweetalert/sweetalert.min.js' %}"></script>
+     <!-- Page Specific JS File -->
+     <script src="{% static 'users/sweet/js2/page/sweetalert.js' %}"></script>
