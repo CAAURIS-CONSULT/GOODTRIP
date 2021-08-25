@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
-from location.models import Marque, Modele, Vehicule, Category, Image
+from django.contrib.auth.models import User
+from location.models import Marque, Modele, Vehicule, Category, Image, Commande, ProduitCommande
 from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
+from users.views import sendMessage
+
 # Create your views here.
 def accueil(request):
     template_name = 'location/accueil.html'
@@ -13,7 +16,7 @@ def accueil(request):
     context = {
         'modeles':listModel,
         'marques':listMarque,
-        'category':listCategory,
+        'category':listCategory,    
     }
     return render(request,template_name, context)
 
@@ -92,16 +95,42 @@ def detailsVehicule(request, id):
     }
     return render(request, template_name, context)
 
-#@login_required
+@login_required
 def commander(request):
     template_name = 'location/historique.html'
-    if request.method != 'POST':
+    if request.method != 'GET':
         return HttpResponse('Method not allowed')
     else:
-        data = request.POST
-        print(data)
-    message = 'commande bien effectuée'
+        data = request.GET
+        user                = request.user
+        vehicule_id         = data.get('vehicule_id')
+        quantity            = data.get('quantity')
+        commande = creerCommande(user)
+        vehicule = Vehicule.objects.filter(id=vehicule_id)[0]
+        addToCommand(commande,vehicule,quantity)
+        message = 'commande bien effectuée'
     context = {
         'message':message
     }
-    return render(request, template_name, context)
+    return HttpResponse(message)
+    # return render(request, template_name, context)
+
+def creerCommande(user):
+    commande = Commande()
+    commande.user = user
+    commande.save()
+    latestCommande = Commande.objects.latest('id')
+    return latestCommande
+
+def addToCommand(commande,vehicule,quantity):
+    produitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id,associateVvehicule_id=vehicule.id)
+    if produitCommande:
+        produitCommande = produitCommande[0]
+        produitCommande.quantity += quantity
+        produitCommande.save()
+    else:
+        newProduitCommande = ProduitCommande()
+        newProduitCommande.associateVvehicule = vehicule
+        newProduitCommande.associatedCommande = commande
+        newProduitCommande.quantity = quantity
+        newProduitCommande.save()
