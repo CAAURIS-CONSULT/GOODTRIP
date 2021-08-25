@@ -74,19 +74,18 @@ function getModelsById(id){
 }
 function commander(user_id, vehicule_id, quantity){
     $.ajax({
-        url: 'http://localhost:8000/location/commande',
+        url: 'http://localhost:8000/location/commander',
         method: 'GET',
         data: {
-            'user_id':user_id,
             'vehicule_id':vehicule_id,
             'quantity':quantity,
         },
-        dataType:'application/json',
+        dataType:'html',
         success:function(response){
             alert(response);
         },
         error:function(){
-            alert(response);
+            alert('response');
         }
     });
 }

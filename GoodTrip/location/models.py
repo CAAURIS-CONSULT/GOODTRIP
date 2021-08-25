@@ -1,6 +1,7 @@
 from django.db import models
 from users.models import Particulier
 from django.contrib.auth.models import User
+from datetime import datetime
 
 # Create your models here.
 class Category(models.Model):
@@ -38,11 +39,11 @@ class Image(models.Model):
         return str(self.associatedVehicule)
         
 class Commande(models.Model):    
-    user                =models.OneToOneField(User, on_delete=models.CASCADE)
+    user                =models.ForeignKey(User, on_delete=models.CASCADE)
     status              =models.CharField(default='En cours', max_length=100)
     delivered_at        =models.DateField(auto_now_add=True)
     created_at          =models.DateField(auto_now_add=True)
 class ProduitCommande(models.Model):
     associatedCommande  =models.ForeignKey(Commande,on_delete=models.CASCADE)
-    vehicule            =models.ForeignKey(Vehicule,on_delete=models.CASCADE)
+    associateVvehicule  =models.ForeignKey(Vehicule,on_delete=models.CASCADE)
     quantity            =models.IntegerField()
