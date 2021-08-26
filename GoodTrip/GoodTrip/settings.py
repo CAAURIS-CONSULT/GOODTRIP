@@ -141,7 +141,7 @@ USE_TZ = True
 
 # Les redirecitons au cas ou l'utilisateur se connecte ou se déconnecte
 # LOGIN_REDIRECT_URL = "dashboard"
-# LOGOUT_REDIRECT_URL = "dashboard"
+LOGOUT_REDIRECT_URL = "dashboard"
 
 # Définition des dossiers de fichiers statiques
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
