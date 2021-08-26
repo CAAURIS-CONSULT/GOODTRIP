@@ -156,6 +156,7 @@
                       class="fs-sm text-light" href="#">Mot de passe oublié?</a>
                   </div>
                   <div class="password-toggle">
+                    <input type="hidden" name="next" id="next" value="{{ request.get_full_path }}">
                     <input class="form-control form-control-light" name="id_password" type="password" id="id_password"
                       placeholder="Entrer votre mot de passe" required>
                     <label class="password-toggle-btn" aria-label="Show/hide password">
@@ -285,7 +286,7 @@
                  
                   <span class="dropdown-item" data-bs-toggle="tab" role="tab"><a href="historique.html" style="text-decoration: none; color: #26708b;"> Historique</a></span>
                   
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab"><a href="{% url 'logout' %}" style="text-decoration: none; color: #26708b;"><i class="fi-power me-1"></i> Deconnexion</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b; "><a href="{% url 'logout' %}?next={{ request.get_full_path }}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
                 </div>
               </li>
             </ul>
