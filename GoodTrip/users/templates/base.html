@@ -144,9 +144,7 @@
               <div class="col-md-6 border-end-md border-light p-4 p-sm-5">
                 <h class="h3 text-center text-light mb-4 mb-sm-5">Inscription<br>Goodtrip</h2>
                 <ul class="list-unstyled mb-4 mb-sm-5">
-                  <!-- <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Add and promote your listings</span></li>
-                      <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Easily manage your wishlist</span></li>
-                      <li class="d-flex mb-0"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Leave reviews</span></li> -->
+
                 </ul><img class="d-block mx-auto" src="{% static 'users/img/signin-modal/signup-dark.svg' %}"
                   width="344" alt="Illustartion">
                 <div class="text-light mt-sm-4 pt-md-3"><span class="opacity-60">Déjà un compte? </span><a
@@ -181,18 +179,6 @@
                     <input class="form-control form-control-light" type="text" maxlength="10" name="phone_number" id="phone_number"
                       placeholder="Numéro de Téléphone" required>
                   </div>
-                  <!-- <div class="mb-4">
-                    <label class="form-label text-light" for="signup-password">Téléphone <span
-                        class='fs-sm opacity-50'>Au format dix (10) chiffres</span></label>
-                    <div class="password-toggle">
-                      <input class="form-control form-control-light" type="text" name="last_name" id="signup-password" maxlength="10"
-                        required>
-                      <label class="password-toggle-btn" aria-label="Show/hide password">
-                        <input class="password-toggle-check" type="checkbox"><span
-                          class="password-toggle-indicator"></span>
-                      </label>
-                    </div>
-                  </div> -->
                   <div class="form-check form-check-light mb-4">
                     <input class="form-check-input" type="checkbox" id="agree-to-terms" required>
                     <label class="form-check-label" for="agree-to-terms"><span class='opacity-70'>En m'inscrivant,
@@ -243,6 +229,7 @@
                         class="fs-sm text-light" href="#">Mot de passe oublié?</a>
                     </div>
                     <div class="password-toggle">
+                      <input type="hidden" name="next" id="next" value="{{ request.get_full_path }}">
                       <input class="form-control form-control-light" name="id_password" type="password" id="id_password"
                         placeholder="Entrer votre mot de passe" required>
                       <label class="password-toggle-btn" aria-label="Show/hide password">
@@ -299,7 +286,7 @@
                   <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
                   
                   <hr style="height: 2px;"></hr>
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b; "><a href="{% url 'logout' %}?next={{ request.get_full_path }}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
                 </div>
               </li>
             </ul>
