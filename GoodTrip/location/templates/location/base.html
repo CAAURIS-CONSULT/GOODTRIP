@@ -16,15 +16,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'users/site.webmanifest' %}">
     <link rel="mask-icon" color="#5bbad5" href="{% static 'users/safari-pinned-tab.svg' %}" >
+    <link rel="stylesheet" href="{% static 'users/dist/sweetalert2.min.css' %}">
     <meta name="msapplication-TileColor" content="#766df4">
     <meta name="theme-color" content="#ffffff">
     
     <!-- Page loading styles-->
 
      <!-- Template CSS -->
-     <link rel="stylesheet" href="{% static 'users/sweet/css2/style.css' %}">
-     <link rel="stylesheet" href="{% static 'users/sweet/css2/components.css' %}">
- <!-- Custom style CSS -->
+
     <style>
       .page-loading {
         position: fixed;
@@ -253,48 +252,48 @@
      <!-- Navbar-->
    <!-- Navbar-->
    <header class="navbar navbar-expand-lg navbar-dark fixed-top" data-scroll-header>
-    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard'%}"><img class="d-block" src="{% static 'users/img/logo/logo-light.svg' %}" width="116" alt="Finder"></a>
+    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard'%}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      {% if not user.is_authenticated %}
-      <a class="btn btn-link btn-light btn-sm d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Se connecter</a>
-      {% endif %}
+      
       <a class=" btn-sm ms-2 order-lg-3" href="#">
-        
         <img class="rounded-circle" src="{% static 'users/img/cart/cart.jpg' %}" width="40" alt="pannier" style="margin-right: 20px">
       </a>
       <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
-        <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
+        <ul class="navbar-nav navbar-nav-scroll col-lg-10" style="max-height: 35rem;">
           <!-- Demos switcher-->
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-white " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-divider"></li>
               
-              <li><a class="dropdown-item" href="Achat-vehicule-par-liste.html"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
+              <li><a class="dropdown-item text-white" href="Achat-vehicule-par-liste.html"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
               </ul>
           </li>
           <!-- Menu items-->
           
           <li class="nav-item"><a class="nav-link" href="real-estate-home.html">Livraison de colis</a></li>
           <li class="nav-item"><a class="nav-link" href="docs/dev-setup.">Nos services</a></li>
-          {% if not user.is_authenticated %}
-          <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Se connecter</a></li>
+          </ul>
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav" style="margin-right: 20px">
+            <li class="nav-item dropdown ">
+                <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #fff;">
+                  <i class="fi-user me-2"></i>Mon compte</a>
+                <div class="dropdown-menu " >
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #f2ac2a"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
+                 
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #f2ac2a"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
+                  
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #f2ac2a; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
+                </div>
+              </li>
+            </ul>
+            {% else%}
+          <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
+            <i class="fi-user me-2"></i>
+            Se connecter</a>
           {% endif %}
-        </ul>
-        <ul class="navbar-nav " style="padding-right: 10px">
-          <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #fd5631; color: #fff; padding: 10px"> <i class="fi-user me-2"></i>Mon compte</a>
-              <div class="dropdown-menu my-0" >
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
-               
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
-                
-                <hr style="height: 2px;"></hr>
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="#" style="text-decoration: none"> Deconnexion</a></span>
-              </div>
-            </li>
-        </ul>
       </div>
     </div>
 
@@ -305,7 +304,7 @@
  <!-- Footer-->
     <footer class="footer bg-faded-light">
         <div class="border-bottom border-light py-4">
-          <div class="container d-sm-flex align-items-center justify-content-between"><a class="d-inline-block" href="index.html"><img src=" {% static 'users/img/logo/logo-light.svg' %}" width="116" alt="logo"></a>
+          <div class="container d-sm-flex align-items-center justify-content-between"><a class="d-inline-block" href="index.html"><img src=" {% static 'users/img/logo/logo.png' %}" width="116" alt="logo"></a>
             <div class="d-flex pt-3 pt-sm-0">
               <div class="dropdown ms-n3">
                 <button class="btn btn-light btn-link btn-sm dropdown-toggle fw-normal py-2" type="button" data-bs-toggle="dropdown"><i class="fi-globe me-2"></i>Français</button>
@@ -374,11 +373,9 @@
   <script src="{% static 'users/vendor/jarallax/dist/jarallax.min.js' %}"></script>
   <script src="{% static 'users/vendor/jarallax/dist/jarallax-element.min.js' %}"></script>
   <!-- Main theme script-->
+  <script src="{% static 'users/dist/sweetalert2.min.js' %}"></script>
   <script src="{% static 'users/js/theme.min.js' %}"></script>
   <script src="{% static 'users/js/customjs.js' %}"></script>
      <!-- General JS Scripts -->
-     <script src="{% static 'users/sweet/js/app.min.js' %}"></script>
      <!-- JS Libraies -->
-     <script src="{% static 'users/sweet/bundles2/sweetalert/sweetalert.min.js' %}"></script>
      <!-- Page Specific JS File -->
-     <script src="{% static 'users/sweet/js2/page/sweetalert.js' %}"></script>

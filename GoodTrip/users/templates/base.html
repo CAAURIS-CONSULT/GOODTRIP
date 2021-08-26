@@ -82,7 +82,7 @@
       -webkit-animation: spinner .75s linear infinite;
       animation: spinner .75s linear infinite;
     }
-
+    
 
     @-webkit-keyframes spinner {
       100% {
@@ -265,7 +265,7 @@
     <header class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #fff;">
       <div class="container">
         <a class="navbar-brand me-2 me-xl-4" href="#">
-          <img class="d-block" src="{% static 'users/img/logo/logo-dark.svg' %}" width="116" alt="Goodtrip">
+          <img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Goodtrip">
         </a>
         <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-primary btn-sm rounded-pill ms-2 order-md-3" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" target="_blank" rel="noopener">Se connecter</a> -->
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -273,7 +273,7 @@
         </button>
        
         <div class="collapse navbar-collapse order-md-2" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav col-lg-10">
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
               <ul class="dropdown-menu">
@@ -288,28 +288,30 @@
               <a class="nav-link" href="#services" data-scroll>Nos services</a>
             </li>
           </ul>
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav" style="margin-right: 20px">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #26708b; color: #fff;">
+                  <i class="fi-user me-2"></i>Mon compte</a>
+                <div class="dropdown-menu" >
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
+                 
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
+                  
+                  <hr style="height: 2px;"></hr>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
+                </div>
+              </li>
+            </ul>
+            {% else%}
+          <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
+            <i class="fi-user me-2"></i>
+            Se connecter</a>
+          {% endif %}
         </div>
+        
       </div>
-      {% if user.is_authenticated %}
-      <ul class="navbar-nav" style="margin-right: 20px">
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #fd5631; color: #fff;">
-              <i class="fi-user me-2"></i>Mon compte</a>
-            <div class="dropdown-menu" >
-              <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
-             
-              <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
-              
-              <hr style="height: 2px;"></hr>
-              <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
-            </div>
-          </li>
-        </ul>
-        {% else%}
-      <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
-        <i class="fi-user me-2"></i>
-        Se connecter</a>
-      {% endif %}
+     
       
     </header>
     <!-- end header -->
@@ -381,7 +383,7 @@
     </script>
   
 
-  <script src="js/theme.min.js"></script>
+  <script src="{% static 'users/js/theme.min.js' %}"></script>
   {% if anchor %}
   <script>
     $(document).ready(function(){

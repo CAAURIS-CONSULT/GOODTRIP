@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
   img.vert-move {
     -webkit-animation: mover 1s infinite  alternate;
     animation: mover 1s infinite  alternate;
@@ -15,7 +15,7 @@ img.vert-move {
     0% { transform: translatey(0); }
     100% { transform: translatey(-10px); }
 }
-</style>
+</style> -->
 
 
 {% extends 'base.html' %}
@@ -32,20 +32,20 @@ img.vert-move {
         <div class="container content-overlay mt-4 mb-2 mt-lg-5 mb-lg-4 pt-5 pb-md-2">
           <h2 class="display-4 text-center text-md-start">Nous sommes <br> disponibles<br> 24h/24 7j/7</h2>
           <div class="row">
-            <div class="d-none d-md-block col-md-2 pt-4 mt-4"><img src="{% static 'users/img/intro/swirly-arrow.svg' %}" width="120" alt="Arrow"></div>
+            <div class="d-none d-md-block col-md-2 pt-4 mt-4"><img src="{% static 'users/img/intro/swirly-arrow2.svg' %}" width="120" alt="Arrow"></div>
             <div class="col-md-10 d-md-flex mt-md-n4">
               <!-- Real Estate-->
               <div class="d-block hover-img-scale position-relative zindex-5 mt-md-5 mx-auto me-md-n5 mb-4 mb-md-0" style="max-width: 633px;">
                 <div class="pt-md-5 mt-4 me-md-n5">
-                  <h2 class="h4 mb-2 pb-1 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="real-estate-home.html"><i class="fi-truck text-primary me-2 pe-1"></i><span>Livraison de colis</span></a></h2>
-                  <div class="position-relative zindex-0"><img class="position-relative zindex-5 vert-move" src="{% static 'users/img/intro/demos/capture2.png' %}" style="border-radius: 5px;" alt="Goodtrip">
+                  <h2 class="h4 mb-2 pb-1 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="real-estate-home.html"><i class="fi-truck me-2 pe-1" style="color: #26708b;"></i><span>Livraison de colis</span></a></h2>
+                  <div class="position-relative zindex-0"><img class="position-relative zindex-5" src="{% static 'users/img/intro/demos/capture3.png' %}" style="border-radius: 5px;" alt="Goodtrip">
                     <div class="d-none d-md-block position-absolute zindex-1" style="top: 15px; left: 20px; width: calc(100% - 40px); height: calc(100% - 50px); box-shadow: 33px 26px 85px rgba(0, 0, 0, .14);"></div>
                   </div>
                 </div>
               </div>
               <!-- Job Board-->
               <div class="d-block hover-img-scale position-relative mt-md-n5 mx-auto me-md-n3" style="max-width: 550px;">
-                <h2 class="h4 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="{% url 'acc_location'%}"><i class="fi-car text-primary me-2 pe-1"></i><span>Location et Achat</span></a></h2><img class="vert-move" src="{% static 'users/img/intro/demos/capture.png' %}" style="border-radius: 5px;" alt="Goodtrip">
+                <h2 class="h4 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="{% url 'acc_location'%}"><i class="fi-car me-2 pe-1" style="color: #26708b;"></i><span>Location et Achat</span></a></h2><img src="{% static 'users/img/intro/demos/capture.png' %}" style="border-radius: 5px;" alt="Goodtrip">
               </div>
             </div>
             
@@ -56,7 +56,7 @@ img.vert-move {
       <section id='services' class="container pt-md-4 pt-xl-5 pb-lg-3 pb-xl-5">
         <div class="row mb-5">
           <div class="col-lg-3">
-            <h2 class="py-2 pb-md-3 pb-lg-4">Nos services</h2><img class="d-none d-lg-block" src="{% static 'users/img/intro/turn-right-arrow.svg' %}" width="80" alt="Arrow">
+            <h2 class="py-2 pb-md-3 pb-lg-4">Nos services</h2><img class="d-none d-lg-block" src="{% static 'users/img/intro/turn-right-arrow-2.svg' %}" width="80" alt="Arrow">
           </div>
           <div class="col-lg-9">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gy-1 gy-md-3 gx-3 gx-md-4">
@@ -118,27 +118,27 @@ img.vert-move {
           <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4 mt-4">
             <div data-aos="zoom-in" data-aos-duration="2000">
             <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" >
-                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-check-circle"></i></div>
+                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto" ><i class="fi-check-circle" style="color: #26708b;"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Fiabilité</h3></a></div></div>
                 <div data-aos="zoom-in" data-aos-duration="2000">
             <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
-                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-lock"></i></div>
+                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto" ><i class="fi-lock" style="color: #26708b;"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Sécurité</h3></a></div></div>
                 <div data-aos="zoom-in" data-aos-duration="2000">
             <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
-                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-zoom-in"></i></div>
+                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto" ><i class="fi-zoom-in" style="color: #26708b;"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Transparence</h3></a></div></div>
                 <div data-aos="zoom-in" data-aos-duration="2000">
             <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
-                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-globe"></i></div>
+                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto" ><i class="fi-globe" style="color: #26708b;"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Flexibilité</h3></a></div></div>
                 <div data-aos="zoom-in" data-aos-duration="2000">
             <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
-                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-plant"></i></div>
+                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto" ><i class="fi-plant" style="color: #26708b;"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Durabilité</h3></a></div></div>
                 <div data-aos="zoom-in" data-aos-duration="2000">
                 <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center">
-                  <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-truck"></i></div>
+                  <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto" ><i class="fi-truck" style="color: #26708b;"></i></div>
                   <h3 class="icon-box-title fs-base mb-0">Livraison en 24h</h3></a></div></div>
           </div>
         </section>

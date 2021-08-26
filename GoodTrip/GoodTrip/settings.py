@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,8 +140,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 # Les redirecitons au cas ou l'utilisateur se connecte ou se déconnecte
-LOGIN_REDIRECT_URL = "dashboard"
-LOGOUT_REDIRECT_URL = "dashboard"
+# LOGIN_REDIRECT_URL = "dashboard"
+# LOGOUT_REDIRECT_URL = "dashboard"
 
 # Définition des dossiers de fichiers statiques
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
