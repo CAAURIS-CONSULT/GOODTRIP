@@ -1,0 +1,158 @@
+{% extends 'location/base.html' %}
+{% block content %}
+      <div class="container pt-5 pb-lg-4 mt-5 mb-sm-2">
+          <!-- Breadcrumb-->
+          <nav class="mb-4 pt-md-3" aria-label="Breadcrumb">
+            <ol class="breadcrumb breadcrumb-light">
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Mon panier</li>
+            </ol>
+          </nav>
+          <div class="row">
+              <!-- Content-->
+              <div class="col-lg-8 col-md-7 mb-5">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h1 class="h2 text-light mb-0">Mon panier</h1><a class="nav-link-light fw-bold" href="#"><i class="fi-trash mt-n1 me-2"></i>Vider mon panier</a>
+                </div>
+                
+                <!-- Item-->
+                <div class="card card-light card-hover card-horizontal mb-4">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #fd5631" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en cours de livraison.&lt;/div&gt;&lt;/div&gt;">En cours</span></div>
+                   
+                    <div class="tns-carousel-inner position-absolute top-0 h-100">
+                      <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url(img/car-finder/catalog/14.jpg);"></div>
+                      <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url(img/car-finder/catalog/14.jpg);"></div>
+                    </div>
+                  </div>
+                  <div class="card-body position-relative">
+                    <div class="dropdown position-absolute zindex-5 top-0 end-0 mt-3 me-3">
+                      <button class="btn btn-icon btn-translucent-light btn-xs rounded-circle" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                      <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="contextMenu1">
+                        <li>
+                          <button class="dropdown-item" type="button"><i class="fi-trash me-2"></i>Rétirer</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="fs-sm text-light pb-1">2017</div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="#">Toyota GT86</a></h3>
+                    <div class="text-primary fw-bold mb-1">8 959 609,8 Franc CFA</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                    <div class="border-top border-light mt-3 pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">32 Km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Essence</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Item-->
+                <div class="card card-light card-hover card-horizontal mb-4">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #fd5631" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en cours de livraison.&lt;/div&gt;&lt;/div&gt;">En cours</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner position-absolute top-0 h-100">
+                      <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url(img/car-finder/catalog/15.jpg);"></div>
+                      <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url(img/car-finder/catalog/15.jpg);"></div>
+                    </div>
+                  </div>
+                  <div class="card-body position-relative">
+                    <div class="dropdown position-absolute zindex-5 top-0 end-0 mt-3 me-3">
+                      <button class="btn btn-icon btn-translucent-light btn-xs rounded-circle" type="button" id="contextMenu2" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                      <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="contextMenu2">
+                        <li>
+                          <button class="dropdown-item" type="button"><i class="fi-trash me-2"></i>Rétirer</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="fs-sm text-light pb-1">2019</div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="#">Volkswagen GTI S </a></h3>
+                    <div class="text-primary fw-bold mb-1">8 959 609,8 Franc CFA</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                    <div class="border-top border-light mt-3 pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">25km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">automatique</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">hybride</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Item-->
+                <div class="card card-light card-hover card-horizontal">
+                  <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                    <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #fd5631" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en cours de livraison.&lt;/div&gt;&lt;/div&gt;">En cours</span></div>
+                    <div class="content-overlay end-0 top-0 pt-3 pe-3">
+                      <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
+                    </div>
+                    <div class="tns-carousel-inner position-absolute top-0 h-100">
+                      <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url(img/car-finder/catalog/16.jpg);"></div>
+                      <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url(img/car-finder/catalog/16.jpg);"></div>
+                    </div>
+                  </div>
+                  <div class="card-body position-relative">
+                    <div class="dropdown position-absolute zindex-5 top-0 end-0 mt-3 me-3">
+                      <button class="btn btn-icon btn-translucent-light btn-xs rounded-circle" type="button" id="contextMenu3" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                      <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="contextMenu3">
+                        <li>
+                          <button class="dropdown-item" type="button"><i class="fi-trash me-2"></i>Rétirer</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="fs-sm text-light pb-1">2017</div>
+                    <h3 class="h6 mb-1"><a class="nav-link-light" href="#">Ford Explorer XLT </a></h3>
+                    <div class="text-primary fw-bold mb-1">15 056 739 Franc CFA</div>
+                    <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                    <div class="border-top border-light mt-3 pt-3">
+                      <div class="row g-2">
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">47km</span></div>
+                        </div>
+                        <div class="col me-sm-1">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manual</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Diesel</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sidebar-->
+              <aside class="col-lg-4 col-md-5 pe-xl-4 mb-5">
+                  <!-- Account nav-->
+                  <div class="card card-body card-light border-0 shadow-sm pb-1 me-lg-1">
+                    <h5 class="text-white">Total : 8 959 609,8 Franc CFA</h5>
+                    <!-- Select -->
+              <div class="mb-3 card-nav-link">
+                  <select class="form-select" id="select-input">
+                  <option>Lieu de livraison</option>
+                  <option>Abidjan</option>
+                  <option>Yamoussoukro</option>
+                  <option>Bouaké</option>
+                  </select>
+              </div>
+              <a class="btn btn-primary btn-lg" href="#send-mail" data-bs-toggle="collapse"><i class="fi-cart me-2"></i>Finaliser ma commande</a>
+              <span style="font-size: 13px" class="text-secondary mt-3">Après avoir finaliser votre commande vous recevrez un appel.</span>
+                  </div>
+                </aside>
+            </div>
+          <!-- Page content-->
+{% endblock content %}
+ 

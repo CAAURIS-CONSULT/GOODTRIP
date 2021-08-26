@@ -1,5 +1,20 @@
 
 var data = {};
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }   
+    return cookieValue;
+};
 
 $('.marque').click(function(){
    var marque = $('#marque').val();
@@ -56,4 +71,44 @@ function getModelsById(id){
                 alert('nononn');
             }
     });
+}
+
+function commander(vehicule_id, quantity){
+    Swal.fire({
+        title: 'Voulez-vous commder ce véhicule?',
+        text: "Vous pourrez voir vos commandes dans votre historique!",
+        icon: 'warning',
+        showCancelButton: 'Annuler',
+        confirmButtonColor: '#26708b',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Oui, commander!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: 'http://localhost:8000/location/commander',
+                method: 'GET',
+                data: {
+                    'vehicule_id':vehicule_id,
+                    'quantity':quantity,
+                },
+                dataType:'html',
+                success:function(response){
+                    Swal.fire({
+                        title:'Effectuée!',
+                        text:'Votre commande a été validée',
+                        icon: 'success',
+                        footer:'<a class="link text-success" href="#">Aller à mon historique <i class="fi fi-chevrons-right"><i/> </a>'
+                    })
+                },
+                error:function(response){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response,
+                        icon: 'error',
+                        confirmButtonText: 'Cool'
+                    });
+                }
+            });
+        }
+    })
 }

@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
-from location.models import Marque, Modele, Vehicule, Category, Image
+from django.contrib.auth.models import User
+from location.models import Marque, Modele, Vehicule, Category, Image, Commande, ProduitCommande
 from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
+from users.views import sendMessage
 
 # Create your views here.
 def accueil(request):
@@ -13,7 +16,7 @@ def accueil(request):
     context = {
         'modeles':listModel,
         'marques':listMarque,
-        'category':listCategory,
+        'category':listCategory,    
     }
     return render(request,template_name, context)
 
@@ -24,9 +27,7 @@ def ajaxForMarques(request):
         listModel = [Modele.objects.filter(marque=idMarque)[i].nom_modele for i in range(len(Modele.objects.filter(marque=idMarque)))]
     if request.GET.get('id'):
         idMarque = request.GET.get('id')
-        print(idMarque)
         listModel = [Modele.objects.filter(marque=idMarque)[i].nom_modele for i in range(len(Modele.objects.filter(marque=idMarque)))]
-        print(listModel)
     return JsonResponse({'models':listModel})
 
 def rechercheVoiture(request):
@@ -91,3 +92,45 @@ def detailsVehicule(request, id):
         'lastVehicule':latelyAdd
     }
     return render(request, template_name, context)
+
+@login_required
+def commander(request):
+    template_name = 'location/historique.html'
+    if request.method != 'GET':
+        return HttpResponse('Method not allowed')
+    else:
+        data = request.GET
+        user                = request.user
+        vehicule_id         = data.get('vehicule_id')
+        quantity            = data.get('quantity')
+        commande = creerCommande(user)
+        vehicule = Vehicule.objects.filter(id=vehicule_id)[0]
+        addToCommand(commande,vehicule,quantity)
+        message = 'commande bien effectuée'
+        #sendMessage(user.phone)
+    context = {
+        'message':message
+    }
+    return HttpResponse(message)
+    # return render(request, template_name, context)
+
+def creerCommande(user):
+    commande = Commande()
+    commande.user = user
+    commande.save()
+    latestCommande = Commande.objects.latest('id')
+    return latestCommande
+
+# Permet l'ajout de uqantité à un article ( voiture d'un commande donnée )
+def addToCommand(commande,vehicule,quantity):
+    produitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id,associateVvehicule_id=vehicule.id)
+    if produitCommande:
+        produitCommande = produitCommande[0]
+        produitCommande.quantity += quantity
+        produitCommande.save()
+    else:
+        newProduitCommande = ProduitCommande()
+        newProduitCommande.associateVvehicule = vehicule
+        newProduitCommande.associatedCommande = commande
+        newProduitCommande.quantity = quantity
+        newProduitCommande.save()
