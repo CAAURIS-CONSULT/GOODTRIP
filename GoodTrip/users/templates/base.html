@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -18,9 +18,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static 'users/site.webmanifest' %}">
   <link rel="mask-icon" color="#5bbad5" href="{% static 'users/safari-pinned-tab.svg' %}">
+  
   <meta name="msapplication-TileColor" content="#766df4">
   <meta name="theme-color" content="#ffffff">
   <!-- Page loading styles-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     .page-loading {
       position: fixed;
@@ -80,7 +82,7 @@
       -webkit-animation: spinner .75s linear infinite;
       animation: spinner .75s linear infinite;
     }
-
+    
 
     @-webkit-keyframes spinner {
       100% {
@@ -95,6 +97,14 @@
         transform: rotate(360deg);
       }
     }
+    @media (max-width: 992px)
+      {
+        .message {
+          z-index: 7; 
+          position: absolute;
+          margin-top: 150px;
+        }
+      }
   </style>
   <!-- Page loading scripts-->
   <script>
@@ -252,29 +262,18 @@
     {% endif %}
     <!-- Page content-->
     <!-- Navbar (Header)-->
-    <header class="navbar navbar-expand-md navbar-light fixed-top">
+    <header class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #fff;">
       <div class="container">
         <a class="navbar-brand me-2 me-xl-4" href="#">
-          <img class="d-block" src="{% static 'users/img/logo/logo-dark.svg' %}" width="116" alt="Finder">
+          <img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Goodtrip">
         </a>
         <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-primary btn-sm rounded-pill ms-2 order-md-3" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" target="_blank" rel="noopener">Se connecter</a> -->
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        {% if user.is_authenticated %}
-        <a class="btn btn-dark btn-sm rounded-pill order-md-3" href="{% url 'logout' %}">
-          <i class="fi-user me-2"></i>
-          Mon compte</a>
-          <a class="icon-box card card-body h-10 border-0 shadow-sm w-10  text-center" href="{% url 'logout' %}">
-            <div class="icon-box-media bg-faded-primary card-hover text-primary rounded-circle mb-3 mx-auto"><i class="fi-power"></i></div>
-            </a>
-          {% else%}
-        <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
-          <i class="fi-user me-2"></i>
-          Se connecter</a>
-        {% endif %}
+       
         <div class="collapse navbar-collapse order-md-2" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav col-lg-10">
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
               <ul class="dropdown-menu">
@@ -289,15 +288,38 @@
               <a class="nav-link" href="#services" data-scroll>Nos services</a>
             </li>
           </ul>
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav" style="margin-right: 20px">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #26708b; color: #fff;">
+                  <i class="fi-user me-2"></i>Mon compte</a>
+                <div class="dropdown-menu" >
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
+                 
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
+                  
+                  <hr style="height: 2px;"></hr>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
+                </div>
+              </li>
+            </ul>
+            {% else%}
+          <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
+            <i class="fi-user me-2"></i>
+            Se connecter</a>
+          {% endif %}
         </div>
+        
       </div>
+     
+      
     </header>
     <!-- end header -->
     {% if message %}
     <center>
-      <div style="z-index: 1000;" class="text-center mt-5 col-md-4 col-lg-3 col-sm-6 col-xl-3">
-        <div class="message alert alert-success text-center"> {{message}}</div>
-      </div>
+        <div class="text-center mt-5 col-md-4 col-lg-3 col-sm-6 col-xl-3">
+          <div class="message alert alert-success text-center mt-5" style="z-index: 7; position: absolute;"> {{message}}</div>
+        </div>
     </center>
     {% endif%}
     {% block content %}
@@ -352,8 +374,16 @@
   <script src="{% static 'users/vendor/tiny-slider/dist/min/tiny-slider.js' %}"></script>
   <script src="{% static 'users/vendor/jarallax/dist/jarallax.min.js' %}"></script>
   <script src="{% static 'users/vendor/jarallax/dist/jarallax-element.min.js' %}"></script>
+  
   <!-- Main theme script-->
-  <script src="{% static 'users/js/theme.min.js' %}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+    <script>
+      AOS.init();
+    </script>
+  
+
+  <script src="js/theme.min.js"></script>
   {% if anchor %}
   <script>
     $(document).ready(function(){
