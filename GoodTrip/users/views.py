@@ -24,8 +24,9 @@ class LoginView(TemplateView):
             if user is not None and user.is_active:
                 login(request, user)
                 message = f'Connecté en tant que {user.last_name} {user.first_name}'
-                return redirect(request.POST.get('next'))
-                #return render(request,self.template_name,{'message':message})
+                if(request.POST.get('next')):
+                    return redirect(request.POST.get('next'))
+                return render(request,self.template_name,{'message':message})
             else:
                 error = 'Nom d\'utilisateur ou mot de passe incorrect'
                 return render(request, self.template_name, {'error':error,'anchor':'signin-modal'})

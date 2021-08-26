@@ -72,20 +72,43 @@ function getModelsById(id){
             }
     });
 }
-function commander(user_id, vehicule_id, quantity){
-    $.ajax({
-        url: 'http://localhost:8000/location/commander',
-        method: 'GET',
-        data: {
-            'vehicule_id':vehicule_id,
-            'quantity':quantity,
-        },
-        dataType:'html',
-        success:function(response){
-            alert(response);
-        },
-        error:function(){
-            alert('response');
+
+function commander(vehicule_id, quantity){
+    Swal.fire({
+        title: 'Voulez-vous commder ce véhicule?',
+        text: "Vous pourrez voir vos commandes dans votre historique!",
+        icon: 'warning',
+        showCancelButton: 'Annuler',
+        confirmButtonColor: '#26708b',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Oui, commander!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: 'http://localhost:8000/location/commander',
+                method: 'GET',
+                data: {
+                    'vehicule_id':vehicule_id,
+                    'quantity':quantity,
+                },
+                dataType:'html',
+                success:function(response){
+                    Swal.fire({
+                        title:'Effectuée!',
+                        text:'Votre commande a été validée',
+                        icon: 'success',
+                        footer:'<a class="link text-success" href="#">Aller à mon historique <i class="fi fi-chevrons-right"><i/> </a>'
+                    })
+                },
+                error:function(response){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response,
+                        icon: 'error',
+                        confirmButtonText: 'Cool'
+                    });
+                }
+            });
         }
-    });
+    })
 }

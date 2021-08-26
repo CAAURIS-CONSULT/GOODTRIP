@@ -27,9 +27,7 @@ def ajaxForMarques(request):
         listModel = [Modele.objects.filter(marque=idMarque)[i].nom_modele for i in range(len(Modele.objects.filter(marque=idMarque)))]
     if request.GET.get('id'):
         idMarque = request.GET.get('id')
-        print(idMarque)
         listModel = [Modele.objects.filter(marque=idMarque)[i].nom_modele for i in range(len(Modele.objects.filter(marque=idMarque)))]
-        print(listModel)
     return JsonResponse({'models':listModel})
 
 def rechercheVoiture(request):
@@ -109,6 +107,7 @@ def commander(request):
         vehicule = Vehicule.objects.filter(id=vehicule_id)[0]
         addToCommand(commande,vehicule,quantity)
         message = 'commande bien effectuée'
+        #sendMessage(user.phone)
     context = {
         'message':message
     }
@@ -122,6 +121,7 @@ def creerCommande(user):
     latestCommande = Commande.objects.latest('id')
     return latestCommande
 
+# Permet l'ajout de uqantité à un article ( voiture d'un commande donnée )
 def addToCommand(commande,vehicule,quantity):
     produitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id,associateVvehicule_id=vehicule.id)
     if produitCommande:

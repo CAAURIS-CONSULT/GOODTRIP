@@ -16,15 +16,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'users/site.webmanifest' %}">
     <link rel="mask-icon" color="#5bbad5" href="{% static 'users/safari-pinned-tab.svg' %}" >
+    <link rel="stylesheet" href="{% static 'users/dist/sweetalert2.min.css' %}">
     <meta name="msapplication-TileColor" content="#766df4">
     <meta name="theme-color" content="#ffffff">
     
     <!-- Page loading styles-->
 
      <!-- Template CSS -->
-     <link rel="stylesheet" href="{% static 'users/sweet/css2/style.css' %}">
-     <link rel="stylesheet" href="{% static 'users/sweet/css2/components.css' %}">
- <!-- Custom style CSS -->
+
     <style>
       .page-loading {
         position: fixed;
@@ -248,61 +247,6 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    <!-- Sign In Modal-->
-    <div class="modal fade" id="signin-modal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered p-2 my-0 mx-auto" style="max-width: 950px;">
-        <div class="modal-content bg-dark border-light">
-          <div class="modal-body px-0 py-2 py-sm-0">
-            <button class="btn-close btn-close-white position-absolute top-0 end-0 mt-3 me-3" type="button"
-              data-bs-dismiss="modal"></button>
-            <div class="row mx-0 align-items-center" style="background-color: #033f58">
-              <div class="col-md-6 border-end-md border-light p-4 p-sm-5">
-                <h2 class="h3 text-light mb-4 mb-sm-5">Formulaire de connexion<br>Goodtrip.</h2><img
-                  class="d-block mx-auto" src="{% static 'users/img/signin-modal/signin-dark.svg' %}" width="344"
-                  alt="Illustartion">
-                <div class="text-light mt-4 mt-sm-5"><span class="opacity-60">Pas encore de compte? </span><a
-                    class="text-light" href="#signup-modal" data-bs-toggle="modal"
-                    data-bs-dismiss="modal">Inscrivez-vous ici</a></div>
-              </div>
-              <div class="col-md-6 px-4 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5 ">
-                <form action="{% url 'user_login' %}"  method="POST" class="needs-validation" novalidate>
-                  {% csrf_token %}
-                  {% if error %}
-                    {% ifequal anchor 'signin-modal' %}
-                      <div class="alert alert-danger">{{error}}</div>
-                    {% endifequal %}
-                  {% endif %}
-                  <div class="mb-4">
-                    <label class="form-label text-light mb-2" for="id_username">Nom d'utilisateur</label>
-                    <input name="id_username" class="form-control form-control-light" type="text" id="id_username"
-                      placeholder="Par exemple: user_0XXXXXXXXX" required>
-                  </div>
-                  <div class="mb-4">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                      <label class="form-label text-light mb-0" for="id_password">Mot de passe</label><a
-                        class="fs-sm text-light" href="#">Mot de passe oublié?</a>
-                    </div>
-                    <div class="password-toggle">
-                      <input class="form-control form-control-light" name="id_password" type="password" id="id_password"
-                        placeholder="Entrer votre mot de passe" required>
-                      <label class="password-toggle-btn" aria-label="Show/hide password">
-                        <input class="password-toggle-check" type="checkbox"><span
-                          class="password-toggle-indicator"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                  <button class="btn btn-primary btn-lg w-100" type="submit">Se connecter</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-=======
->>>>>>> aaddee54f792d11116186f819f13132c9a6b03b8
     {% endif %}
       <!-- Navbar-->
      <!-- Navbar-->
@@ -333,21 +277,6 @@
           </ul>
           {% if user.is_authenticated %}
           <ul class="navbar-nav" style="margin-right: 20px">
-<<<<<<< HEAD
-          <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #fd5631; color: #fff;">
-                <i class="fi-user me-2"></i>Mon compte</a>
-              <div class="dropdown-menu" >
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
-               
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
-                
-                <hr style="height: 2px;"></hr>
-                <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #fd5631; "><a href="{% url 'logout' %}?next={{request.get_full_path }}" style="text-decoration: none"> Deconnexion</a></span>
-              </div>
-            </li>
-          </ul>
-=======
             <li class="nav-item dropdown ">
                 <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #fff;">
                   <i class="fi-user me-2"></i>Mon compte</a>
@@ -364,7 +293,6 @@
           <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
             <i class="fi-user me-2"></i>
             Se connecter</a>
->>>>>>> aaddee54f792d11116186f819f13132c9a6b03b8
           {% endif %}
       </div>
     </div>
@@ -445,11 +373,9 @@
   <script src="{% static 'users/vendor/jarallax/dist/jarallax.min.js' %}"></script>
   <script src="{% static 'users/vendor/jarallax/dist/jarallax-element.min.js' %}"></script>
   <!-- Main theme script-->
+  <script src="{% static 'users/dist/sweetalert2.min.js' %}"></script>
   <script src="{% static 'users/js/theme.min.js' %}"></script>
   <script src="{% static 'users/js/customjs.js' %}"></script>
      <!-- General JS Scripts -->
-     <script src="{% static 'users/sweet/js/app.min.js' %}"></script>
      <!-- JS Libraies -->
-     <script src="{% static 'users/sweet/bundles2/sweetalert/sweetalert.min.js' %}"></script>
      <!-- Page Specific JS File -->
-     <script src="{% static 'users/sweet/js2/page/sweetalert.js' %}"></script>
