@@ -164,12 +164,12 @@ def history(request):
         listcommandes = paginator.page(paginator.num_pages)
         listcommandes.page=paginator.num_pages
     link = request.get_full_path().split('&page')[0]+'&page='
-    
     context = {
         'mes_commandes':listcommandes,
         'link':link
     }
     return render(request,template_name, context)
+
 
 def passwordAndSettings(request):
     template_name = 'location/password-settings.html'

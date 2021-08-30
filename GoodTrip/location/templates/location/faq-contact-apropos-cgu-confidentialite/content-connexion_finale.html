@@ -1,0 +1,65 @@
+<!-- Body-->
+  <body class="bg-dark">
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <main class="page-wrapper">
+    
+      <!-- Page content-->
+      <div class="container pt-5 pb-lg-4 mt-5 mb-sm-2">
+        <!-- Breadcrumb-->
+        <nav class="mb-4 pt-md-3" aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-light">
+            <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+            <li class="breadcrumb-item"><a href="profile.html">Mon compte</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Connexion</li>
+          </ol>
+        </nav>
+        <!-- Page content-->
+        <div class="row">
+         
+          <!-- Content-->
+          
+          <div class="container">
+            <div class="row d-flex justify-content-around">
+              <div class="col-lg-5 col-md-4 mb-3 bg-secondary rounded">
+                <img class="position-relative zindex-5" src="{% static'users/img/logo/logo.png' %}" style="border-radius: 5px;" alt="Goodtrip">
+              </div>
+
+              <div class="col-lg-5 col-md-4 mb-3 border rounded">
+                <h1 class="h2 text-light mt-4">Connexion</h1>
+                <form class="needs-validation pb-4" novalidate>
+                      <div class="mb-4">
+                        <label class="form-label text-light mb-2" for="id_username">Nom d'utilisateur</label>
+                        <input name="id_username" class="form-control form-control-light" type="text" id="id_username"
+                          placeholder="Par exemple: user_0XXXXXXXXX" required>
+                      </div>
+                      <div class="mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                          <label class="form-label text-light mb-0" for="id_password">Mot de passe</label>
+                          <a class="fs-sm text-light" href="#">Mot de passe oublié?</a>
+                        </div>
+                        <div class="password-toggle">
+                          <input class="form-control form-control-light" name="id_password" type="password" id="id_password"
+                            placeholder="Entrer votre mot de passe" required>
+                          <label class="password-toggle-btn" aria-label="Show/hide password">
+                            <input class="password-toggle-check" type="checkbox"><span
+                              class="password-toggle-indicator"></span>
+                          </label>
+                        </div>
+                  </div>
+                      <button class="btn btn-lg w-100 mt-5" style="background-color: #f2ac2a; color: #000;" type="submit">S'identifier</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+
+          
+      
+        </div>
+      </div>
+    </main>
+    <!-- Footer-->

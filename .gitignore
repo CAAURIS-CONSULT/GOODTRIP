@@ -4,3 +4,4 @@ virt/
 issa/
 GoodTrip/Michael/
 TEMPLATE/
+GoodTrip/*/__pycache__/
