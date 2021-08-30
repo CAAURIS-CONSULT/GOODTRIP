@@ -64,13 +64,12 @@ def rechercheVoiture(request):
             listvehicule = paginator.page(paginator.num_pages)
             listvehicule.page=paginator.num_pages
         link = request.get_full_path().split('&page')[0]+'&page='
-        print(link)
         context = {
             'vehicules':listvehicule,
             'marques':marques,
             'link':link,
         }
-        return render(request, 'location/achat-vehicule-grille.html', context)
+        return render(request, 'location/recherche-vehicule.html', context)
     else:
         return redirect('acc_location')
 
@@ -134,3 +133,24 @@ def addToCommand(commande,vehicule,quantity):
         newProduitCommande.associatedCommande = commande
         newProduitCommande.quantity = quantity
         newProduitCommande.save()
+
+@login_required
+def history(request):
+    template_name = 'location/historique.html'
+    mes_commandes = Commande.objects.filter(user = request.user.id)
+    paginator = Paginator(mes_commandes,6)
+    page  = request.GET.get('page')
+    try:
+        listcommandes = paginator.page(page)
+        listcommandes.page=page
+    except PageNotAnInteger:
+        listcommandes = paginator.page(1)
+    except EmptyPage:
+        listcommandes = paginator.page(paginator.num_pages)
+        listcommandes.page=paginator.num_pages
+    link = request.get_full_path().split('&page')[0]+'&page='
+    context = {
+        'mes_commandes':listcommandes,
+        'link':link
+    }
+    return render(request,template_name, context)
