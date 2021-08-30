@@ -265,16 +265,14 @@
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="location/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
             <ul class="dropdown-menu bg-dark">
               <li><a class="dropdown-item text-white " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
-              <li class="dropdown-divider"></li>
-              <li class="dropdown-divider"></li>
-              
+              <li class="dropdown-divider"></li>              
               <li><a class="dropdown-item text-white" href="Achat-vehicule-par-liste.html"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
               </ul>
           </li>
           <!-- Menu items-->
           
-          <li class="nav-item"><a class="nav-link" href="real-estate-home.html">Livraison de colis</a></li>
-          <li class="nav-item"><a class="nav-link" href="docs/dev-setup.">Nos services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Livraison de colis</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}#services">Nos services</a></li>
           </ul>
           {% if user.is_authenticated %}
           <ul class="navbar-nav" style="margin-right: 20px">
@@ -282,9 +280,9 @@
                 <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #000;">
                   <i class="fi-user me-2"></i>Mon compte</a>
                 <div class="dropdown-menu " >
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none; color: #26708b;"><a href="{% url 'history' %}" style="text-decoration: none"> Profil</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Profil</a></span>
                  
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none; color: #26708b;"><a href="{% url 'history' %}" style="text-decoration: none"> Historique</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Historique</a></span>
                   
                   <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'logout' %}?next={{ request.get_full_path }}" style="text-decoration: none; color: #26708b;"><i class="fi-power me-1"></i> Deconnexion</a></span>
                 </div>
