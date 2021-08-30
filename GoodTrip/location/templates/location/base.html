@@ -165,7 +165,7 @@
                     </label>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-lg w-100" type="submit">S'identifier</button>
+                <button class="btn btn-lg w-100" style="background-color: #f2ac2a; color: #000;" type="submit">S'identifier</button>
               </form>
             </div>
           </div>
@@ -240,7 +240,7 @@
                         class='opacity-70'>et la</span> <a href='#' class='text-light'>Politique de
                         confidentialité</a></label>
                   </div>
-                  <button class="btn btn-primary btn-lg w-100" type="submit">S'inscrire</button>
+                  <button class="btn btn-lg w-100" style="background-color: #f2ac2a; color: #000;" type="submit">S'inscrire</button>
                 </form>
               </div>
             </div>
@@ -250,14 +250,14 @@
     </div>
     {% endif %}
       <!-- Navbar-->
-     <!-- Navbar-->
+    
    <!-- Navbar-->
    <header class="navbar navbar-expand-lg navbar-dark fixed-top" data-scroll-header>
     <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard' %}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       
       <a class=" btn-sm ms-2 order-lg-3" href="#">
-        <img class="rounded-circle" src="{% static 'users/img/cart/cart.jpg' %}" width="40" alt="pannier" style="margin-right: 20px">
+        <img src="{% static 'users/img/cart/shopping-cart.svg' %}" width="40" alt="pannier" style="margin-right: 20px">
       </a>
       <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
         <ul class="navbar-nav navbar-nav-scroll col-lg-10" style="max-height: 35rem;">
@@ -280,9 +280,15 @@
                 <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #000;">
                   <i class="fi-user me-2"></i>Mon compte</a>
                 <div class="dropdown-menu " >
+<<<<<<< HEAD
                   <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Profil</a></span>
                  
                   <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Historique</a></span>
+=======
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none;"><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Profil</a></span>
+                 
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none; "><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Historique</a></span>
+>>>>>>> 28822ea54223177a3b6ce1c5684e1965cf8220b0
                   
                   <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'logout' %}?next={{ request.get_full_path }}" style="text-decoration: none; color: #26708b;"><i class="fi-power me-1"></i> Deconnexion</a></span>
                 </div>

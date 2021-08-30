@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+  <!-- {% debutblock content %} -->
       <div class="container pt-5 pb-lg-4 mt-5 mb-sm-2">
         <!-- Breadcrumb-->
         <nav class="mb-4 pt-md-3" aria-label="Breadcrumb">
@@ -28,8 +26,8 @@
                 <a class="btn btn-outline-light d-block d-md-none w-100 mb-3" href="#account-nav" data-bs-toggle="collapse">
                   <i class="fi-align-justify me-2"></i>Menu</a>
                 <div class="collapse d-md-block mt-3" id="account-nav">
-                  <div class="card-nav"><a class="card-nav-link active" href="#"><i class="fi-user me-2"></i>Informations personnelles</a>
-                    <a class="card-nav-link" href="settings.html"><i class="fi-lock me-2"></i>Mot de passe &amp; Sécurité</a>
+                  <div class="card-nav"><a class="card-nav-link " href="#"><i class="fi-user me-2"></i>Informations personnelles</a>
+                    <a class="card-nav-link active" href="settings.html"><i class="fi-lock me-2"></i>Mot de passe &amp; Sécurité</a>
                     <a class="card-nav-link" href="historique.html"><i class="fi-car me-2"></i>Historique-véhicule</a>
                     <a class="card-nav-link" href="historique.html"><i class="fi-car me-2"></i>Historique-livraison</a>
                     <a class="card-nav-link" href="#"><i class="fi-logout me-2"></i>Déconnexion</a></div>
@@ -81,4 +79,4 @@
         </div>
       </div>
     </main>
-{% endblock content %}
+      <!-- {% finblock content %} -->
