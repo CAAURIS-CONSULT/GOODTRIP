@@ -138,6 +138,21 @@ def addToCommand(commande,vehicule,quantity):
 def history(request):
     template_name = 'location/historique.html'
     mes_commandes = Commande.objects.filter(user = request.user.id)
+    for commande in mes_commandes:
+        commande.image = []
+        listProduitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id)
+        for produitCommande in listProduitCommande:
+            vehiculeId = produitCommande.associateVvehicule.id
+            image = Image.objects.filter(associatedVehicule=vehiculeId)[0].image
+            commande.image.append(image)
+        # produitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id)
+        # associatedVehicule = [v for v in Vehicule.objects.filter(id=)]
+        # commande.associatedProduct = produitCommande
+        # listImage = []
+        # for produit in commande.associatedProduct:
+        #     id = produit.id
+        #     listImage.append(Image.objects.filter(associatedVehicule=id)[0].image)
+        # commande.listImage = listImage
     paginator = Paginator(mes_commandes,6)
     page  = request.GET.get('page')
     try:
@@ -149,6 +164,7 @@ def history(request):
         listcommandes = paginator.page(paginator.num_pages)
         listcommandes.page=paginator.num_pages
     link = request.get_full_path().split('&page')[0]+'&page='
+    
     context = {
         'mes_commandes':listcommandes,
         'link':link
