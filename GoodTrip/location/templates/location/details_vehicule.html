@@ -81,22 +81,22 @@
         <div class="row row-cols-2 row-cols-sm-4 gx-3 gx-xl-4 gy-4">
           <div class="col text-light text-center">
             <div class="d-table bg-dark rounded-3 mx-auto p-3"><img
-                src="{% static 'users/img/car-finder/icons/check.svg' %}" width="48" alt="Icon"></div>
+                src="{% static 'users/img/car-finder/icons/check2.svg' %}" width="48" alt="Icon"></div>
             <div class="fs-sm pt-2 mt-1">Vérifié et certifié par Goodtrip</div>
           </div>
           <div class="col text-light text-center">
             <div class="d-table bg-dark rounded-3 mx-auto p-3"><img
-                src="{% static 'users/img/car-finder/icons/steering-wheel.svg' %}" width="48" alt="Icon"></div>
+                src="{% static 'users/img/car-finder/icons/steering-wheel2.svg' %}" width="48" alt="Icon"></div>
             <div class="fs-sm pt-2 mt-1">Propriétaire unique</div>
           </div>
           <div class="col text-light text-center">
             <div class="d-table bg-dark rounded-3 mx-auto p-3"><img
-                src="{% static 'users/img/car-finder/icons/driving-test.svg' %}" width="48" alt="Icon"></div>
+                src="{% static 'users/img/car-finder/icons/driving-test2.svg' %}" width="48" alt="Icon"></div>
             <div class="fs-sm pt-2 mt-1">Bien équipé</div>
           </div>
           <div class="col text-light text-center">
             <div class="d-table bg-dark rounded-3 mx-auto p-3"><img
-                src="{% static 'users/img/car-finder/icons/accident.svg' %}" width="48" alt="Icon"></div>
+                src="{% static 'users/img/car-finder/icons/accident2.svg' %}" width="48" alt="Icon"></div>
             <div class="fs-sm pt-2 mt-1">Aucun accident / dommage signalé</div>
           </div>
         </div>
@@ -113,12 +113,12 @@
             excepturi totam exercitationem quia inventore quod amet labore impedit quae distinctio? Officiis blanditiis
             consequatur alias, atque, sed est incidunt accusamus repudiandae tempora repellendus obcaecati delectus
             ducimus inventore tempore harum numquam autem eligendi culpa.</p>
-        </div><a class="collapse-label collapsed" href="#seeMoreDescription" data-bs-toggle="collapse"
+        </div><a class="collapse-label collapsed" style="color: #26708b;" href="#seeMoreDescription" data-bs-toggle="collapse"
           data-bs-label-collapsed="En savoir plus" data-bs-label-expanded="Afficher moins" role="button" aria-expanded="false"
           aria-controls="seeMoreDescription"></a>
       </div>
       <!-- Post meta-->
-      <div class="d-flex flex-wrap border-top border-light fs-sm text-light pt-4 pb-5 pb-md-2">
+      <div class="d-flex flex-wrap border-top border-light fs-sm pt-4 pb-5 pb-md-2" style="color: #f2ac2a;">
         <div class="border-end border-light pe-3 me-3"><span class="opacity-70">Publié: <strong>9 mai
               2021</strong></span></div>
         <div class="border-end border-light pe-3 me-3"><span class="opacity-70"> Numéro d'annonce :
@@ -148,7 +148,7 @@
         </div>
         <div class="card card-light card-body mb-4">
           <div class="pt-4 mt-2">
-            <button class="btn btn-lg btn-primary" onclick="{% if user.is_authenticated %}commander({{ user.id}}, {{ vehicule.id }},2) {% else %} Swal.fire('Veuillez vous connecter'){% endif %}" href="#" data-bs-toggle="modal">
+            <button class="btn btn-lg" style="background-color: #f2ac2a; color: #000;" onclick="{% if user.is_authenticated %}commander({{ user.id}}, {{ vehicule.id }},2) {% else %} Swal.fire('Veuillez vous connecter'){% endif %}" href="#" data-bs-toggle="modal">
               <i class="fi-credit-card me-2"></i> Commander </button>
           </div>
         </div>
@@ -189,7 +189,7 @@
           <div class="card-body">
 
             <h3 class="h6 mb-1"><a class="nav-link-light" href="#">{{v}}</a></h3>
-            <div class="text-primary fw-bold mb-1">{{v.per_day_price}} F CFA/Jour</div>
+            <div class="fw-bold mb-1" style="color: #f2ac2a;">{{v.per_day_price}} F CFA/Jour</div>
             <!-- {% if v.prix_de_vente %} -->
             <div class="text-secondary fw-bold mb-1"> F CFA/Jour</div>
             <!-- {% endif %} -->
