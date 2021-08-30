@@ -170,3 +170,7 @@ def history(request):
         'link':link
     }
     return render(request,template_name, context)
+
+def passwordAndSettings(request):
+    template_name = 'location/password-settings.html'
+    return render(request, template_name)
