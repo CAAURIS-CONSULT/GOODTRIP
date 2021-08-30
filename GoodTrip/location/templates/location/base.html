@@ -253,7 +253,7 @@
      <!-- Navbar-->
    <!-- Navbar-->
    <header class="navbar navbar-expand-lg navbar-dark fixed-top" data-scroll-header>
-    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard'%}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
+    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard' %}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       
       <a class=" btn-sm ms-2 order-lg-3" href="#">
@@ -262,7 +262,7 @@
       <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
         <ul class="navbar-nav navbar-nav-scroll col-lg-10" style="max-height: 35rem;">
           <!-- Demos switcher-->
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="location/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
             <ul class="dropdown-menu bg-dark">
               <li><a class="dropdown-item text-white " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
               <li class="dropdown-divider"></li>
@@ -282,9 +282,9 @@
                 <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #000;">
                   <i class="fi-user me-2"></i>Mon compte</a>
                 <div class="dropdown-menu " >
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab"><a href="profile.html" style="text-decoration: none; color: #26708b;"> Profil</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none; color: #26708b;"><a href="{% url 'history' %}" style="text-decoration: none"> Profil</a></span>
                  
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab"><a href="historique.html" style="text-decoration: none; color: #26708b;"> Historique</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none; color: #26708b;"><a href="{% url 'history' %}" style="text-decoration: none"> Historique</a></span>
                   
                   <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'logout' %}?next={{ request.get_full_path }}" style="text-decoration: none; color: #26708b;"><i class="fi-power me-1"></i> Deconnexion</a></span>
                 </div>
