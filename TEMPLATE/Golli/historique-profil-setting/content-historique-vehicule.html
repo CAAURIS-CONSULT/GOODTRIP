@@ -1,0 +1,216 @@
+ <!-- {% debutblock content %} -->
+      <div class="container pt-5 pb-lg-4 mt-5 mb-sm-2">
+        <!-- Breadcrumb-->
+        <nav class="mb-4 pt-md-3" aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-light">
+            <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+            <li class="breadcrumb-item"><a href="profile.html">Mon compte</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Historique</li>
+          </ol>
+        </nav>
+        <!-- Page content-->
+        <div class="row">
+          <!-- Sidebar-->
+          <aside class="col-lg-4 col-md-5 pe-xl-4 mb-5">
+            <!-- Account nav-->
+            <div class="card card-body card-light border-0 shadow-sm pb-1 me-lg-1">
+              <div class="d-flex d-md-block d-lg-flex align-items-start pt-lg-2 mb-4"><img class="rounded-circle" src="{% static 'user/img/avatars/01.jpg' %}" width="48" alt="Robert Fox">
+                <div class="pt-md-2 pt-lg-0 ps-3 ps-md-0 ps-lg-3">
+                  <h2 class="fs-lg text-light mb-0">Robert Fox</h2>
+                  <ul class="list-unstyled fs-sm mt-3 mb-0">
+                    <li><a class="nav-link-light fw-normal" href="tel:0000000000"><i class="fi-phone opacity-60 me-2"></i>(+225) 00-00-00-00-00</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-outline-light d-block d-md-none w-100 mb-3" href="#account-nav" data-bs-toggle="collapse">
+                <i class="fi-align-justify me-2"></i>Menu</a>
+              <div class="collapse d-md-block mt-3" id="account-nav">
+                <div class="card-nav"><a class="card-nav-link active" href="#"><i class="fi-user me-2"></i>Informations personnelles</a>
+                  <a class="card-nav-link" href="settings.html"><i class="fi-lock me-2"></i>Mot de passe &amp; Sécurité</a>
+                  <a class="card-nav-link" href="historique.html"><i class="fi-car me-2"></i>Historique-véhicule</a>
+                  <a class="card-nav-link" href="historique.html"><i class="fi-car me-2"></i>Historique-livraison</a>
+                  <a class="card-nav-link" href="#"><i class="fi-logout me-2"></i>Déconnexion</a></div>
+              </div>
+            </div>
+          </aside>
+          <!-- Content-->
+          <div class="col-lg-8 col-md-7 mb-5">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h1 class="h2 text-light mb-0">Mes commandes</h1><a class="nav-link-light fw-bold" href="#"><i class="fi-trash mt-n1 me-2"></i>Supprimer tout</a>
+            </div>
+            <p class="text-light pt-1 mb-4">Ici, vous pouvez voir vos commandes et les modifier facilement..</p>
+            <!-- Nav tabs-->
+            <ul class="nav nav-tabs nav-tabs-light border-bottom border-light mb-4" role="tablist">
+              <li class="nav-item mb-3" ><a class="nav-link active" style="background-color: #fd5631; color: #fff" href="#" role="tab" aria-selected="true"><i class="fi-file fs-base me-2"></i>En cours</a></li>
+              <li class="nav-item mb-3" ><a class="nav-link bg-success" style="color: #fff" href="#" role="tab" aria-selected="false"><i class="fi-file-clean fs-base me-2"></i>Livrée</a></li>
+              
+            </ul>
+            <!-- Item-->
+            <div class="card card-light card-hover card-horizontal mb-4">
+              <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #fd5631" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en cours de livraison.&lt;/div&gt;&lt;/div&gt;">En cours</span></div>
+                
+                <div class="tns-carousel-inner position-absolute top-0 h-100">
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/14.jpg' %};"></div>
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/14.jpg' %};"></div>
+                </div>
+              </div>
+              <div class="card-body position-relative">
+                <div class="dropdown position-absolute zindex-5 top-0 end-0 mt-3 me-3">
+                  <button class="btn btn-icon btn-translucent-light btn-xs rounded-circle" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="contextMenu1">
+                    <li>
+                      <button class="dropdown-item" type="button"><i class="fi-trash me-2"></i>Supprimer</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="fs-sm text-light pb-1">2017</div>
+                <h3 class="h6 mb-1"><a class="nav-link-light" href="#">Toyota GT86</a></h3>
+                <div class="text-primary fw-bold mb-1">8 959 609,8 Franc CFA</div>
+                <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                <div class="border-top border-light mt-3 pt-3">
+                  <div class="row g-2">
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">32 km</span></div>
+                    </div>
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                    </div>
+                    <div class="col">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Essence</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item-->
+             <!-- Item-->
+             <div class="card card-light card-hover card-horizontal mb-4">
+                <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
+                  <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #fd5631" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;cette voiture&lt;br&gt;est en cours de livraison.&lt;/div&gt;&lt;/div&gt;">En cours</span></div>
+                  
+                  <div class="tns-carousel-inner position-absolute top-0 h-100">
+                    <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/14.jpg' %});"></div>
+                    <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/14.jpg' %});"></div>
+                  </div>
+                </div>
+                <div class="card-body position-relative">
+                  <div class="dropdown position-absolute zindex-5 top-0 end-0 mt-3 me-3">
+                    <button class="btn btn-icon btn-translucent-light btn-xs rounded-circle" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="contextMenu1">
+                      <li>
+                        <button class="dropdown-item" type="button"><i class="fi-trash me-2"></i>Supprimer</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="fs-sm text-light pb-1">2017</div>
+                  <h3 class="h6 mb-1"><a class="nav-link-light" href="#">Toyota GT86</a></h3>
+                  <div class="text-primary fw-bold mb-1">8 959 609,8 Franc CFA</div>
+                  <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                  <div class="border-top border-light mt-3 pt-3">
+                    <div class="row g-2">
+                      <div class="col me-sm-1">
+                        <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">32 km</span></div>
+                      </div>
+                      <div class="col me-sm-1">
+                        <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                      </div>
+                      <div class="col">
+                        <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Essence</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+            <div class="card card-light card-hover card-horizontal mb-4">
+              <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="car-finder-single.html"></a>
+                <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
+               
+                <div class="tns-carousel-inner position-absolute top-0 h-100">
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static'user/img/car-finder/catalog/15.jpg' %});"></div>
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static'user/img/car-finder/catalog/15.jpg' %});"></div>
+                </div>
+              </div>
+              <div class="card-body position-relative">
+                <div class="dropdown position-absolute zindex-5 top-0 end-0 mt-3 me-3">
+                  <button class="btn btn-icon btn-translucent-light btn-xs rounded-circle" type="button" id="contextMenu2" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="contextMenu2">
+                   
+                    <li>
+                      <button class="dropdown-item" type="button"><i class="fi-trash me-2"></i>Supprimer</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="fs-sm text-light pb-1">2019</div>
+                <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Volkswagen GTI S </a></h3>
+                <div class="text-primary fw-bold mb-1">11 193 266 Franc CFA</div>
+                <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                <div class="border-top border-light mt-3 pt-3">
+                  <div class="row g-2">
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">25km</span></div>
+                    </div>
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Automatique</span></div>
+                    </div>
+                    <div class="col">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Hybride</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item-->
+            <div class="card card-light card-hover card-horizontal">
+              <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="car-finder-single.html"></a>
+                <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success">Livrée</span></div>
+                
+                <div class="tns-carousel-inner position-absolute top-0 h-100">
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/16.jpg' %});"></div>
+                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/16.jpg' %});"></div>
+                </div>
+              </div>
+              <div class="card-body position-relative">
+                <div class="dropdown position-absolute zindex-5 top-0 end-0 mt-3 me-3">
+                  <button class="btn btn-icon btn-translucent-light btn-xs rounded-circle" type="button" id="contextMenu3" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="contextMenu3">
+                    <li>
+                      <button class="dropdown-item" type="button"><i class="fi-edit me-2"></i>Edit</button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" type="button"><i class="fi-flame me-2"></i>Promote</button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" type="button"><i class="fi-power me-2"></i>Deactivate</button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" type="button"><i class="fi-trash me-2"></i>Delete</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="fs-sm text-light pb-1">2017</div>
+                <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Ford Explorer XLT </a></h3>
+                <div class="text-primary fw-bold mb-1">$26,950</div>
+                <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
+                <div class="border-top border-light mt-3 pt-3">
+                  <div class="row g-2">
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">47km</span></div>
+                    </div>
+                    <div class="col me-sm-1">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Manuelle</span></div>
+                    </div>
+                    <div class="col">
+                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Diesel</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- {% endblock content %} -->
