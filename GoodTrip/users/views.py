@@ -41,8 +41,9 @@ class LogoutView(TemplateView):
   def get(self, request, **kwargs):
 
     logout(request)
-
-    return redirect(request.POST.get('next'))
+    if request.POST.get('next'):
+        return redirect(request.POST.get('next'))
+    return redirect(template_name)
 
 
 # Create your views here.

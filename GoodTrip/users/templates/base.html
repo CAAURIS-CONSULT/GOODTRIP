@@ -144,9 +144,7 @@
               <div class="col-md-6 border-end-md border-light p-4 p-sm-5">
                 <h class="h3 text-center text-light mb-4 mb-sm-5">Inscription<br>Goodtrip</h2>
                 <ul class="list-unstyled mb-4 mb-sm-5">
-                  <!-- <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Add and promote your listings</span></li>
-                      <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Easily manage your wishlist</span></li>
-                      <li class="d-flex mb-0"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Leave reviews</span></li> -->
+
                 </ul><img class="d-block mx-auto" src="{% static 'users/img/signin-modal/signup-dark.svg' %}"
                   width="344" alt="Illustartion">
                 <div class="text-light mt-sm-4 pt-md-3"><span class="opacity-60">Déjà un compte? </span><a
@@ -181,18 +179,6 @@
                     <input class="form-control form-control-light" type="text" maxlength="10" name="phone_number" id="phone_number"
                       placeholder="Numéro de Téléphone" required>
                   </div>
-                  <!-- <div class="mb-4">
-                    <label class="form-label text-light" for="signup-password">Téléphone <span
-                        class='fs-sm opacity-50'>Au format dix (10) chiffres</span></label>
-                    <div class="password-toggle">
-                      <input class="form-control form-control-light" type="text" name="last_name" id="signup-password" maxlength="10"
-                        required>
-                      <label class="password-toggle-btn" aria-label="Show/hide password">
-                        <input class="password-toggle-check" type="checkbox"><span
-                          class="password-toggle-indicator"></span>
-                      </label>
-                    </div>
-                  </div> -->
                   <div class="form-check form-check-light mb-4">
                     <input class="form-check-input" type="checkbox" id="agree-to-terms" required>
                     <label class="form-check-label" for="agree-to-terms"><span class='opacity-70'>En m'inscrivant,
@@ -243,6 +229,7 @@
                         class="fs-sm text-light" href="#">Mot de passe oublié?</a>
                     </div>
                     <div class="password-toggle">
+                      <input type="hidden" name="next" id="next" value="{{ request.get_full_path }}">
                       <input class="form-control form-control-light" name="id_password" type="password" id="id_password"
                         placeholder="Entrer votre mot de passe" required>
                       <label class="password-toggle-btn" aria-label="Show/hide password">
@@ -264,7 +251,7 @@
     <!-- Navbar (Header)-->
     <header class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #fff;">
       <div class="container">
-        <a class="navbar-brand me-2 me-xl-4" href="#">
+        <a class="navbar-brand me-2 me-xl-4" href="{% url 'dashboard' %}">
           <img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Goodtrip">
         </a>
         <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-primary btn-sm rounded-pill ms-2 order-md-3" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" target="_blank" rel="noopener">Se connecter</a> -->
@@ -277,7 +264,7 @@
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a>
+                <li><a class="dropdown-item" href="location/"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a>
                 </li>
                 <li class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
@@ -291,20 +278,20 @@
           {% if user.is_authenticated %}
           <ul class="navbar-nav" style="margin-right: 20px">
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #26708b; color: #fff;">
+                <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #000;">
                   <i class="fi-user me-2"></i>Mon compte</a>
                 <div class="dropdown-menu" >
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="profile.html" style="text-decoration: none;color: #26708b"> Profil</a></span>
                  
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="historique.html" style="text-decoration: none; color: #26708b"> Historique</a></span>
                   
                   <hr style="height: 2px;"></hr>
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #26708b; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab"><a href="{% url 'logout' %}?next={{ request.get_full_path }}" style="text-decoration: none; color: #26708b"><i class="fi-power me-1"></i> Deconnexion</a></span>
                 </div>
               </li>
             </ul>
             {% else%}
-          <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
+          <a class="btn btn-sm rounded-pill order-md-3" style="background-color: #26708b; color: #fff;" href="#signin-modal" data-bs-toggle="modal">
             <i class="fi-user me-2"></i>
             Se connecter</a>
           {% endif %}
@@ -318,7 +305,7 @@
     {% if message %}
     <center>
         <div class="text-center mt-5 col-md-4 col-lg-3 col-sm-6 col-xl-3">
-          <div class="message alert alert-success text-center mt-5" style="z-index: 7; position: absolute;"> {{message}}</div>
+          <div class="message alert alert-success text-center " style="z-index: 7; position: absolute; margin-top: 100px;"> {{message}}</div>
         </div>
     </center>
     {% endif%}

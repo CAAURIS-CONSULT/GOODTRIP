@@ -43,6 +43,7 @@ class Commande(models.Model):
     status              =models.CharField(default='En cours', max_length=100)
     delivered_at        =models.DateField(auto_now_add=True)
     created_at          =models.DateField(auto_now_add=True)
+    lieu_livraison      =models.CharField(max_length=100, default='not defined')
 class ProduitCommande(models.Model):
     associatedCommande  =models.ForeignKey(Commande,on_delete=models.CASCADE)
     associateVvehicule  =models.ForeignKey(Vehicule,on_delete=models.CASCADE)

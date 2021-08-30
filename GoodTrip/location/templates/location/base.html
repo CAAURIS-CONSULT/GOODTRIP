@@ -156,6 +156,7 @@
                       class="fs-sm text-light" href="#">Mot de passe oublié?</a>
                   </div>
                   <div class="password-toggle">
+                    <input type="hidden" name="next" id="next" value="{{ request.get_full_path }}">
                     <input class="form-control form-control-light" name="id_password" type="password" id="id_password"
                       placeholder="Entrer votre mot de passe" required>
                     <label class="password-toggle-btn" aria-label="Show/hide password">
@@ -164,7 +165,7 @@
                     </label>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-lg w-100" type="submit">S'identifier</button>
+                <button class="btn btn-lg w-100" style="background-color: #f2ac2a; color: #000;" type="submit">S'identifier</button>
               </form>
             </div>
           </div>
@@ -239,7 +240,7 @@
                         class='opacity-70'>et la</span> <a href='#' class='text-light'>Politique de
                         confidentialité</a></label>
                   </div>
-                  <button class="btn btn-primary btn-lg w-100" type="submit">S'inscrire</button>
+                  <button class="btn btn-lg w-100" style="background-color: #f2ac2a; color: #000;" type="submit">S'inscrire</button>
                 </form>
               </div>
             </div>
@@ -249,19 +250,19 @@
     </div>
     {% endif %}
       <!-- Navbar-->
-     <!-- Navbar-->
+    
    <!-- Navbar-->
    <header class="navbar navbar-expand-lg navbar-dark fixed-top" data-scroll-header>
-    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard'%}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
+    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard' %}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       
       <a class=" btn-sm ms-2 order-lg-3" href="#">
-        <img class="rounded-circle" src="{% static 'users/img/cart/cart.jpg' %}" width="40" alt="pannier" style="margin-right: 20px">
+        <img src="{% static 'users/img/cart/shopping-cart.svg' %}" width="40" alt="pannier" style="margin-right: 20px">
       </a>
       <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
         <ul class="navbar-nav navbar-nav-scroll col-lg-10" style="max-height: 35rem;">
           <!-- Demos switcher-->
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="location/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
             <ul class="dropdown-menu bg-dark">
               <li><a class="dropdown-item text-white " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
               <li class="dropdown-divider"></li>
@@ -278,19 +279,19 @@
           {% if user.is_authenticated %}
           <ul class="navbar-nav" style="margin-right: 20px">
             <li class="nav-item dropdown ">
-                <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #fff;">
+                <a href="#" class="nav-link dropdown-toggle rounded-pill order-md-3" data-bs-toggle="dropdown" role="button" style="background-color: #f2ac2a; color: #000;">
                   <i class="fi-user me-2"></i>Mon compte</a>
                 <div class="dropdown-menu " >
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #f2ac2a"><a href="profile.html" style="text-decoration: none"> Profil</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none;"><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Profil</a></span>
                  
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #f2ac2a"><a href="historique.html" style="text-decoration: none"> Historique</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="text-decoration: none; "><a href="{% url 'history' %}" style="text-decoration: none; color: #26708b;"> Historique</a></span>
                   
-                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" style="color: #f2ac2a; "><a href="{% url 'logout' %}" style="text-decoration: none"><i class="fi-power me-1"></i> Deconnexion</a></span>
+                  <span class="dropdown-item" data-bs-toggle="tab" role="tab" ><a href="{% url 'logout' %}?next={{ request.get_full_path }}" style="text-decoration: none; color: #26708b;"><i class="fi-power me-1"></i> Deconnexion</a></span>
                 </div>
               </li>
             </ul>
             {% else%}
-          <a class="btn btn-success btn-sm rounded-pill order-md-3" style="color: #fff;" href="#signin-modal" data-bs-toggle="modal">
+          <a class="btn btn-sm rounded-pill order-md-3" style="color: #fff; background-color: #26708b;" href="#signin-modal" data-bs-toggle="modal">
             <i class="fi-user me-2"></i>
             Se connecter</a>
           {% endif %}
@@ -326,7 +327,7 @@
                 <div class="input-group input-group-sm"><span class="input-group-text"> <i class="fi-mail"></i></span>
                   <input class="form-control" type="text" placeholder="Votre e-mail">
                 </div>
-                <button class="btn btn-primary btn-icon btn-sm" type="button"><i class="fi-send"></i></button>
+                <button class="btn btn-icon btn-sm" type="button" style="background-color: #f2ac2a;"><i class="fi-send"></i></button>
               </form>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 offset-xl-1 mb-2 mb-sm-4">
@@ -351,7 +352,7 @@
                 <li><a class="nav-link-light" href="#">Historique</a></li>
               </ul>
             </div>
-            <div class="col-xl-2 col-lg-3 col-sm-6 col-md-3 mb-2 mb-sm-4"><a class="d-flex align-items-center text-decoration-none mb-2" href="tel:4065550120"><i class="fi-device-mobile me-2"></i><span class="text-light">(+225) xx-xx-xx-xx-xx</span></a><a class="d-flex align-items-center text-decoration-none mb-2" href="mailto:example@email.com"><i class="fi-mail me-2"></i><span class="text-light">example@email.com</span></a>
+            <div class="col-xl-2 col-lg-3 col-sm-6 col-md-3 mb-2 mb-sm-4"><a class="d-flex align-items-center text-decoration-none mb-2" href="tel:4065550120"><img src="{% static 'users/img/elt/smartphone.svg' %}" width="20px" class="me-2"><span class="text-light">(+225) xx-xx-xx-xx-xx</span></a><a class="d-flex align-items-center text-decoration-none mb-2" href="mailto:example@email.com"><img src="{% static 'users/img/elt/mail.svg' %}" width="20px" class="me-2"><span class="text-light">example@email.com</span></a>
               <div class="d-flex flex-wrap pt-4"><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2 me-2" href="#"><i class="fi-facebook"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2 me-2" href="#"><i class="fi-twitter"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2 me-2" href="#"><i class="fi-telegram"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2" href="#"><i class="fi-messenger"></i></a></div>
             </div>
           </div>

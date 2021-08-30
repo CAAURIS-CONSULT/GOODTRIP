@@ -44,18 +44,19 @@
           <p class="text-light pt-1 mb-4">Ici, vous pouvez voir l'historique de vos livraisons</p>
          
           <!-- Item-->
+          {% for command in mes_commandes %}
           <div class="card card-light card-hover card-horizontal mb-4">
             <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
-              <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
+              <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge " style="background-color: #f2ac2a; color: #000;"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
               
-              <div class="tns-carousel-inner {% static 'users/position-absolute top-0 h-100">
+              <div class="tns-carousel-inner position-absolute top-0 h-100">
                 <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/02.jpg' %});"></div>
                 <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/10.jpg' %});"></div>
               </div>
             </div>
             <div class="card-body position-relative">
               <div class="fs-sm text-light pb-1">Livrée le : 12/05/2017</div>
-              <div class="text-primary fw-bold mb-1">20 000 000 Franc CFA</div>
+              <div class="fw-bold mb-1" style="color: #f2ac2a;">20 000 000 Franc CFA</div>
               <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
               <div class="border-top border-light mt-3 pt-3">
                 <div class="row g-2">
@@ -72,93 +73,24 @@
               </div>
             </div>
           </div>
-          <!-- Item-->
-           <!-- Item-->
-           <div class="card card-light card-hover card-horizontal mb-4">
-            <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
-              <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
-              
-              <div class="tns-carousel-inner position-absolute top-0 h-100">
-                <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/04.jpg' %});"></div>
-                <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/12.jpg' %});"></div>
-              </div>
-            </div>
-            <div class="card-body position-relative">
-              <div class="fs-sm text-light pb-1">Livrée le : 12/05/2017</div>
-              <div class="text-primary fw-bold mb-1">20 000 000 Franc CFA</div>
-              <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
-              <div class="border-top border-light mt-3 pt-3">
-                <div class="row g-2">
-                  <div class="col me-sm-1">
-                    <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-car d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu d'expedition: Yopougon</span></div>
-                  </div>
-                  <div class="col me-sm-1">
-                    <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-file d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu de livraison: Adjamé</span></div>
-                  </div>
-                  <div class="col">
-                    <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-clock d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Heure de livraison: 14h05</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-            <!-- Item-->
-            <div class="card card-light card-hover card-horizontal mb-4">
-              <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
-                <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
-                
-                <div class="tns-carousel-inner position-absolute top-0 h-100">
-                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/03.jpg' %});"></div>
-                  <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/14.jpg' %});"></div>
-                </div>
-              </div>
-              <div class="card-body position-relative">
-                <div class="fs-sm text-light pb-1">Livrée le : 12/05/2017</div>
-                <div class="text-primary fw-bold mb-1">20 000 Franc CFA</div>
-                <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
-                <div class="border-top border-light mt-3 pt-3">
-                  <div class="row g-2">
-                    <div class="col me-sm-1">
-                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-car d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu d'expedition: Yopougon</span></div>
-                    </div>
-                    <div class="col me-sm-1">
-                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-file d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu de livraison: Adjamé</span></div>
-                    </div>
-                    <div class="col">
-                      <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-clock d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Heure de livraison: 14h05</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!-- Item-->
-          <div class="card card-light card-hover card-horizontal mb-4">
-            <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay" href="#"></a>
-              <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true">Livrée</span></div>
-              
-              <div class="tns-carousel-inner position-absolute top-0 h-100">
-                <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/08.jpg' %});"></div>
-                <div class="bg-size-cover bg-position-center w-100 h-100" style="background-image: url({% static 'users/img/car-finder/catalog/16.jpg' %});"></div>
-              </div>
-            </div>
-            <div class="card-body position-relative">
-              <div class="fs-sm text-light pb-1">Livrée le : 12/05/2017</div>
-              <div class="text-primary fw-bold mb-1">20 000 Franc CFA</div>
-              <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
-              <div class="border-top border-light mt-3 pt-3">
-                <div class="row g-2">
-                  <div class="col me-sm-1">
-                    <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-car d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu d'expedition: Yopougon</span></div>
-                  </div>
-                  <div class="col me-sm-1">
-                    <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-file d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Lieu de livraison: Adjamé</span></div>
-                  </div>
-                  <div class="col">
-                    <div class="bg-dark rounded text-center w-100 h-100 p-2"><i class="fi-clock d-block h4 text-light mb-0 mx-center"></i><span class="fs-xs text-light">Heure de livraison: 14h05</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {% endfor %}
+          <div class="d-flex align-items-center justify-content-between py-2">
+            <nav aria-label="Pagination">
+              <ul class="pagination pagination-light mb-0">
+                <li class="page-item d-sm-none text-nowrap"><span class="page-link page-link-static">1 / 5</span></li>
+                {% if mes_commandes.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1" aria-label="first"><i class="fi-chevrons-left"></i></a></li>
+                <li class="page-item"><a class="page-link" href="?page={{mes_commandes.previous_page_number}}" aria-label="Previous"><i class="fi-chevron-left"></i></a></li>
+                {% endif %}
+                <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">{{ mes_commandes.number }}<span class="visually-hidden">(current)</span></span></li>
+                <li class="page-item d-none d-sm-block">/</li>
+                <li class="page-item d-none d-sm-block"> <a class="page-link">{{ mes_commandes.paginator.num_pages }}</a></li>
+                {% if mes_commandes.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{mes_commandes.next_page_number}}" aria-label="Next"><i class="fi-chevron-right"></i></a></li>
+                <li class="page-item"><a class="page-link" href="?page={{mes_commandes.paginator.num_pages}}" aria-label="last"><i class="fi-chevrons-right"></i></a></li>
+                {% endif %}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>

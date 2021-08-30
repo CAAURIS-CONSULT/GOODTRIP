@@ -1,13 +1,21 @@
 {% extends 'location/base.html' %}
 {% load static %}
 {% block content %}
+<style>
+    .nav-tabs-light .nav-link.active {
+        color: black;
+    }
+    .nav-tabs-light .nav-link{
+        color: black;
+    }
+</style>
 <!-- Hero + Search form-->
 <section class="bg-top-center bg-repeat-0 pt-5"
     style="background-image: url({% static 'users/img/car-finder/home/hero-bg.png' %}); background-size: 1920px 630px;">
     <div class="container pt-5">
         <div class="row pt-lg-4 pt-xl-5">
             <div class="col-lg-4 col-md-5 pt-3 pt-md-4 pt-lg-5">
-                <h1 class="display-4 text-light pb-2 mb-4 me-md-n5">Un moyen facile de trouver la bonne voiture</h1>
+                <h1 class="display-4 text-light pb-2 mb-4 me-md-n5 mt-3">Un moyen facile de trouver la bonne voiture</h1>
                 <p class="fs-lg text-light opacity-70">Goodtrip est une entreprise de location et vente de véhicule
                     disponible 7j/7.
 
@@ -20,8 +28,8 @@
     <div class="container mt-4 mt-sm-3 mt-lg-n3 pb-5 mb-md-4">
         <!-- Tabs-->
         <ul class="nav nav-tabs nav-tabs-light mb-4">
-            <li class="nav-item"><a class="nav-link active" href="#"><i class="fi-users"></i> Particulier</a></li>
-            <li class="nav-item"><a class="nav-link" href="#" style="background-color: #fd5631"><i
+            <li class="nav-item"><a class="nav-link active" href="#" style="background-color:#26708b; "><i class="fi-users"></i> Particulier</a></li>
+            <li class="nav-item"><a class="nav-link " href="#" style="background-color: #f2ac2a"><i
                         class="fi-apartment"></i> Entreprise</a></li>
         </ul>
         <!-- Form group-->
@@ -77,7 +85,7 @@
             </div>
             <hr class="hr-light d-lg-none my-2">
             <div class="col-lg-2">
-                    <button class="btn btn-primary w-100" type="submit">Chercher</button>
+                    <button class="btn w-100" type="submit" style="background-color: #f2ac2a; color: #000;">Chercher</button>
                 </div>
             </div>
         </form>
@@ -87,7 +95,7 @@
 <section class="container pb-5 mb-md-4">
     <div class="d-sm-flex align-items-center justify-content-between mb-3 mb-sm-4 pb-sm-2">
         <h2 class="h3 text-light mb-2 mb-sm-0">Les véhicules populaires</h2><a
-            class="btn btn-link btn-light fw-normal px-0" href="car-finder-catalog-grid.html">voir tout<i
+            class="btn btn-link btn-light fw-normal px-0" href="{% url 'rechercheVoiture' %}?page=1">voir tout<i
                 class="fi-arrow-long-right fs-sm mt-0 ps-1 ms-2"></i></a>
     </div>
     <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2 g-md-4">
@@ -177,8 +185,8 @@
                 <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay"
                         href="car-finder-single.html"></a>
                     <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge mb-1"
-                            style="background-color: #fd5631">Nouvelle</span><span class="d-table badge "
-                            style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom"
+                            style="background-color: #f2ac2a; color: #000;">Nouvelle</span><span class="d-table badge "
+                            style="background-color: #26708b" data-bs-toggle="popover" data-bs-placement="bottom"
                             data-bs-trigger="hover" data-bs-html="true"
                             data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;Cette voiture&lt;br&gt;est en vente.&lt;/div&gt;&lt;/div&gt;">En
                             vente</span></div>
@@ -200,7 +208,7 @@
                     </div>
                     <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Mercedes Benz
                             Convertible Coupe</a></h3>
-                    <div class="text-primary fw-bold mb-1">14 281 167 Franc CFA</div>
+                    <div class="fw-bold mb-1" style="color: #f2ac2a;">14 281 167 Franc CFA</div>
                     <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
                 </div>
                 <div class="card-footer border-0 pt-0">
@@ -232,7 +240,7 @@
                 <div class="tns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay"
                         href="car-finder-single.html"></a>
                     <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge"
-                            style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom"
+                            style="background-color: #26708b" data-bs-toggle="popover" data-bs-placement="bottom"
                             data-bs-trigger="hover" data-bs-html="true"
                             data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;Cette voiture&lt;br&gt;est En location.&lt;/div&gt;&lt;/div&gt;">En
                             location</span></div>
@@ -258,7 +266,7 @@
                     </div>
                     <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Ford Truck Lifted </a>
                     </h3>
-                    <div class="text-primary fw-bold mb-1">25 000 Franc CFA/jour</div>
+                    <div class="fw-bold mb-1" style="color: #f2ac2a;">25 000 Franc CFA/jour</div>
                     <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
                     <div class="border-top border-light mt-3 pt-3">
                         <div class="row g-2">
@@ -288,8 +296,8 @@
                     <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-danger">En
                             vente</span></div>
                     <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge mb-1"
-                            style="background-color: #fd5631">Occasion</span><span class="d-table badge"
-                            style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom"
+                            style="background-color: #f2ac2a; color: #000;">Occasion</span><span class="d-table badge"
+                            style="background-color: #26708b" data-bs-toggle="popover" data-bs-placement="bottom"
                             data-bs-trigger="hover" data-bs-html="true"
                             data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;Cette voiture&lt;br&gt;est en vente.&lt;/div&gt;&lt;/div&gt;">En
                             vente</span></div>
@@ -315,7 +323,7 @@
                     </div>
                     <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">BMW 640 XI Gran
                             Turismo</a></h3>
-                    <div class="text-primary fw-bold mb-1">18 101 844 Franc CFA</div>
+                    <div class="fw-bold mb-1" style="color: #f2ac2a;">18 101 844 Franc CFA</div>
                     <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
                     <div class="border-top border-light mt-3 pt-3">
                         <div class="row g-2">
@@ -387,21 +395,21 @@
     </div>
     <div class="row">
         <div class="col-md-5 col-lg-4 offset-lg-1 pt-4 mt-2 pt-md-5 mt-md-3">
-            <div class="d-flex pb-4 pb-md-5 mb-2"><i class="fi-file lead text-primary mt-1 order-md-2"></i>
+            <div class="d-flex pb-4 pb-md-5 mb-2"><img src="{% static 'users/img/elt/file.svg' %}" width="20px" class="order-md-2"> 
                 <div class="text-md-end ps-3 ps-md-0 pe-md-3 order-md-1">
                     <h3 class="h6 text-light mb-1">Plus d'un million d'annonces</h3>
                     <p class="fs-sm text-light opacity-70 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
             </div>
-            <div class="d-flex pb-4 pb-md-5 mb-2"><i class="fi-search lead text-primary mt-1 order-md-2"></i>
+            <div class="d-flex pb-4 pb-md-5 mb-2"><img src="{% static 'users/img/elt/loupe.svg' %}" width="20px" class="order-md-2">
                 <div class="text-md-end ps-3 ps-md-0 pe-md-3 order-md-1">
                     <h3 class="h6 text-light mb-1">Recherche personnalisée</h3>
                     <p class="fs-sm text-light opacity-70 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
-            <div class="d-flex pb-4 pb-md-5 mb-2"><i class="fi-settings lead text-primary mt-1 order-md-2"></i>
+            <div class="d-flex pb-4 pb-md-5 mb-2"><img src="{% static 'users/img/elt/settings.svg' %}" width="20px" class="order-md-2">
                 <div class="text-md-end ps-3 ps-md-0 pe-md-3 order-md-1">
                     <h3 class="h6 text-light mb-1">Innovation non-stop</h3>
                     <p class="fs-sm text-light opacity-70 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -412,27 +420,27 @@
         <div class="col-md-2 d-none d-md-block">
             <div class="position-relative mx-auto h-100" style="max-width: 5rem; min-height: 26rem;">
                 <div class="content-overlay pt-5" data-jarallax-element="100"><img class="pt-3 mt-5"
-                        src="{% static 'users/img/car-finder/home/car.svg' %}" alt="Car"></div>
+                        src="{% static 'users/img/car-finder/home/car.svg' %}"  alt="Car"></div>
                 <div class="position-absolute top-0 start-50 translate-middle-x h-100 overflow-hidden"><img
                         src="{% static 'users/img/car-finder/home/road-line.svg' %}" width="2" alt="Road line"></div>
             </div>
         </div>
         <div class="col-md-5 col-lg-4 pt-md-5 mt-md-3">
-            <div class="d-flex pb-4 pb-md-5 mb-2"><i class="fi-info-circle lead text-primary mt-1"></i>
+            <div class="d-flex pb-4 pb-md-5 mb-2"><img src="{% static 'users/img/elt/info.svg' %}" width="20px">
                 <div class="ps-3">
                     <h3 class="h6 text-light mb-1">Des idées précieuses</h3>
                     <p class="fs-sm text-light opacity-70 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
-            <div class="d-flex pb-4 pb-md-5 mb-2"><i class="fi-users lead text-primary mt-1"></i>
+            <div class="d-flex pb-4 pb-md-5 mb-2"><img src="{% static 'users/img/elt/users.svg' %}" width="20px">
                 <div class="ps-3">
                     <h3 class="h6 text-light mb-1">La mentalité du consommateur d'abord</h3>
                     <p class="fs-sm text-light opacity-70 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
-            <div class="d-flex pb-4 pb-md-5 mb-2"><i class="fi-calculator lead text-primary mt-1"></i>
+            <div class="d-flex pb-4 pb-md-5 mb-2"><img src="{% static 'users/img/elt/calculator.svg' %}" width="20px">
                 <div class="ps-3">
                     <h3 class="h6 text-light mb-1">Évaluation de voiture en ligne</h3>
                     <p class="fs-sm text-light opacity-70 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -448,8 +456,8 @@
         <h2 class="h3 text-light mb-3 mb-sm-0">Dernières voitures</h2>
         <div class="d-flex align-items-center">
             <ul class="nav nav-tabs nav-tabs-light fs-sm me-4 pe-2 mb-0">
-                <li class="nav-item"><a class="nav-link" href="#">Nouvelles</a></li>
-                <li class="nav-item"><a class="nav-link active" href="#">Occasion</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="background-color: #f2ac2a;">Nouvelles</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#" style="background-color: #26708b;">Occasion</a></li>
             </ul><a class="btn btn-link btn-light fw-normal px-0" href="car-finder-catalog-grid.html">Voir tout<i
                     class="fi-arrow-long-right fs-sm mt-0 ps-1 ms-2"></i></a>
         </div>
@@ -461,8 +469,8 @@
                 <div class="card card-light card-hover h-100">
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="car-finder-single.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge mb-1"
-                                style="background-color: #fd5631">Nouvelle</span><span class="d-table badge "
-                                style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom"
+                                style="background-color: #f2ac2a; color: #000;">Nouvelle</span><span class="d-table badge "
+                                style="background-color: #26708b" data-bs-toggle="popover" data-bs-placement="bottom"
                                 data-bs-trigger="hover" data-bs-html="true"
                                 data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;Cette voiture&lt;br&gt;est en vente.&lt;/div&gt;&lt;/div&gt;">En
                                 vente</span></div>
@@ -482,7 +490,7 @@
                         </div>
                         <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Nissan 370Z
                                 Nismo</a></h3>
-                        <div class="text-primary fw-bold mb-1">21 002 197 Franc CFA</div>
+                        <div class="fw-bold mb-1" style="color: #f2ac2a;">21 002 197 Franc CFA</div>
                         <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
                     </div>
                     <div class="card-footer border-0 pt-0">
@@ -512,8 +520,8 @@
                 <div class="card card-light card-hover h-100">
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="car-finder-single.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge mb-1"
-                                style="background-color: #fd5631">Occasion</span><span class="d-table badge"
-                                style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom"
+                                style="background-color: #f2ac2a; color: #000;">Occasion</span><span class="d-table badge"
+                                style="background-color: #26708b" data-bs-toggle="popover" data-bs-placement="bottom"
                                 data-bs-trigger="hover" data-bs-html="true"
                                 data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;Cette voiture&lt;br&gt;est en vente.&lt;/div&gt;&lt;/div&gt;">En
                                 vente</span></div>
@@ -533,7 +541,7 @@
                         </div>
                         <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Ford Explorer
                                 XLT</a></h3>
-                        <div class="text-primary fw-bold mb-1">7 927 599 Franc CFA</div>
+                        <div class="fw-bold mb-1" style="color: #f2ac2a;">7 927 599 Franc CFA</div>
                         <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
                     </div>
                     <div class="card-footer border-0 pt-0">
@@ -563,7 +571,7 @@
                 <div class="card card-light card-hover h-100">
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="car-finder-single.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge"
-                                style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom"
+                                style="background-color: #26708b" data-bs-toggle="popover" data-bs-placement="bottom"
                                 data-bs-trigger="hover" data-bs-html="true"
                                 data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;Cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En
                                 location</span></div>
@@ -583,7 +591,7 @@
                         </div>
                         <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Mazda MX-5 Miata
                                 Convertible</a></h3>
-                        <div class="text-primary fw-bold mb-1">100 000 / Jour Franc CFA</div>
+                        <div class="fw-bold mb-1" style="color: #f2ac2a;">100 000 / Jour Franc CFA</div>
                         <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>Abidjan</div>
                     </div>
                     <div class="card-footer border-0 pt-0">
@@ -613,7 +621,7 @@
                 <div class="card card-light card-hover h-100">
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="car-finder-single.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge"
-                                style="background-color: #033f58" data-bs-toggle="popover" data-bs-placement="bottom"
+                                style="background-color: #26708b" data-bs-toggle="popover" data-bs-placement="bottom"
                                 data-bs-trigger="hover" data-bs-html="true"
                                 data-bs-content="&lt;div class=&quot;d-flex&quot;&gt;&lt;i class=&quot;fi-award mt-1 me-2&quot;&gt;&lt;/i&gt;&lt;div&gt;Cette voiture&lt;br&gt;est en location.&lt;/div&gt;&lt;/div&gt;">En
                                 location</span></div>
@@ -633,7 +641,7 @@
                         </div>
                         <h3 class="h6 mb-1"><a class="nav-link-light" href="car-finder-single.html">Mercedes Benz C300
                                 Sport</a></h3>
-                        <div class="text-primary fw-bold mb-1">$53,600</div>
+                        <div class="fw-bold mb-1" style="color: #f2ac2a;">100 600 / Jour Franc CFA</div>
                         <div class="fs-sm text-light opacity-70"><i class="fi-map-pin me-1"></i>San Francisco</div>
                     </div>
                     <div class="card-footer border-0 pt-0">
@@ -663,11 +671,11 @@
     </div>
 </section>
 <!-- CTA carousel-->
-<section class="container pt-4 pb-5 py-sm-5">
+<!-- <section class="container pt-4 pb-5 py-sm-5">
     <div class="tns-carousel-wrapper">
         <div class="tns-carousel-inner d-block d-md-flex"
             data-carousel-options="{&quot;controlsContainer&quot;: &quot;#external-controls&quot;, &quot;nav&quot;: false, &quot;gutter&quot;: 20, &quot;autoHeight&quot;: true}">
-            <!-- Slide 1-->
+             
             <div>
                 <div class="card card-body p-sm-5 card-light h-100">
                     <div class="row align-items-center py-3 py-sm-0">
@@ -704,7 +712,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Slide 2-->
+            
             <div>
                 <div class="card card-body p-sm-5 card-light h-100">
                     <div class="row align-items-center py-3 py-sm-0">
@@ -741,11 +749,11 @@
             </div>
         </div>
     </div>
-    <!-- External carousel controls-->
+   
     <div class="tns-carousel-controls tns-carousel-light pt-4 pb-2" id="external-controls">
         <button class="me-3" type="button"><i class="fi-chevron-left"></i></button>
         <button type="button"><i class="fi-chevron-right"></i></button>
     </div>
-</section>
+</section> -->
 </main>
 {% endblock content %}

@@ -23,6 +23,8 @@ img.vert-move {
 
 {% block content %}
 {% if success %}
+
+
   <div class="message alert alert-success"> {{success}}</div>
 {% endif%}
       <!-- Hero (Demos)-->
@@ -30,22 +32,22 @@ img.vert-move {
         <div class="d-none d-xl-block position-absolute top-0 start-0 h-100 bg-secondary" style="width: 67%; border-bottom-right-radius: .75rem;"></div>
         <div class="d-xl-none position-absolute top-0 start-0 w-100 h-100 bg-secondary"></div>
         <div class="container content-overlay mt-4 mb-2 mt-lg-5 mb-lg-4 pt-5 pb-md-2">
-          <h2 class="display-4 text-center text-md-start">Nous sommes <br> disponibles<br> 24h/24 7j/7</h2>
+          <h2 class="display-4 text-center text-md-start mt-3">Nous sommes <br> disponibles<br> 24h/24 7j/7</h2>
           <div class="row">
             <div class="d-none d-md-block col-md-2 pt-4 mt-4"><img src="{% static 'users/img/intro/swirly-arrow2.svg' %}" width="120" alt="Arrow"></div>
             <div class="col-md-10 d-md-flex mt-md-n4">
               <!-- Real Estate-->
-              <div class="d-block hover-img-scale position-relative zindex-5 mt-md-5 mx-auto me-md-n5 mb-4 mb-md-0" style="max-width: 633px;">
+              <div class="d-block hover-img-scale position-relative z-index-5 mt-md-5 mx-auto me-md-n5 mb-4 mb-md-0" style="max-width: 633px;">
                 <div class="pt-md-5 mt-4 me-md-n5">
                   <h2 class="h4 mb-2 pb-1 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="real-estate-home.html"><i class="fi-truck me-2 pe-1" style="color: #26708b;"></i><span>Livraison de colis</span></a></h2>
-                  <div class="position-relative zindex-0"><img class="position-relative zindex-5" src="{% static 'users/img/intro/demos/capture3.png' %}" style="border-radius: 5px;" alt="Goodtrip">
+                  <div class="position-relative zindex-0"><img class="position-relative zindex-5" src="{% static 'users/img/intro/demos/capture2.png' %}" style="border-radius: 5px;" alt="Goodtrip">
                     <div class="d-none d-md-block position-absolute zindex-1" style="top: 15px; left: 20px; width: calc(100% - 40px); height: calc(100% - 50px); box-shadow: 33px 26px 85px rgba(0, 0, 0, .14);"></div>
                   </div>
                 </div>
               </div>
               <!-- Job Board-->
               <div class="d-block hover-img-scale position-relative mt-md-n5 mx-auto me-md-n3" style="max-width: 550px;">
-                <h2 class="h4 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="{% url 'acc_location'%}"><i class="fi-car me-2 pe-1" style="color: #26708b;"></i><span>Location et Achat</span></a></h2><img src="{% static 'users/img/intro/demos/capture.png' %}" style="border-radius: 5px;" alt="Goodtrip">
+                <h2 class="h4 ms-md-3"><a class="nav-link stretched-link d-flex align-items-center justify-content-center justify-content-md-start" href="{% url 'acc_location'%}"><i class="fi-car me-2 pe-1" style="color: #26708b;"></i><span>Location et Achat</span></a></h2><img src="{% static 'users/img/intro/demos/capture3.png' %}" style="border-radius: 5px;" alt="Goodtrip">
               </div>
             </div>
             
