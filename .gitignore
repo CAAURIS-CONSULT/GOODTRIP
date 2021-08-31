@@ -4,4 +4,8 @@ virt/
 issa/
 GoodTrip/Michael/
 TEMPLATE/
-GoodTrip/*/__pycache__/
+GoodTrip/__pycache__/
+users/__pycache__/
+livraison/__pycache__/
+location/__pycache__/
+db.sqlite3
