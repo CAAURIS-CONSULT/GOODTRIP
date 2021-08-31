@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -146,10 +147,11 @@
   </div>
         </div>
       </header>
-      <!-- Page content-->
- 
- 
- <!-- Footer-->
+<!-- Page content-->
+{% block content %} 
+
+{% endblock %}
+<!-- Footer-->
  <footer class="footer bg-faded-dark">
   <div class="border-bottom border-dark py-4">
     <div class="container d-sm-flex align-items-center justify-content-between"><a class="d-inline-block" href="real-estate-home.html"><img src="img/logo/logo-dark.svg" width="116" alt="logo"></a>

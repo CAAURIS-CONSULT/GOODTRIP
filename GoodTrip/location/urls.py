@@ -1,5 +1,5 @@
 from django.urls import path
-from location.views import accueil, ajaxForMarques, rechercheVoiture, detailsVehicule, commander, history
+from location.views import accueil, ajaxForMarques, rechercheVoiture, detailsVehicule, commander, history, passwordAndSettings
 urlpatterns = [
     path("", accueil, name="acc_location"),
     path("marque",ajaxForMarques,name="marque"),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('paiement/<int:id>/',commander,name='paiement'),
     path('commander',commander,name='commander'),
     path('historique',history,name='history'),
+    path('parametres',passwordAndSettings, name = 'settings_passw'),
 ]
