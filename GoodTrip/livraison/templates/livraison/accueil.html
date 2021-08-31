@@ -39,7 +39,7 @@
                   <label class="form-label fw-bold mb-2" for="property-area">Le prix de la livraison.</label>
                   <input class="form-control" id="disabled-input" type="text" placeholder="prix de la livraison" disabled>
                 </div>
-                <button class="btn btn-primary d-block w-100 mb-4" id="swal-2"><i class="fi-calculator me-2"></i>Valider</button>
+                <button class="btn d-block w-100 mb-4" id="swal-2" style="background-color: #26708b; color: #fff;"><i class="fi-calculator me-2"></i>Valider</button>
               </form>
             </div>
           </div>
@@ -57,6 +57,18 @@
           
         </div>
       </section>
+
+ <!-- Property cost calculator-->
+ <section class="container mb-5 pb-2 pb-lg-4">
+  <div class="row align-items-center">
+    <div class="col-md-5"><img class="d-block mx-md-0 mx-auto mb-md-0 mb-4" src="{% static 'users/img/real-estate/illustrations/calculator.svg' %}" width="416" alt="Illustration"></div>
+    <div class="col-xxl-6 col-md-7 text-md-start text-center">
+      <h2>Estimez ma livraison</h2>
+      <p class="pb-3 fs-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><a class="btn btn-lg estimation" style="background-color: #26708b; color: #fff;" href="#cost-calculator" data-bs-toggle="modal"><i class="fi-calculator me-2"></i>Estimez</a>
+    </div>
+  </div>
+</section>
+
       <!-- Services-->
       <section class="container mb-5 mt-n3 mt-lg-0">
         <div class="tns-carousel-wrapper tns-nav-outside tns-nav-outside-flush mx-n2">
@@ -91,16 +103,7 @@
       </section>
       <hr class="mt-n1 mb-5 d-md-none">
      
-      <!-- Property cost calculator-->
-      <section class="container mb-5 pb-2 pb-lg-4">
-        <div class="row align-items-center">
-          <div class="col-md-5"><img class="d-block mx-md-0 mx-auto mb-md-0 mb-4" src="{% static 'users/img/real-estate/illustrations/calculator.svg' %}" width="416" alt="Illustration"></div>
-          <div class="col-xxl-6 col-md-7 text-md-start text-center">
-            <h2>Estimez ma livraison</h2>
-            <p class="pb-3 fs-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><a class="btn btn-lg btn-primary estimation" href="#cost-calculator" data-bs-toggle="modal"><i class="fi-calculator me-2"></i>Estimez</a>
-          </div>
-        </div>
-      </section>
+     
       <!-- Partners (carousel)-->
       <section class="container mb-5 pb-2 pb-lg-4">
         <h2 class="h3 mb-4 text-center text-md-start">Nos partenaires</h2>
