@@ -264,13 +264,13 @@
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="location/"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a>
+                <li><a class="dropdown-item" href="{% url 'acc_location' %}"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a>
                 </li>
                 <li class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Livraison de colis</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'acc_livraison' %}">Livraison de colis</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#services" data-scroll>Nos services</a>
             </li>

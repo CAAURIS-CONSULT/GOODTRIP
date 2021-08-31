@@ -11,11 +11,11 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'users/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'users/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'users/site.webmanifest' %}">
+    <link rel="mask-icon" color="#5bbad5" href="{% static 'users/safari-pinned-tab.svg' %}">
     <meta name="msapplication-TileColor" content="#766df4">
     <meta name="theme-color" content="#ffffff">
     <!-- Page loading styles-->
@@ -100,10 +100,10 @@
       
     </script>
     <!-- Vendor Styles-->
-    <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
-    <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css"/>
+    <link rel="stylesheet" media="screen" href="{% static 'users/vendor/simplebar/dist/simplebar.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'users/vendor/tiny-slider/dist/tiny-slider.css' %}"/>
     <!-- Main Theme Styles + Bootstrap-->
-    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <link rel="stylesheet" media="screen" href="{% static 'users/css/theme.min.css' %}">
   </head>
   <!-- Body-->
   <body class="bg-light">
@@ -116,11 +116,11 @@
     <main class="page-wrapper">
       <!-- Navbar-->
 <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header>
-  <div class="container"><a class="navbar-brand me-3 me-xl-4" href="index.html"><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></a>
+  <div class="container"><a class="navbar-brand me-3 me-xl-4" href="index.html"><img class="d-block" src="{% static 'users/img/logo/logo-dark.svg' %}" width="116" alt="Finder"></a>
    
-<div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3"><a class="d-block py-2" href="car-finder-account-info.html"><img class="rounded-circle" src="img/avatars/02.jpg" width="40" alt="Robert Fox"></a>
+<div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3"><a class="d-block py-2" href="car-finder-account-info.html"><img class="rounded-circle" src="{% static 'users/img/avatars/02.jpg' %}" width="40" alt="Robert Fox"></a>
   <div class="dropdown-menu dropdown-menu-light dropdown-menu-end">
-    <div class="d-flex align-items-start border-bottom border-dark px-3 py-1 mb-2" style="width: 16rem;"><img class="rounded-circle" src="img/avatars/01.jpg" width="48" alt="Robert Fox">
+    <div class="d-flex align-items-start border-bottom border-dark px-3 py-1 mb-2" style="width: 16rem;"><img class="rounded-circle" src="{% static 'users/img/avatars/01.jpg' %}" width="48" alt="Robert Fox">
       <div class="ps-2">
         <h6 class="fs-base text-dark mb-0">Robert Fox</h6><span class="star-rating star-rating-sm">
             <div class="fs-xs py-2">(+225) 00-00-00-00-00</div>
@@ -141,7 +141,7 @@
             </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="real-estate-home.html">Livraison de colis</a></li>
-        <li class="nav-item"><a class="nav-link" href="docs/dev-setup.">Nos services</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% static 'users/docs/dev-setup.' %}">Nos services</a></li>
       </ul>
     </div>
   </div>
@@ -154,7 +154,7 @@
 <!-- Footer-->
  <footer class="footer bg-faded-dark">
   <div class="border-bottom border-dark py-4">
-    <div class="container d-sm-flex align-items-center justify-content-between"><a class="d-inline-block" href="real-estate-home.html"><img src="img/logo/logo-dark.svg" width="116" alt="logo"></a>
+    <div class="container d-sm-flex align-items-center justify-content-between"><a class="d-inline-block" href="real-estate-home.html"><img src="{% static 'users/img/logo/logo-dark.svg' %}" width="116" alt="logo"></a>
       <div class="d-flex pt-3 pt-sm-0">
         <div class="dropdown ms-n3">
           <button class="btn btn-dark btn-link btn-sm dropdown-toggle fw-normal py-2" type="button" data-bs-toggle="dropdown"><i class="fi-globe me-2"></i>Français</button>
@@ -213,20 +213,20 @@
 </footer>
 <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fi-chevron-up">   </i></a>
 <!-- Vendor scrits: js libraries and plugins-->
-<script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="vendor/simplebar/dist/simplebar.min.js"></script>
-<script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-<script src="vendor/nouislider/dist/nouislider.min.js"></script>
-<script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+<script src="{% static 'users/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'users/vendor/simplebar/dist/simplebar.min.js' %}"></script>
+<script src="{% static 'users/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+<script src="{% static 'users/vendor/nouislider/dist/nouislider.min.js' %}"></script>
+<script src="{% static 'users/vendor/tiny-slider/dist/min/tiny-slider.js' %}"></script>
 <!-- Main theme script-->
-<script src="js/theme.min.js"></script>
+<script src="{% static 'users/js/theme.min.js' %}"></script>
 
 <!-- General JS Scripts -->
-<script src="sweet/js2/app.min.js"></script>
+<script src="{% static 'users/sweet/js2/app.min.js' %}"></script>
 <!-- JS Libraies -->
-<script src="sweet/bundles2/sweetalert/sweetalert.min.js"></script>
+<script src="{% static 'users/sweet/bundles2/sweetalert/sweetalert.min.js' %}"></script>
 <!-- Page Specific JS File -->
-<script src="sweet/js2/page/sweetalert.js"></script>
+<script src="{% static 'users/sweet/js2/page/sweetalert.js' %}"></script>
 
 </body>
 </html>

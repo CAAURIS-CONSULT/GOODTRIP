@@ -1,10 +1,13 @@
+
+.gitignore
 virtualenv/
 GoodTrip/virtualenv/
 virt/
 issa/
+GoodTrip/Michael/
 TEMPLATE/
 GoodTrip/__pycache__/
-location/__pycache__/
-livraison/__pycache__/
 users/__pycache__/
-GoodTrip/db.sqlite3
+livraison/__pycache__/
+location/__pycache__/
+db.sqlite3
