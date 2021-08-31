@@ -2,3 +2,9 @@ virtualenv/
 GoodTrip/virtualenv/
 virt/
 issa/
+TEMPLATE/
+GoodTrip/__pycache__/
+location/__pycache__/
+livraison/__pycache__/
+users/__pycache__/
+GoodTrip/db.sqlite3
