@@ -44,7 +44,21 @@ class Commande(models.Model):
     delivered_at        =models.DateField(auto_now_add=True)
     created_at          =models.DateField(auto_now_add=True)
     lieu_livraison      =models.CharField(max_length=100, default='not defined')
+    total               =models.PositiveIntegerField(default=0)
 class ProduitCommande(models.Model):
     associatedCommande  =models.ForeignKey(Commande,on_delete=models.CASCADE)
     associateVvehicule  =models.ForeignKey(Vehicule,on_delete=models.CASCADE)
     quantity            =models.IntegerField()
+
+class Location(models.Model):
+    user                =models.ForeignKey(User, on_delete=models.CASCADE)
+    vehicule            =models.ForeignKey(Vehicule, on_delete=models.CASCADE)
+    debut_location      =models.DateField()
+    fin_location        =models.DateField()
+    status              =models.CharField(max_length=10)
+    lieu_livraison      =models.CharField(max_length=100)
+    pour_abidjan        =models.BooleanField(default=True)
+    pour_interieur      =models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f'location de {self.vehicule} par {self.user}'

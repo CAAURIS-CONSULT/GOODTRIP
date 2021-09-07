@@ -108,6 +108,7 @@
     <link rel="stylesheet" media="screen" href="{% static 'users/vendor/simplebar/dist/simplebar.min.css' %}"/>
     <link rel="stylesheet" media="screen" href="{% static 'users/vendor/tiny-slider/dist/tiny-slider.css' %}"/>
     <link rel="stylesheet" media="screen" href="{% static 'users/vendor/nouislider/dist/nouislider.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'users/vendor/flatpickr/dist/flatpickr.min.css' %}"/>
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="{% static 'users/css/theme.min.css' %}">
   </head>
@@ -120,6 +121,79 @@
       </div>
     </div>
   <main class="page-wrapper">
+  <!-- Modal de commande de vehixule -->
+  {% if not user.is_authenticated %}
+  <div class="modal fade" id="modalCentered" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Connexion requise</h4>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Veuillez vous <strong>connecter</strong> avant de passer une commande </p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-shadow btn-sm" style="background-color: #f2ac2a; color: #000; border-color: #f2ac2a;" data-bs-dismiss="modal" type="button">C'est compris</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+<form action="" id="command" needvalidate>
+  <div class="modal fade" id="modalCentered" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Commander votre vehicule </h4>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group">
+              <span class="input-group-text fw-bold text-dark">Où ?</span>
+              <input class="form-control" name="lieu_livraison" type="text" placeholder="Lieu de livraison" required>
+            </div>
+            <label>Date range</label>
+            <div class="input-group mb-2">
+              <span class="input-group-text">
+                <i class="fi-calendar"></i>
+              </span>
+              <input class="form-control date-picker date-range" name="debut_livraison" type="text" placeholder="Du" 
+                data-datepicker-options='{"altInput": true, "altFormat": "d-m-Y", "dateFormat": "Y-m-d"}'
+                data-linked-input="#end-date" required>
+              <input class="form-control date-picker" name="fin_livraison" type="text" placeholder="Au" data-datepicker-options='{"altInput": true, "altFormat": "d-m-Y", "dateFormat": "Y-m-d"}' id="end-date">
+            </div>
+            <div class="input-group mb-2" style="width: 100%;">
+              <span class="input-group-text"> Zone d'utilisation </span>
+              <div class="input-group-text ">
+                <label for="ex-check-1">Abidjan</label>
+                <div class="form-check">
+                  <input class="form-check-input" value="abidjan" name="abidjan" type="checkbox" id="ex-check-1">
+                </div>
+              </div>
+              <div class="input-group-text ">
+                <label for="ex-check-2">Interieur</label>
+                <div class="form-check">
+                  <input class="form-check-input" value="interieur" name="interieur" type="checkbox" id="ex-check-2">
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text fs-lg py-1">$</span>
+              <input readonly type="text" class="form-control" placeholder="Total">
+              <span class="input-group-text">.00</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary btn-sm"  type="button" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary btn-shadow btn-sm" id="command_submit" type="submit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+  {% endif %}
+  <!-- fin du modal de commande de vehicule -->
     {% if not user.is_authenticated %}
    <!-- Sign In Modal-->
    <div class="modal fade" id="signin-modal" tabindex="-1" aria-hidden="true">
@@ -364,6 +438,7 @@
       class="btn-scroll-top-tooltip text-muted fs-sm me-2">Haut</span><i class="btn-scroll-top-icon fi-chevron-up">
     </i></a>
   <!-- Vendor scrits: js libraries and plugins-->
+
   <script src="{% static 'users/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'users/js/jquery-3.6.0.min.js' %}"></script>
   <script src="{% static 'users/vendor/simplebar/dist/simplebar.min.js' %}"></script>
@@ -371,6 +446,8 @@
   <script src="{% static 'users/vendor/tiny-slider/dist/min/tiny-slider.js' %}"></script>
   <script src="{% static 'users/vendor/jarallax/dist/jarallax.min.js' %}"></script>
   <script src="{% static 'users/vendor/jarallax/dist/jarallax-element.min.js' %}"></script>
+  <script src="{% static 'users/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
+  <script src="{% static 'users/vendor/flatpickr/dist/plugins/rangePlugin.js' %}"></script>
   <!-- Main theme script-->
   <script src="{% static 'users/dist/sweetalert2.min.js' %}"></script>
   <script src="{% static 'users/js/theme.min.js' %}"></script>
