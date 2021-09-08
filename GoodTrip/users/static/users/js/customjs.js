@@ -75,7 +75,7 @@ function getModelsById(id){
 
 function commander(vehicule_id, quantity){
     Swal.fire({
-        title: 'Voulez-vous commder ce véhicule?',
+        title: 'Voulez-vous commander ce véhicule?',
         text: "Vous pourrez voir vos commandes dans votre historique!",
         icon: 'warning',
         showCancelButton: 'true',
