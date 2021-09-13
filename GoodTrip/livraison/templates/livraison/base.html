@@ -133,7 +133,7 @@
               <!-- Demos switcher-->
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="location/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
                 <ul class="dropdown-menu bg-light">
-                  <li><a class="dropdown-item text-dark " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
+                  <li><a class="dropdown-item text-dark " href="{% url 'acc_location' %}"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
                   <li class="dropdown-divider"></li>              
                   <li><a class="dropdown-item text-dark" href="Achat-vehicule-par-liste.html"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
                   </ul>
@@ -190,10 +190,10 @@
         </form>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-6 offset-xl-1 mb-2 mb-sm-4">
-        <h3 class="fs-base text-dark">Livraison colis</h3>
+        <h3 class="fs-base text-dark">Véhicules &amp; Colis</h3>
         <ul class="list-unstyled fs-sm">
-          <li><a class="nav-link-light" href="#" style="text-decoration: none; color: #26708b;">Envoyer un colis</a></li>
-          <li><a class="nav-link-dark" href="location-achat-vehicule.html" style="text-decoration: none; color: #26708b;">Autres services</a></li>
+          <li><a class="nav-link-light" href="{% url 'acc_livraison' %}" style="text-decoration: none; color: #26708b;">Livrer un colis</a></li>
+          <li><a class="nav-link-dark" href="{% url 'acc_location' %}" style="text-decoration: none; color: #26708b;">Louer une voiture</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 mb-2 mb-sm-4">

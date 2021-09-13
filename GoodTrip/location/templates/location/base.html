@@ -264,14 +264,14 @@
           <!-- Demos switcher-->
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="location/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
             <ul class="dropdown-menu bg-dark">
-              <li><a class="dropdown-item text-white " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
+              <li><a class="dropdown-item text-white " href="{% url 'acc_location' %}"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
               <li class="dropdown-divider"></li>              
               <li><a class="dropdown-item text-white" href="Achat-vehicule-par-liste.html"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
               </ul>
           </li>
           <!-- Menu items-->
           
-          <li class="nav-item"><a class="nav-link" href="#">Livraison de colis</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'acc_livraison' %}">Livraison de colis</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}#services">Nos services</a></li>
           </ul>
           {% if user.is_authenticated %}
@@ -329,10 +329,10 @@
               </form>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 offset-xl-1 mb-2 mb-sm-4">
-              <h3 class="fs-base text-light">Achat &amp; Location</h3>
+              <h3 class="fs-base text-light">Véhicules &amp; Colis</h3>
               <ul class="list-unstyled fs-sm">
-                <li><a class="nav-link-light" href="#">Louer une voiture</a></li>
-                <li><a class="nav-link-light" href="#">acheter une voiture</a></li>
+                <li><a class="nav-link-light" href="{% url 'acc_location' %}">Louer une voiture</a></li>
+                <li><a class="nav-link-light" href="{% url 'acc_livraison' %}">Livrer un colis</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 mb-2 mb-sm-4">
