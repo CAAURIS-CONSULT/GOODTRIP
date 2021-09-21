@@ -86,7 +86,13 @@ $('#command_submit').click(function(event){
         confirmButtonText: 'Oui, commander!'
       }).then((result) => {
         if (result.isConfirmed) {
-            $('#command').submit()
+            $('#command').submit();
+            Swal.fire({
+                title: 'Success!',
+                text: 'Commande validée.',
+                icon: 'success',
+                confirmButtonColor: '#26708b',
+            });
         }
     })
 })

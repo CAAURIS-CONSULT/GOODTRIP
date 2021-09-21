@@ -99,19 +99,20 @@ def commander(request):
         return HttpResponse('Method not allowed')
     else:
         
-        user                = request.user
-        vehicule_id         = request.GET.get('vehicule_id')
-        quantity            = request.GET.get('quantity')
+        # user                = request.user
+        # vehicule_id         = request.GET.get('vehicule_id')
+        # quantity            = request.GET.get('quantity')
         
-        commande = creerCommande(user)
-        vehicule = Vehicule.objects.filter(id=vehicule_id)[0]
-        addToCommand(commande,vehicule,quantity)
-        message = 'commande bien effectuée'
+        # commande = creerCommande(user)
+        # vehicule = Vehicule.objects.filter(id=vehicule_id)[0]
+        # addToCommand(commande,vehicule,quantity)
+        # message = 'commande bien effectuée'
         #sendMessage(user.phone)
+        print(request.GET)
     context = {
-        'message':message
+        'message':'message'
     }
-    return HttpResponse(message)
+    return HttpResponse('message')
     # return render(request, template_name, context)
 
 def creerCommande(user,lieu_de_livraison='marcory',total=0):
@@ -123,7 +124,7 @@ def creerCommande(user,lieu_de_livraison='marcory',total=0):
     latestCommande = Commande.objects.latest('id')
     return latestCommande
 
-# Permet l'ajout de uqantité à un article ( voiture d'un commande donnée )
+# Permet l'ajout de quantité à un article ( voiture d'un commande donnée )
 def addToCommand(commande,vehicule,quantity):
     produitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id,associateVvehicule_id=vehicule.id)
     if produitCommande:
@@ -151,6 +152,7 @@ def history2(request):
         print(command.images) 
     return render(request,template_name)
 
+#Visualisation de l'historique des locations
 @login_required
 def history(request):
     template_name = 'location/historique.html'
@@ -181,7 +183,7 @@ def history(request):
     }
     return render(request,template_name, context)
 
-
+#Vue qui permet de regler les parametres et le changement de mot de passe
 def passwordAndSettings(request):
     template_name = 'location/password-settings.html'
     return render(request, template_name)
