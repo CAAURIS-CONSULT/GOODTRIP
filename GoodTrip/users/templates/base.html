@@ -24,6 +24,7 @@
   <!-- Page loading styles-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+  
     .page-loading {
       position: fixed;
       top: 0;
@@ -83,13 +84,6 @@
       animation: spinner .75s linear infinite;
     }
     
-    .loc_ach{
-    color: #033f58;
-    text-decoration: none;
-  }
-  .loc_ach:hover{
-    color: #f2ac2a;
-  }
     @-webkit-keyframes spinner {
       100% {
         -webkit-transform: rotate(360deg);
@@ -267,7 +261,7 @@
        
         <div class="collapse navbar-collapse order-md-2" id="navbarNav">
           <ul class="navbar-nav col-lg-10">
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+            <li class="nav-item dropdown "><a class="nav-link dropdown-toggle" href="#" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'acc_location' %}"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a>
