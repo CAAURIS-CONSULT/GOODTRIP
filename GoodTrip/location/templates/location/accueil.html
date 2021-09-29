@@ -16,7 +16,7 @@
         <div class="row pt-lg-4 pt-xl-5">
             <div class="col-lg-4 col-md-5 pt-3 pt-md-4 pt-lg-5">
                 <h1 class="display-4 text-light pb-2 mb-4 me-md-n5 mt-3">Un moyen facile de trouver la bonne voiture</h1>
-                <p class="fs-lg text-light opacity-70">Goodtrip est une entreprise de location et vente de véhicule
+                <p class="fs-lg text-light opacity-70">Goodtrip est une entreprise de location, vente de véhicule et de livraison de colis
                     disponible 7j/7.
 
                 </p>
@@ -174,8 +174,8 @@
 <!-- Top offers-->
 <section class="container pt-sm-1 pb-5 mb-md-4">
     <div class="d-sm-flex align-items-center justify-content-between mb-4 pb-sm-2">
-        <h2 class="h3 text-light mb-2 mb-sm-0">Meilleures offres</h2><a class="btn btn-link btn-light fw-normal px-0"
-            href="car-finder-catalog-list.html">Voir toutes les offres<i
+        <h2 class="h3 text-light mb-2 mb-sm-0">Nos meilleures offres</h2><a class="btn btn-link btn-light fw-normal px-0"
+            href="{% url 'rechercheVoiture' %}?page=1">Voir toutes les offres<i
                 class="fi-arrow-long-right fs-sm mt-0 ps-1 ms-2"></i></a>
     </div>
     <div class="row">
@@ -216,17 +216,17 @@
                         <div class="row g-2">
                             <div class="col me-sm-1">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-dashboard d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">48 Km</span></div>
                             </div>
                             <div class="col me-sm-1">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-gearbox d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">Automatique</span></div>
                             </div>
                             <div class="col">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-petrol d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">Gasoile</span></div>
                             </div>
                         </div>
@@ -272,17 +272,17 @@
                         <div class="row g-2">
                             <div class="col me-sm-1">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-dashboard d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">278 Km</span></div>
                             </div>
                             <div class="col me-sm-1">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-gearbox d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">Manuelle</span></div>
                             </div>
                             <div class="col">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-petrol d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">Diesel</span></div>
                             </div>
                         </div>
@@ -329,17 +329,17 @@
                         <div class="row g-2">
                             <div class="col me-sm-1">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-dashboard d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">10 Km</span></div>
                             </div>
                             <div class="col me-sm-1">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-gearbox d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">Automatique</span></div>
                             </div>
                             <div class="col">
                                 <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                        class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span
+                                        class="fi-petrol d-block h4 text-warning mb-0 mx-center"></i><span
                                         class="fs-xs text-light">Essence</span></div>
                             </div>
                         </div>
@@ -453,7 +453,7 @@
 <!-- Latest cars (carousel)-->
 <section class="container pt-sm-5 pt-4 pb-3">
     <div class="d-sm-flex align-items-center justify-content-between mb-3 mb-sm-4 pb-2">
-        <h2 class="h3 text-light mb-3 mb-sm-0">Dernières voitures</h2>
+        <h2 class="h3 text-light mb-3 mb-sm-0">Nos dernières voitures</h2>
         <div class="d-flex align-items-center">
             <ul class="nav nav-tabs nav-tabs-light fs-sm me-4 pe-2 mb-0">
                 <li class="nav-item"><a class="nav-link" href="#" style="background-color: #f2ac2a;">Nouvelles</a></li>
@@ -498,17 +498,17 @@
                             <div class="row g-2">
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-dashboard d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">16 Km</span></div>
                                 </div>
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-gearbox d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">Automatique</span></div>
                                 </div>
                                 <div class="col">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-petrol d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">Gasoile</span></div>
                                 </div>
                             </div>
@@ -549,17 +549,17 @@
                             <div class="row g-2">
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-dashboard d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">34 Km</span></div>
                                 </div>
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-gearbox d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">Manuelle</span></div>
                                 </div>
                                 <div class="col">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-petrol d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">Diesel</span></div>
                                 </div>
                             </div>
@@ -599,17 +599,17 @@
                             <div class="row g-2">
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-dashboard d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">18 Km</span></div>
                                 </div>
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-gearbox d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">Manuelle</span></div>
                                 </div>
                                 <div class="col">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span
+                                            class="fi-petrol d-block h4 text-warning mb-0 mx-center"></i><span
                                             class="fs-xs text-light">Essence</span></div>
                                 </div>
                             </div>
@@ -649,18 +649,18 @@
                             <div class="row g-2">
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-dashboard d-block h4 text-light mb-0 mx-center"></i><span
-                                            class="fs-xs text-light">35K mi</span></div>
+                                            class="fi-dashboard d-block h4 text-warning mb-0 mx-center"></i><span
+                                            class="fs-xs text-light">35 Km</span></div>
                                 </div>
                                 <div class="col me-sm-1">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-gearbox d-block h4 text-light mb-0 mx-center"></i><span
-                                            class="fs-xs text-light">Automatic</span></div>
+                                            class="fi-gearbox d-block h4 text-warning mb-0 mx-center"></i><span
+                                            class="fs-xs text-light">Automatique</span></div>
                                 </div>
                                 <div class="col">
                                     <div class="bg-dark rounded text-center w-100 h-100 p-2"><i
-                                            class="fi-petrol d-block h4 text-light mb-0 mx-center"></i><span
-                                            class="fs-xs text-light">Hybrid</span></div>
+                                            class="fi-petrol d-block h4 text-warning mb-0 mx-center"></i><span
+                                            class="fs-xs text-light">Hybride</span></div>
                                 </div>
                             </div>
                         </div>

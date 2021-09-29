@@ -6,16 +6,16 @@
   <meta charset="utf-8">
   <title>Goodtrip | Accueil</title>
   <!-- SEO Meta Tags-->
-  <meta name="description" content="Finder - Directory &amp; Listings Bootstrap Template">
+  <meta name="description" content="Goodtrip - Directory &amp; Listings Bootstrap Template">
   <meta name="keywords"
     content="bootstrap, business, directory, listings, e-commerce, car dealer, city guide, real estate, job board, user account, multipurpose, ui kit, html5, css3, javascript, gallery, slider, touch">
   <meta name="author" content="Createx Studio">
   <!-- Viewport-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Favicon and Touch Icons-->
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'users/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'users/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/favicon-16x16.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'users/img/icon/icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'users/img/icon/icon.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/img/icon/icon.png' %}">
   <link rel="manifest" href="{% static 'users/site.webmanifest' %}">
   <link rel="mask-icon" color="#5bbad5" href="{% static 'users/safari-pinned-tab.svg' %}">
   
@@ -24,6 +24,7 @@
   <!-- Page loading styles-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+  
     .page-loading {
       position: fixed;
       top: 0;
@@ -83,7 +84,6 @@
       animation: spinner .75s linear infinite;
     }
     
-
     @-webkit-keyframes spinner {
       100% {
         -webkit-transform: rotate(360deg);
@@ -145,7 +145,7 @@
                 <h class="h3 text-center text-light mb-4 mb-sm-5">Inscription<br>Goodtrip</h2>
                 <ul class="list-unstyled mb-4 mb-sm-5">
 
-                </ul><img class="d-block mx-auto" src="{% static 'users/img/signin-modal/signup-dark.svg' %}"
+                </ul><img class="d-block mx-auto" src="{% static 'users/img/signin-modal/confidential.svg' %}"
                   width="344" alt="Illustartion">
                 <div class="text-light mt-sm-4 pt-md-3"><span class="opacity-60">Déjà un compte? </span><a
                     class="text-light" href="#signin-modal" data-bs-toggle="modal"
@@ -186,7 +186,7 @@
                         class='opacity-70'>et la</span> <a href='#' class='text-light'>Politique de
                         confidentialité</a></label>
                   </div>
-                  <button class="btn btn-primary btn-lg w-100" type="submit">S'inscrire</button>
+                  <button class="btn btn-lg w-100" style="background-color: #f2ac2a; color: #000;" type="submit">S'inscrire</button>
                 </form>
               </div>
             </div>
@@ -204,7 +204,7 @@
             <div class="row mx-0 align-items-center" style="background-color: #033f58">
               <div class="col-md-6 border-end-md border-light p-4 p-sm-5">
                 <h2 class="h3 text-light mb-4 mb-sm-5">Formulaire de connexion<br>Goodtrip.</h2><img
-                  class="d-block mx-auto" src="{% static 'users/img/signin-modal/signin-dark.svg' %}" width="344"
+                  class="d-block mx-auto" src="{% static 'users/img/signin-modal/key.svg' %}" width="344"
                   alt="Illustartion">
                 <div class="text-light mt-4 mt-sm-5"><span class="opacity-60">Pas encore de compte? </span><a
                     class="text-light" href="#signup-modal" data-bs-toggle="modal"
@@ -238,7 +238,7 @@
                       </label>
                     </div>
                   </div>
-                  <button class="btn btn-primary btn-lg w-100" type="submit">S'identifier</button>
+                  <button class="btn btn-lg w-100" style="background-color: #f2ac2a; color: #000;" type="submit">S'identifier</button>
                 </form>
               </div>
             </div>
@@ -261,7 +261,7 @@
        
         <div class="collapse navbar-collapse order-md-2" id="navbarNav">
           <ul class="navbar-nav col-lg-10">
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+            <li class="nav-item dropdown "><a class="nav-link dropdown-toggle" href="#" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'acc_location' %}"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a>
@@ -329,7 +329,7 @@
                       class="fi-mail"></i></span>
                   <input class="form-control" type="email" name="EMAIL" placeholder="Entrer votre email" required>
                 </div>
-                <button class="btn btn-primary rounded-pill" type="submit" name="subscribe">s'abonner*</button>
+                <button class="btn rounded-pill" style="background-color: #f2ac2a; color: #000;" type="submit" name="subscribe">s'abonner*</button>
               </div>
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div style="position: absolute; left: -5000px;" aria-hidden="true">
@@ -342,14 +342,14 @@
             </form>
           </div>
         </div>
-        <p class="fs-sm mb-0"><span class="text-light">&copy; Tous droits réservés. Conçu par </span><a
-            href="http://caauri.com/" target="_blank" rel="noopener">Caauri consulting</a></p>
+        <p class="fs-sm mb-0"><span class="text-light">&copy; Tous droits réservés. Conçu par </span>
+          <a href="http://caauri.com/" target="_blank" rel="noopener" style="color: #f2ac2a;">Caauri consulting</a></p>
       </div>
     </footer>
   </main>
   <!-- Back to top button-->
-  <a class="btn-scroll-top" href="#top" data-scroll><span
-      class="btn-scroll-top-tooltip text-muted fs-sm me-2">Haut</span><i class="btn-scroll-top-icon fi-chevron-up">
+  <a class="btn-scroll-top" href="#top" style="background-color: #f2ac2a;" data-scroll>
+    <span class="btn-scroll-top-tooltip fs-sm me-2" style="color: #26708b;">Haut</span><i class="text-dark btn-scroll-top-icon fi-chevron-up">
     </i></a>
   <!-- Vendor scrits: js libraries and plugins-->
   <script src="{% static 'users/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>

@@ -3,17 +3,17 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Goodtrip | vehicule</title>
+    <title>Goodtrip | Livraison</title>
     <!-- SEO Meta Tags-->
-    <meta name="description" content="Finder - Directory &amp; Listings Bootstrap Template">
+    <meta name="description" content="Goodtrip - Directory &amp; Listings Bootstrap Template">
     <meta name="keywords" content="bootstrap, business, directory, listings, e-commerce, car dealer, city guide, real estate, job board, user account, multipurpose, ui kit, html5, css3, javascript, gallery, slider, touch">
     <meta name="author" content="Createx Studio">
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'users/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'users/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'users/img/icon/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'users/img/icon/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/img/icon/icon.png' %}">
     <link rel="manifest" href="{% static 'users/site.webmanifest' %}">
     <link rel="mask-icon" color="#5bbad5" href="{% static 'users/safari-pinned-tab.svg' %}">
     <meta name="msapplication-TileColor" content="#766df4">
@@ -60,6 +60,7 @@
         font-weight: normal;
         color: #fff;;
       }
+      
       .page-spinner {
         display: inline-block;
         width: 2.75rem;
@@ -115,7 +116,7 @@
     </div>
     <main class="page-wrapper">
       <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header>
-        <div class="container"><a class="navbar-brand me-3 me-xl-4" href="car-finder-home.html"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
+        <div class="container"><a class="navbar-brand me-3 me-xl-4" href="car-finder-home.html"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Goodtrip"></a>
           <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3"><a class="d-block py-2" href="car-finder-account-info.html"><img class="rounded-circle" src="{% static 'users/img/avatars/02.jpg' %}" width="40" alt="Robert Fox"></a>
             <div class="dropdown-menu dropdown-menu-light dropdown-menu-end">
@@ -133,7 +134,7 @@
               <!-- Demos switcher-->
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="location/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
                 <ul class="dropdown-menu bg-light">
-                  <li><a class="dropdown-item text-dark " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
+                  <li><a class="dropdown-item text-dark " href="{% url 'acc_location' %}"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
                   <li class="dropdown-divider"></li>              
                   <li><a class="dropdown-item text-dark" href="Achat-vehicule-par-liste.html"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
                   </ul>
@@ -184,20 +185,20 @@
         <p class="fs-sm text-dark opacity-70">Ne manquez aucune offre pertinente !</p>
         <form class="form-group form-group-dark w-100">
           <div class="input-group input-group-sm"><span class="input-group-text"> <i class="fi-mail"></i></span>
-            <input class="form-control" type="text" placeholder="Votre e-mail">
+            <input class="form-control" type="text" placeholder="Entrez votre e-mail">
           </div>
           <button class="btn btn-icon btn-sm" style="background-color: #26708b; color: #f2ac2a;" type="button"><i class="fi-send"></i></button>
         </form>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-6 offset-xl-1 mb-2 mb-sm-4">
-        <h3 class="fs-base text-dark">Livraison colis</h3>
+        <h3 class="fs-base text-dark">Véhicules &amp; Colis</h3>
         <ul class="list-unstyled fs-sm">
-          <li><a class="nav-link-light" href="#" style="text-decoration: none; color: #26708b;">Envoyer un colis</a></li>
-          <li><a class="nav-link-dark" href="location-achat-vehicule.html" style="text-decoration: none; color: #26708b;">Autres services</a></li>
+          <li><a class="nav-link-light" href="{% url 'acc_livraison' %}" style="text-decoration: none; color: #26708b;">Livrer un colis</a></li>
+          <li><a class="nav-link-dark" href="{% url 'acc_location' %}" style="text-decoration: none; color: #26708b;">Louer une voiture</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 mb-2 mb-sm-4">
-              <h3 class="fs-base text-dark">À propos de</h3>
+              <h3 class="fs-base text-dark">Goodtrip</h3>
               <ul class="list-unstyled fs-sm">
                 <li><a class="nav-link-dark" href="liv-a-propos-de-goodtrip.html" style="text-decoration: none; color: #26708b;">À propos de Goodtrip</a></li>
                 <li><a class="nav-link-dark" href="liv-nous-contacter.html" style="text-decoration: none; color: #26708b;">Nous contacter</a></li>
@@ -219,9 +220,11 @@
   <div class="container d-lg-flex align-items-center justify-content-between fs-sm pb-3">
     <div class="d-flex flex-wrap justify-content-center order-lg-2 mb-3"><a class="nav-link nav-link-dark fw-normal" href="#">Conditions d'utilisation</a><a class="nav-link nav-link-dark fw-normal" href="#">Politique de confidentialité</a></div>
     <p class="text-center text-lg-start order-lg-1 mb-lg-0"><span class="text-dark opacity-50">&copy;  Tous droits réservés. Conçu par </span><a class="nav-link-dark fw-bold" href="http://caauri.com//" target="_blank" rel="noopener" style="color: #26708b; text-decoration: none;">Caauri consulting</a></p>
+    <p class="text-center text-lg-start order-lg-1 mb-lg-0"><span class="text-dark opacity-50">Visitez notre catalogue  </span><a class="nav-link-dark fw-bold" href="http://catalogue.caauri.com/" target="_blank" rel="noopener" style="color: #26708b; text-decoration: none;">Catalogue Caauri</a></p>
   </div>
 </footer>
-<!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fi-chevron-up">   </i></a>
+<!-- Back to top button--><a class="btn-scroll-top" style="background-color: #26708b;" href="#top" data-scroll>
+  <span class="btn-scroll-top-tooltip fs-sm me-2 text-muted">Haut</span><i class="btn-scroll-top-icon fi-chevron-up">   </i></a>
 <!-- Vendor scrits: js libraries and plugins-->
 <script src="{% static 'users/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'users/vendor/simplebar/dist/simplebar.min.js' %}"></script>
@@ -237,6 +240,8 @@
 <script src="{% static 'users/sweet/bundles2/sweetalert/sweetalert.min.js' %}"></script>
 <!-- Page Specific JS File -->
 <script src="{% static 'users/sweet/js2/page/sweetalert.js' %}"></script>
+
+
 
 </body>
 </html>

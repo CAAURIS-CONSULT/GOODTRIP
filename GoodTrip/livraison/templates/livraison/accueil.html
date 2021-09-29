@@ -1,13 +1,15 @@
 {% extends 'livraison/base.html' %}
 {% load static %}
 {% block content %}
+
+
        <!-- Property cost calculator modal-->
        <div class="modal fade" id="cost-calculator" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header d-block position-relative border-0 px-sm-5 px-4">
               <h3 class="h4 modal-title mt-4 text-center">Expédiez un colis</h3>
-              <button class="btn-close position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button class="btn-close position-absolute top-0 end-0 mt-3 me-3 rounded" style="background-color: #f2ac2a;" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body px-sm-5 px-4">
               <form class="needs-validation" novalidate>
@@ -32,7 +34,7 @@
                     <option value="Los Angeles">Plateau</option>
                     <option value="New York">Cocody</option>
                     <option value="San Diego">Marcory</option>
-                  </select>
+                  </select> 
                   <div class="invalid-feedback">Champ obligatoire.</div>
                 </div>
                 <div class="pt-2 mb-4">
@@ -51,7 +53,7 @@
           <div class="col-xl-7 col-lg-6 col-md-5 order-md-2 mb-4 mb-lg-3"><img src="{% static 'users/img/real-estate/livreur.jpg' %}" alt="Hero image"></div>
           <div class="col-xl-5 col-lg-6 col-md-7 order-md-1 pt-xl-5 pe-lg-0 mb-3 text-md-start text-center">
             <h1 class="display-4 mt-lg-5 mb-md-4 mb-3 pt-md-4 pb-lg-2">Un moyen facile de trouver <br> quelqu'un pour livrer vos colis</h1>
-            <p class="position-relative lead me-lg-n5">Goodtrip est une entreprise de Livraison de colis disponible 7j/7..</p>
+            <p class="position-relative lead me-lg-n5">Goodtrip est une entreprise de Livraison de colis et de location, vente de voitures disponible 7j/7..</p>
           </div>
           <!-- Search property form group-->
           
@@ -63,8 +65,8 @@
   <div class="row align-items-center">
     <div class="col-md-5"><img class="d-block mx-md-0 mx-auto mb-md-0 mb-4" src="{% static 'users/img/real-estate/illustrations/calculator.svg' %}" width="416" alt="Illustration"></div>
     <div class="col-xxl-6 col-md-7 text-md-start text-center">
-      <h2>Estimez ma livraison</h2>
-      <p class="pb-3 fs-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><a class="btn btn-lg estimation" style="background-color: #26708b; color: #fff;" href="#cost-calculator" data-bs-toggle="modal"><i class="fi-calculator me-2"></i>Estimez</a>
+      <h2>Expédiez un colis</h2>
+      <p class="pb-3 fs-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><a class="btn btn-lg estimation" style="background-color: #26708b; color: #fff;" href="#cost-calculator" data-bs-toggle="modal"><i class="fi-calculator me-2"></i>Cliquez ici</a>
     </div>
   </div>
 </section>
@@ -74,25 +76,25 @@
         <div class="tns-carousel-wrapper tns-nav-outside tns-nav-outside-flush mx-n2">
           <div class="tns-carousel-inner row gx-4 mx-0 py-3" data-carousel-options="{&quot;items&quot;: 3, &quot;controls&quot;: false, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3}}}">
             <div class="col">
-              <div class="card card-hover border-0 h-100 pb-2 pb-sm-3 px-sm-3 text-center"><img class="d-block mx-auto my-3" src="{% static 'users/img/real-estate/illustrations/delivery-box.svg' %}" width="256" alt="Illustration">
-                <div class="card-body">
-                  <h2 class="h4 card-title">Des tarifs abordables</h2>
+              <div class="card card-hover border-0 h-100 pb-2 pb-sm-3 px-sm-3 text-center"><img class="d-block mx-auto my-3" src="{% static 'users/img/real-estate/illustrations/delivery-box.svg' %}" width="200" alt="Illustration">
+                <div class="card-body ">
+                  <h2 class="h4 card-title" style="color: #f2ac2a;">Des tarifs abordables</h2>
                   <p class="card-text fs-sm">Blandit lorem dictum in velit. Et nisi at faucibus mauris pretium enim. Risus sapien nisi aliquam egestas leo dignissim.</p>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card card-hover border-0 h-100 pb-2 pb-sm-3 px-sm-3 text-center"><img class="d-block mx-auto my-3" src="{% static 'users/img/real-estate/illustrations/delivery-truck.svg' %}" width="256" alt="Illustration">
+              <div class="card card-hover zoomin border-0 h-100 pb-2 pb-sm-3 px-sm-3 text-center"><img class="d-block mx-auto my-3" src="{% static 'users/img/real-estate/illustrations/delivery-truck.svg' %}" width="200" alt="Illustration">
                 <div class="card-body">
-                  <h2 class="h4 card-title">Livraison à domicile</h2>
+                  <h2 class="h4 card-title" style="color: #f2ac2a;">Livraison à domicile</h2>
                   <p class="card-text fs-sm">Amet, cras orci justo, tortor nisl aliquet. Enim tincidunt tellus nunc, nulla arcu posuere quis. Velit turpis orci venenatis.</p>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card card-hover border-0 h-100 pb-2 pb-sm-3 px-sm-3 text-center"><img class="d-block mx-auto my-3" src="{% static 'users/img/real-estate/illustrations/customer-service.svg' %}" width="256" alt="Illustration">
+              <div class="card card-hover zoomin border-0 h-100 pb-2 pb-sm-3 px-sm-3 text-center"><img class="d-block mx-auto my-3" src="{% static 'users/img/real-estate/illustrations/customer-service.svg' %}" width="200" alt="Illustration">
                 <div class="card-body">
-                  <h2 class="h4 card-title">Service client efficace</h2>
+                  <h2 class="h4 card-title" style="color: #f2ac2a;">Service client efficace</h2>
                   <p class="card-text fs-sm">Sed sed aliquet sed id purus malesuada congue viverra. Habitant quis lacus, volutpat natoque ipsum iaculis cursus.</p>
                 </div>
                 

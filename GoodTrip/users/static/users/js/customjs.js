@@ -99,13 +99,15 @@ $('#command_submit').click(function(event){
 
 function commander2(vehicule_id, quantity){
     Swal.fire({
-        title: 'Voulez-vous commder ce véhicule?',
+        title: 'Voulez-vous commander ce véhicule?',
         text: "Vous pourrez voir vos commandes dans votre historique!",
         icon: 'warning',
-        showCancelButton: 'Annuler',
+        showCancelButton: 'true',
         confirmButtonColor: '#26708b',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Oui, commander!'
+        confirmButtonText: 'Oui, commander!',
+        cancelButtonText: 'Annuler',
+        cancelButtonColor: '#f2ac2a',
       }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({

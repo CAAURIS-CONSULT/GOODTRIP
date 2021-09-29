@@ -3,17 +3,17 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Goodtrip | Achat-vehicule-par-grille</title>
+    <title>Goodtrip | vehicule</title>
     <!-- SEO Meta Tags-->
-    <meta name="description" content="Finder - Directory &amp; Listings Bootstrap Template">
+    <meta name="description" content="Goodtrip - Directory &amp; Listings Bootstrap Template">
     <meta name="keywords" content="bootstrap, business, directory, listings, e-commerce, car dealer, city guide, real estate, job board, user account, multipurpose, ui kit, html5, css3, javascript, gallery, slider, touch">
     <meta name="author" content="Createx Studio">
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'users/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'users/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'users/img/icon/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'users/img/icon/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'users/img/icon/icon.png' %}">
     <link rel="manifest" href="{% static 'users/site.webmanifest' %}">
     <link rel="mask-icon" color="#5bbad5" href="{% static 'users/safari-pinned-tab.svg' %}" >
     <link rel="stylesheet" href="{% static 'users/dist/sweetalert2.min.css' %}">
@@ -203,7 +203,7 @@
           <div class="row mx-0 align-items-center" style="background-color: #033f58">
             <div class="col-md-6 border-end-md border-light p-4 p-sm-5">
               <h2 class="h3 text-light mb-4 mb-sm-5">Formulaire de connexion<br>Goodtrip.</h2><img
-                class="d-block mx-auto" src="{% static 'users/img/signin-modal/signin-dark.svg' %}" width="344"
+                class="d-block mx-auto" src="{% static 'users/img/signin-modal/key.svg' %}" width="344"
                 alt="Illustartion">
               <div class="text-light mt-4 mt-sm-5"><span class="opacity-60">Pas encore de compte? </span><a
                   class="text-light" href="#signup-modal" data-bs-toggle="modal"
@@ -259,7 +259,7 @@
                   <!-- <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Add and promote your listings</span></li>
                       <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Easily manage your wishlist</span></li>
                       <li class="d-flex mb-0"><i class="fi-check-circle text-primary mt-1 me-2"></i><span class="text-light">Leave reviews</span></li> -->
-                </ul><img class="d-block mx-auto" src="{% static 'users/img/signin-modal/signup-dark.svg' %}"
+                </ul><img class="d-block mx-auto" src="{% static 'users/img/signin-modal/confidential.svg' %}"
                   width="344" alt="Illustartion">
                 <div class="text-light mt-sm-4 pt-md-3"><span class="opacity-60">Déjà un compte? </span><a
                     class="text-light" href="#signin-modal" data-bs-toggle="modal"
@@ -273,7 +273,7 @@
                     {% ifequal anchor 'signup-modal' %}
                       <div class="alert alert-danger">{{error}} </div>
                       <div class="text-center">
-                        <a href="{% url 'verify_number'%}" class="text-primary "> Faire verifier votre numéro ici <i class="fi-chevrons-right"></i></a>
+                        <a href="{% url 'verify_number'%}" class="text-primary ">Faites verifier votre numéro ici <i class="fi-chevrons-right"></i></a>
                       </div>
                     {% endifequal %}
                     {% endif %}
@@ -325,7 +325,7 @@
     
    <!-- Navbar-->
    <header class="navbar navbar-expand-lg navbar-dark fixed-top" data-scroll-header>
-    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard' %}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Finder"></a>
+    <div class="container"><a class="navbar-brand me-3 me-xl-4" href="{% url 'dashboard' %}"><img class="d-block" src="{% static 'users/img/logo/logo.png' %}" width="116" alt="Goodtrip"></a>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       
       <a class=" btn-sm ms-2 order-lg-3" href="#">
@@ -336,14 +336,14 @@
           <!-- Demos switcher-->
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle " href="location/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Véhicules</a>
             <ul class="dropdown-menu bg-dark">
-              <li><a class="dropdown-item text-white " href="Location-vehicule-par-grille.html"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
+              <li><a class="dropdown-item text-white " href="{% url 'acc_location' %}"><i class="fi-car fs-bae fs-base opacity-50 me-2"></i>Location</a></li>
               <li class="dropdown-divider"></li>              
               <li><a class="dropdown-item text-white" href="Achat-vehicule-par-liste.html"><i class="fi-car fs-bae opacity-50 me-2"></i>Achat</a></li>
               </ul>
           </li>
           <!-- Menu items-->
           
-          <li class="nav-item"><a class="nav-link" href="#">Livraison de colis</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'acc_livraison' %}">Livraison de colis</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}#services">Nos services</a></li>
           </ul>
           {% if user.is_authenticated %}
@@ -395,20 +395,20 @@
               <p class="fs-sm text-light opacity-70">Ne manquez aucune offre pertinente !</p>
               <form class="form-group form-group-light w-100">
                 <div class="input-group input-group-sm"><span class="input-group-text"> <i class="fi-mail"></i></span>
-                  <input class="form-control" type="text" placeholder="Votre e-mail">
+                  <input class="form-control" type="text" placeholder="Entrez votre e-mail">
                 </div>
                 <button class="btn btn-icon btn-sm" type="button" style="background-color: #f2ac2a;"><i class="fi-send"></i></button>
               </form>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 offset-xl-1 mb-2 mb-sm-4">
-              <h3 class="fs-base text-light">Achat &amp; Location</h3>
+              <h3 class="fs-base text-light">Véhicules &amp; Colis</h3>
               <ul class="list-unstyled fs-sm">
-                <li><a class="nav-link-light" href="#">Louer une voiture</a></li>
-                <li><a class="nav-link-light" href="#">acheter une voiture</a></li>
+                <li><a class="nav-link-light" href="{% url 'acc_location' %}">Louer une voiture</a></li>
+                <li><a class="nav-link-light" href="{% url 'acc_livraison' %}">Livrer un colis</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 mb-2 mb-sm-4">
-              <h3 class="fs-base text-light">À propos de</h3>
+              <h3 class="fs-base text-light">Goodtrip</h3>
               <ul class="list-unstyled fs-sm">
                 <li><a class="nav-link-light" href="#">À propos de Goodtrip</a></li>
                 <li><a class="nav-link-light" href="#">Nous contacter</a></li>
@@ -430,6 +430,7 @@
         <div class="container d-lg-flex align-items-center justify-content-between fs-sm pb-3">
           <div class="d-flex flex-wrap justify-content-center order-lg-2 mb-3"><a class="nav-link nav-link-light fw-normal" href="#">Conditions d'utilisation</a><a class="nav-link nav-link-light fw-normal" href="#">Politique de confidentialité</a></div>
           <p class="text-center text-lg-start order-lg-1 mb-lg-0"><span class="text-light opacity-50">&copy;  Tous droits réservés. Conçu par </span><a class="nav-link-light fw-bold" href="http://caauri.com//" style="color: #f2ac2a; text-decoration: none;" target="_blank" rel="noopener">Caauri consulting</a></p>
+          <p class="text-center text-lg-start order-lg-1 mb-lg-0"><span class="text-light opacity-50">Visitez notre catalogue  </span><a class="nav-link-light fw-bold" href="http://catalogue.caauri.com/" style="color: #f2ac2a; text-decoration: none;" target="_blank" rel="noopener" style="color: #26708b; text-decoration: none;">Catalogue Caauri</a></p>
         </div>
     </footer>
     <a class="btn-scroll-top" href="#top" data-scroll><span
