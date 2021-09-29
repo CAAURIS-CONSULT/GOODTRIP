@@ -12,7 +12,7 @@ function getCookie(name) {
                 break;
             }
         }
-    }   
+    }
     return cookieValue;
 };
 
@@ -73,7 +73,31 @@ function getModelsById(id){
     });
 }
 
-function commander(vehicule_id, quantity){
+
+$('#command_submit').click(function(event){
+    event.preventDefault();
+    Swal.fire({
+        title: 'Voulez-vous vraiment commander ce véhicule?',
+        text: "Vous pourrez voir vos commandes dans votre historique!",
+        icon: 'warning',
+        showCancelButton: 'Annuler',
+        confirmButtonColor: '#26708b',
+        cancelButtonColor: '#f2ac2a',
+        confirmButtonText: 'Oui, commander!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            $('#command').submit();
+            Swal.fire({
+                title: 'Success!',
+                text: 'Commande validée.',
+                icon: 'success',
+                confirmButtonColor: '#26708b',
+            });
+        }
+    })
+})
+
+function commander2(vehicule_id, quantity){
     Swal.fire({
         title: 'Voulez-vous commander ce véhicule?',
         text: "Vous pourrez voir vos commandes dans votre historique!",

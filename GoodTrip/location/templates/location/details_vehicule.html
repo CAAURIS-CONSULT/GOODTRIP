@@ -148,7 +148,7 @@
         </div>
         <div class="card card-light card-body mb-4">
           <div class="pt-4 mt-2">
-            <button class="btn btn-lg" style="background-color: #f2ac2a; color: #000;" onclick="{% if user.is_authenticated %}commander({{ user.id}}, {{ vehicule.id }},2) {% else %} Swal.fire('Veuillez vous connecter'){% endif %}" href="#" data-bs-toggle="modal">
+            <button class="btn btn-lg" style="background-color: #f2ac2a; color: #000;" data-bs-target="#modalCentered" data-bs-toggle="modal">
               <i class="fi-credit-card me-2"></i> Commander </button>
           </div>
         </div>

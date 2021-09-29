@@ -98,29 +98,33 @@ def commander(request):
     if request.method != 'GET':
         return HttpResponse('Method not allowed')
     else:
-        data = request.GET
-        user                = request.user
-        vehicule_id         = data.get('vehicule_id')
-        quantity            = data.get('quantity')
-        commande = creerCommande(user)
-        vehicule = Vehicule.objects.filter(id=vehicule_id)[0]
-        addToCommand(commande,vehicule,quantity)
-        message = 'commande bien effectuée'
+        
+        # user                = request.user
+        # vehicule_id         = request.GET.get('vehicule_id')
+        # quantity            = request.GET.get('quantity')
+        
+        # commande = creerCommande(user)
+        # vehicule = Vehicule.objects.filter(id=vehicule_id)[0]
+        # addToCommand(commande,vehicule,quantity)
+        # message = 'commande bien effectuée'
         #sendMessage(user.phone)
+        print(request.GET)
     context = {
-        'message':message
+        'message':'message'
     }
-    return HttpResponse(message)
+    return HttpResponse('message')
     # return render(request, template_name, context)
 
-def creerCommande(user):
+def creerCommande(user,lieu_de_livraison='marcory',total=0):
     commande = Commande()
     commande.user = user
+    commande.total= total
+    commande.lieu_livraison = lieu_de_livraison
     commande.save()
     latestCommande = Commande.objects.latest('id')
     return latestCommande
 
-# Permet l'ajout de uqantité à un article ( voiture d'un commande donnée )
+# Permet l'ajout de quantité à un article ( voiture d'un commande donnée )
 def addToCommand(commande,vehicule,quantity):
     produitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id,associateVvehicule_id=vehicule.id)
     if produitCommande:
@@ -134,26 +138,35 @@ def addToCommand(commande,vehicule,quantity):
         newProduitCommande.quantity = quantity
         newProduitCommande.save()
 
+def history2(request):
+    template_name = 'location/historique.html'
+    listCommande = request.user.commande_set.all()
+
+    for command in listCommande:
+        listimage = []
+        listProduitCommande = command.produitcommande_set.all()
+        for produitCommande in listProduitCommande:
+            vehiculeImage = produitCommande.associateVvehicule.image_set.all()[0]
+            listimage.append(vehiculeImage)
+        command.images = listimage
+        print(command.images) 
+    return render(request,template_name)
+
+#Visualisation de l'historique des locations
 @login_required
 def history(request):
     template_name = 'location/historique.html'
-    mes_commandes = Commande.objects.filter(user = request.user.id)
-    for commande in mes_commandes:
-        commande.image = []
-        listProduitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id)
+
+    listCommande = request.user.commande_set.all()
+    for command in listCommande:
+        listimage = []
+        listProduitCommande = command.produitcommande_set.all()
         for produitCommande in listProduitCommande:
-            vehiculeId = produitCommande.associateVvehicule.id
-            image = Image.objects.filter(associatedVehicule=vehiculeId)[0].image
-            commande.image.append(image)
-        # produitCommande = ProduitCommande.objects.filter(associatedCommande=commande.id)
-        # associatedVehicule = [v for v in Vehicule.objects.filter(id=)]
-        # commande.associatedProduct = produitCommande
-        # listImage = []
-        # for produit in commande.associatedProduct:
-        #     id = produit.id
-        #     listImage.append(Image.objects.filter(associatedVehicule=id)[0].image)
-        # commande.listImage = listImage
-    paginator = Paginator(mes_commandes,6)
+            vehiculeImage = produitCommande.associateVvehicule.image_set.all()[0]
+            listimage.append(vehiculeImage)
+        command.images = listimage
+        
+    paginator = Paginator(listCommande,6)
     page  = request.GET.get('page')
     try:
         listcommandes = paginator.page(page)
@@ -170,7 +183,7 @@ def history(request):
     }
     return render(request,template_name, context)
 
-
+#Vue qui permet de regler les parametres et le changement de mot de passe
 def passwordAndSettings(request):
     template_name = 'location/password-settings.html'
     return render(request, template_name)
